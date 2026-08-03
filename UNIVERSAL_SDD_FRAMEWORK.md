@@ -13,14 +13,16 @@ and then populated by an LLM by inspecting the real source code.
 
 # Principles
 
-1. Code is the Source of Truth.
-2. Specifications drive implementation.
-3. Humans approve business decisions.
-4. AI executes within approved scope.
-5. Every decision is documented.
-6. Architecture evolves through ADRs.
-7. Reviews are mandatory.
-8. Documentation evolves with the code.
+1. An approved SPEC defines the intended behavior of a change.
+2. PROJECT.md records the canonical current state of the project.
+3. Code and QA evidence demonstrate the implemented behavior.
+4. Any divergence among SPEC, PROJECT.md, code, and evidence is resolved explicitly.
+5. Humans approve business and user-experience decisions.
+6. AI executes within approved scope.
+7. Every decision is documented.
+8. Architecture evolves through ADRs.
+9. Quality, design, accessibility, and code reviews are mandatory when applicable.
+10. Documentation evolves with the code.
 
 ---
 
@@ -67,13 +69,19 @@ Must contain:
 - Environment variables
 - APIs
 - Security
+- User experience and interface conventions
+- Design system and accessibility baseline
+- Testing strategy and quality gates
 - CI/CD
 - Deployment
 - Coding standards
 - Known limitations
 - Technologies intentionally NOT used
 
-Whenever documentation diverges from source code, source code wins.
+For an active change, the approved SPEC is the acceptance baseline. After the
+change is accepted, code, PROJECT.md, and QA evidence must be aligned. A
+divergence is recorded and resolved as a defect, approved scope change, or
+documentation debt; it must never be silently ignored.
 
 ---
 
@@ -111,6 +119,39 @@ Produces:
 - risks
 
 Never modifies code.
+
+---
+
+## UX Research Agent
+
+Discovers user needs before interface decisions are made.
+
+Produces:
+
+- UX brief
+- user groups and needs
+- journeys or task flows
+- assumptions and research questions
+- usability risks
+
+Never invents user evidence. Assumptions must be labeled and approved.
+
+---
+
+## UX/UI Design Agent
+
+Turns approved user needs and product requirements into implementable interface
+behavior.
+
+Produces:
+
+- user flows
+- wireframes or prototypes when needed
+- design specification and component mapping
+- responsive behavior and interface states
+- accessibility annotations
+
+Never starts implementation and never bypasses human design approval.
 
 ---
 
@@ -171,6 +212,48 @@ Creates or updates:
 - integration tests
 - e2e tests
 
+Follows `standards/testing.md` and records evidence against acceptance criteria.
+
+---
+
+## QA Agent
+
+Owns risk-based quality planning and independent validation.
+
+Produces:
+
+- QA plan and traceability matrix
+- manual and exploratory test evidence
+- regression result
+- defect reports with severity and priority
+- release quality recommendation
+
+Does not silently accept failed gates or residual risk.
+
+---
+
+## Accessibility Review Agent
+
+Validates applicable accessibility requirements using automated and manual
+checks. Records violations, evidence, impact, and exceptions.
+
+---
+
+## Design Review Agent
+
+Compares the implemented interface with the approved design specification.
+
+Checks:
+
+- layout and visual hierarchy
+- component and token usage
+- responsive behavior
+- content and interaction states
+- accessibility annotations
+
+Outputs Approved, Approved with remarks, or Rejected. Never edits application
+code while acting as reviewer.
+
 ---
 
 ## Review Agent
@@ -221,6 +304,10 @@ build
 
 tests
 
+quality gates
+
+design and accessibility approvals when applicable
+
 documentation
 
 version
@@ -253,10 +340,13 @@ coding.md
 security.md
 performance.md
 testing.md
+quality-gates.md
 database.md
 api.md
 commits.md
 accessibility.md
+ux-ui.md
+design-system.md
 ```
 
 ---
@@ -290,18 +380,22 @@ The active profile defines validations, commands and conventions.
 
 # Templates
 
-Mandatory templates
+Provided baseline templates:
 
-- SPEC
-- TASK
-- REVIEW
-- ADR
-- RFC
-- BUG REPORT
-- TEST PLAN
-- RELEASE PLAN
-- DEPLOY PLAN
-- POST MORTEM
+- `templates/spec.md`
+- `templates/ux-brief.md`
+- `templates/user-flow.md`
+- `templates/design-specification.md`
+- `templates/usability-test-plan.md`
+- `templates/qa-plan.md`
+- `templates/test-case.md`
+- `templates/regression-checklist.md`
+- `templates/accessibility-checklist.md`
+- `templates/design-review.md`
+- `templates/bug-report.md`
+
+Adopting projects must also provide or map their canonical templates for TASK,
+REVIEW, ADR, RFC, RELEASE PLAN, DEPLOY PLAN, and POST MORTEM.
 
 ---
 
@@ -311,7 +405,7 @@ Idea
 
 ↓
 
-Discovery
+Product and UX Discovery
 
 ↓
 
@@ -319,7 +413,15 @@ Architecture
 
 ↓
 
-Specification
+UX/UI Design (when user-facing)
+
+↓
+
+Human Design Approval
+
+↓
+
+Functional and Technical Specification
 
 ↓
 
@@ -335,11 +437,19 @@ Implementation
 
 ↓
 
-Testing
+Automated and Manual QA
 
 ↓
 
-Review
+Accessibility Review (when applicable)
+
+↓
+
+Design Review (when user-facing)
+
+↓
+
+Code Review
 
 ↓
 
@@ -353,6 +463,9 @@ Documentation
 
 Release
 
+Rejected reviews return to implementation and the applicable QA checks repeat.
+Any requested scope change returns to specification and human approval.
+
 ---
 
 # Universal Rules
@@ -365,9 +478,17 @@ Release
   - SPEC
   - TASK
   - REVIEW
+- Every user-facing change must also have:
+  - UX brief or an explicit reason why it is not needed
+  - approved design specification
+  - design review
+  - accessibility evidence
+- Every change must satisfy the applicable quality gates before release.
+- Acceptance criteria must be traceable to test evidence.
+- Failed gates and residual risks require an explicit human exception with owner and expiry.
 - Every architectural change must create an ADR.
 - Every relevant implementation updates PROJECT.md.
-- Documentation follows the code.
+- Documentation and evidence align with the accepted implementation.
 
 ---
 
@@ -381,9 +502,12 @@ When this framework is copied into a repository, the first AI must:
 4. Detect architecture.
 5. Detect package manager/build system.
 6. Detect testing strategy.
-7. Populate Knowledge Base.
-8. Create missing ADRs if required.
-9. Suggest improvements but never apply without approval.
-10. Wait for the first specification.
+7. Detect the design system and interface conventions.
+8. Detect the accessibility baseline.
+9. Define applicable quality gates.
+10. Populate Knowledge Base.
+11. Create missing ADRs if required.
+12. Suggest improvements but never apply without approval.
+13. Wait for approved discovery, design, and specification artifacts as applicable.
 
 At this point the repository is considered SDD-ready.
