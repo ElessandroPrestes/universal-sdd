@@ -1,6 +1,6 @@
 # Universal SDD
 
-> 🚧 **Status:** Em desenvolvimento ativo. Versão documentada: **1.0.0**.
+> 🚧 **Status:** Em desenvolvimento ativo. O framework evolui continuamente até a versão **1.0** e sua API documental ainda pode mudar.
 
 > **Framework universal para aplicar Spec-Driven Development (SDD) em qualquer projeto de software, utilizando pessoas e agentes de IA de forma organizada, previsível e auditável.**
 
@@ -128,29 +128,31 @@ A documentação é organizada em módulos para facilitar adoção e evolução.
 
 | Documento | Objetivo |
 |-----------|----------|
-| `README.md` | Visão geral do framework |
-| `PROJECT.md` | Estado canônico atual do projeto |
-| `docs/getting-started.md` | Primeiros passos |
-| `docs/architecture.md` | Arquitetura do framework |
-| `docs/agents.md` | Papéis e responsabilidades dos agentes |
-| `docs/workflows.md` | Fluxos oficiais |
-| `docs/knowledge-base.md` | Base de conhecimento |
-| `docs/bootstrapping.md` | Inicialização de novos projetos |
-| `docs/governance.md` | Regras e governança |
-| `docs/best-practices.md` | Boas práticas |
-| `docs/faq.md` | Perguntas frequentes |
-| `CONTRIBUTING.md` | Como contribuir |
-| `CHANGELOG.md` | Histórico de versões |
-| `ROADMAP.md` | Evolução planejada |
-| `CODE_OF_CONDUCT.md` | Código de conduta |
-| `standards/ux-ui.md` | Processo e critérios de UX/UI |
-| `standards/design-system.md` | Tokens, componentes e governança visual |
-| `standards/accessibility.md` | Requisitos e validações de acessibilidade |
-| `standards/testing.md` | Estratégia de testes e evidências |
-| `standards/quality-gates.md` | Critérios de entrada, saída e release |
-| `workflows/feature.md` | Fluxo completo de uma funcionalidade |
-| `agents/` | Responsabilidades e limites dos papéis de UX/UI e QA |
-| `templates/` | Artefatos executáveis de especificação, design, testes e revisão |
+| [`README.md`](README.md) | Visão geral do framework |
+| [`PROJECT.md`](PROJECT.md) | Estado canônico atual do projeto |
+| [`UNIVERSAL_SDD_FRAMEWORK.md`](UNIVERSAL_SDD_FRAMEWORK.md) | Definição normativa do núcleo |
+| [`AGENTS.md`](AGENTS.md) | Protocolo comum para pessoas e agentes de IA |
+| [`docs/getting-started.md`](docs/getting-started.md) | Primeiros passos |
+| [`docs/architecture.md`](docs/architecture.md) | Arquitetura do framework |
+| [`docs/agents.md`](docs/agents.md) | Papéis e responsabilidades dos agentes |
+| [`docs/workflows.md`](docs/workflows.md) | Fluxos oficiais |
+| [`docs/knowledge-base.md`](docs/knowledge-base.md) | Base de conhecimento |
+| [`docs/bootstrapping.md`](docs/bootstrapping.md) | Inicialização de novos projetos |
+| [`docs/governance.md`](docs/governance.md) | Regras e governança |
+| [`docs/best-practices.md`](docs/best-practices.md) | Boas práticas |
+| [`docs/faq.md`](docs/faq.md) | Perguntas frequentes |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Como contribuir |
+| [`CHANGELOG.md`](CHANGELOG.md) | Histórico de versões |
+| [`ROADMAP.md`](ROADMAP.md) | Evolução planejada |
+| [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | Código de conduta |
+| [`standards/ux-ui.md`](standards/ux-ui.md) | Processo e critérios de UX/UI |
+| [`standards/design-system.md`](standards/design-system.md) | Tokens, componentes e governança visual |
+| [`standards/accessibility.md`](standards/accessibility.md) | Requisitos e validações de acessibilidade |
+| [`standards/testing.md`](standards/testing.md) | Estratégia de testes e evidências |
+| [`standards/quality-gates.md`](standards/quality-gates.md) | Critérios de entrada, saída e release |
+| [`workflows/feature.md`](workflows/feature.md) | Fluxo completo de uma funcionalidade |
+| [`agents/`](agents/) | Missões, responsabilidades e limites dos papéis |
+| [`templates/`](templates/) | Artefatos executáveis de especificação, design, tarefas, testes e revisão |
 
 ---
 
@@ -182,7 +184,9 @@ A documentação é organizada em módulos para facilitar adoção e evolução.
 
 ---
 
-# Roadmap
+# Roadmap resumido
+
+O planejamento detalhado e seu status são mantidos em [`ROADMAP.md`](ROADMAP.md).
 
 ## v1.0
 - Framework base
@@ -218,7 +222,7 @@ Contribuições são bem-vindas.
 
 # Licença
 
-MIT License.
+[MIT License](LICENSE).
 
 ---
 

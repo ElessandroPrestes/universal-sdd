@@ -16,7 +16,7 @@ canonical guidance, roles, standards, workflows, and templates.
 
 ## Current version and status
 
-- Documented version: 1.0.0.
+- Documented version: pre-1.0 development draft.
 - Status: active development.
 - Runtime: none; the project currently consists of Markdown documentation.
 - Dependencies: none.
@@ -34,10 +34,14 @@ canonical guidance, roles, standards, workflows, and templates.
 |---|---|
 | `README.md` | Portuguese overview and adoption entry point |
 | `UNIVERSAL_SDD_FRAMEWORK.md` | Core language-agnostic framework definition |
+| `AGENTS.md` and AI entry files | Shared session startup and scope protocol |
 | `agents/` | Specialized role contracts and boundaries |
 | `workflows/` | End-to-end delivery workflows |
 | `standards/` | Operational UX/UI, design-system, accessibility, testing, and gate rules |
 | `templates/` | Versioned artifacts for specifications, design, QA, evidence, and defects |
+| `specs/`, `tasks/`, `reviews/`, `adr/` | Versioned change and decision records |
+| `knowledge/` and `profiles/` | Reusable context and project-specific adaptations |
+| `docs/` | Adoption, architecture, governance, and reference documentation |
 
 ## Architecture
 
@@ -85,10 +89,9 @@ their own automation.
 
 ## Known limitations
 
-- Some cataloged general-purpose artifacts outside the UX/UI and QA scope are
-  not yet provided as concrete templates.
 - Technology profiles and automatic bootstrapping are planned but not implemented.
 - The project has no automated Markdown link or schema validation yet.
+- The documentation API may change before version 1.0.
 
 ## Technologies intentionally not used
 

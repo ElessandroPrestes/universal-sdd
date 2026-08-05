@@ -1,6 +1,6 @@
 # Universal SDD Framework (USF)
 
-> Version: 1.0.0
+> Version: pre-1.0 development draft
 
 ## Purpose
 
@@ -43,7 +43,6 @@ knowledge/
 standards/
 templates/
 adr/
-decisions/
 specs/
 tasks/
 reviews/
@@ -318,16 +317,9 @@ release notes
 
 # Knowledge Base
 
-```
-knowledge/
- architecture/
- business/
- glossary/
- integrations/
- stack/
- patterns/
- decisions/
-```
+Entries in `knowledge/` may be organized by architecture, business, glossary,
+integrations, stack, patterns, or another taxonomy defined by the adopting
+project. Use `templates/knowledge-entry.md` and avoid duplicating ADRs or SPECs.
 
 ---
 
@@ -383,6 +375,11 @@ The active profile defines validations, commands and conventions.
 Provided baseline templates:
 
 - `templates/spec.md`
+- `templates/project.md`
+- `templates/task.md`
+- `templates/adr.md`
+- `templates/rfc.md`
+- `templates/review.md`
 - `templates/ux-brief.md`
 - `templates/user-flow.md`
 - `templates/design-specification.md`
@@ -393,9 +390,12 @@ Provided baseline templates:
 - `templates/accessibility-checklist.md`
 - `templates/design-review.md`
 - `templates/bug-report.md`
+- `templates/release-plan.md`
+- `templates/deploy-plan.md`
+- `templates/post-mortem.md`
 
-Adopting projects must also provide or map their canonical templates for TASK,
-REVIEW, ADR, RFC, RELEASE PLAN, DEPLOY PLAN, and POST MORTEM.
+Adopting projects may extend or map these to canonical templates in their own
+tooling while preserving the required metadata and traceability.
 
 ---
 
