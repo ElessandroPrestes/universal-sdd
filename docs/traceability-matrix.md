@@ -19,7 +19,9 @@ c60ce0f` docs(rastreabilidade): sincroniza matriz com aprovação da SPEC-004<br
 8f7f52e` docs(qa): registra aprovação da verificação de critérios<br>`
 b7c623f` docs(rastreabilidade): atualiza matriz de critérios<br>`
 3559da5` feat(qa): adiciona verificador de critérios | [REVIEW-004-structured-acceptance-verification.md](../reviews/REVIEW-004-structured-acceptance-verification.md) (Approved) |
-| [SPEC-005](../specs/SPEC-005-structured-qa-evidence.md) | Approved | [TASK-005-01](../tasks/TASK-005-01-structured-qa-evidence.md) (In review) | `ba1bb92b` feat(qa): adiciona contrato de evidência estruturada | — |
+| [SPEC-005](../specs/SPEC-005-structured-qa-evidence.md) | Implemented | [TASK-005-01](../tasks/TASK-005-01-structured-qa-evidence.md) (Done) | `6f764f49` docs(qa): registra aprovação da evidência estruturada<br>`
+aa7df07` docs(rastreabilidade): atualiza matriz de evidência<br>`
+ba1bb92` feat(qa): adiciona contrato de evidência estruturada | [REVIEW-005-structured-qa-evidence.md](../reviews/REVIEW-005-structured-qa-evidence.md) (Approved) |
 
 ## Traceability gaps
 
