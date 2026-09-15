@@ -16,9 +16,10 @@ marks an inferred or prose-only result as passing.
   the QA-evidence contract;
 - authorized exceptions, if any.
 
-The structured QA-evidence template is introduced by Melhoria 6. Until it is
-available, QA-Verifier cannot issue a passing result for a change that requires
-QA evidence.
+Structured QA evidence must follow `templates/QA_EVIDENCE_TEMPLATE.md`.
+QA-Verifier produces its verification report using `templates/VERIFICATION_REPORT_TEMPLATE.md`.
+With this contract in place, QA-Verifier is operational and issues passing results
+when all applicable criteria are verified without open findings.
 
 ## Comparison
 
@@ -32,7 +33,8 @@ For every applicable SPEC criterion, QA-Verifier verifies that:
 
 ## Output
 
-Produce a reproducible verification report containing the SPEC and TASK
+Produce a reproducible verification report based on
+`templates/VERIFICATION_REPORT_TEMPLATE.md` containing the SPEC and TASK
 references, evidence locations, execution context, timestamp, and one entry per
 criterion. Classify every unresolved item as one of:
 

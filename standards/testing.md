@@ -82,3 +82,7 @@ Priority describes repair order and is decided separately from severity.
 Evidence must include build, environment, command or steps, result, timestamp,
 and relevant logs, reports, screenshots, recordings, or links. A reviewer must be
 able to reproduce the conclusion without relying on undocumented context.
+
+For changes with structured acceptance criteria, QA evidence must be recorded
+using `templates/QA_EVIDENCE_TEMPLATE.md` to enable structured comparison by the
+QA-Verifier before review.
