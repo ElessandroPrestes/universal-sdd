@@ -5,7 +5,7 @@
 | Campo | Valor |
 |---|---|
 | ID | TASK-003-01 |
-| Status | In review |
+| Status | Done |
 | Responsável | Implementation Agent |
 | SPEC | SPEC-003 |
 | Critérios | AC-001, AC-002, AC-003 |
@@ -72,4 +72,5 @@ SPEC.
 - Evidências: em 2026-09-15, `python3 -m unittest discover -s tests -v` passou
   com 8 testes; `python3 scripts/generate_traceability.py` gerou a matriz e
   `git diff --check` não reportou erros.
-- Pendências ou bloqueios: QA e review independentes permanecem pendentes.
+- Pendências ou bloqueios: decisão humana registrada em
+  `reviews/REVIEW-003-spec-amendment-protocol.md`; não há bloqueios conhecidos.
