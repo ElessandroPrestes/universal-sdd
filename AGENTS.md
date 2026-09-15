@@ -66,6 +66,15 @@ O hook opcional em `templates/hooks/commit-msg` rejeita referências parciais ou
 malformadas; projetos podem instalá-lo conforme o guia de rastreabilidade.
 Use `Refs:` nos artefatos para manter a cadeia entre as fontes de verdade.
 
+## Orçamento de contexto
+
+Carregue `docs/context-budget.md` e siga o pacote da fase ativa. Para trabalho
+ativo, carregue somente a SPEC aprovada, a TASK atribuída quando aplicável, e
+os módulos de `knowledge/` referenciados explicitamente pela SPEC. Não carregue
+a base de conhecimento completa, nem use uma varredura ampla do repositório
+como substituto para recuperação seletiva. Registre uma exceção apenas quando
+um risco material exigir contexto adicional e indique o módulo e o motivo.
+
 ## Encerramento
 
 Ao concluir uma tarefa, informe:

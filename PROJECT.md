@@ -1,100 +1,44 @@
 # Universal SDD Project State
 
-## Overview
+## Current state
 
-Universal SDD Framework (USF) is a language- and AI-agnostic documentation
-framework for Spec-Driven Development. This repository contains the framework's
-canonical guidance, roles, standards, workflows, and templates.
-
-## Domain and users
-
-- Domain: software-development governance and delivery.
-- Primary users: product, design, engineering, QA, accessibility, architecture,
-  documentation, and release practitioners working with people or AI agents.
-- Main outcome: approved requirements become traceable implementation and
-  reproducible quality evidence.
-
-## Current version and status
-
-- Documented version: pre-1.0 development draft.
-- Status: active development.
-- Runtime: none; the project currently consists of Markdown documentation.
-- Dependencies: none.
-
-## Canonical source hierarchy
-
-- An approved SPEC is the acceptance baseline for an active change.
-- This `PROJECT.md` records the canonical current state of the framework project.
-- Repository content and QA evidence demonstrate what has been delivered.
-- Divergence is handled explicitly as a defect, scope change, or documentation debt.
-
-## Repository structure
-
-| Path | Responsibility |
+| Field | Value |
 |---|---|
-| `README.md` | Portuguese overview and adoption entry point |
-| `UNIVERSAL_SDD_FRAMEWORK.md` | Core language-agnostic framework definition |
-| `AGENTS.md` and AI entry files | Shared session startup and scope protocol |
-| `agents/` | Specialized role contracts and boundaries |
-| `workflows/` | End-to-end delivery workflows |
-| `standards/` | Operational UX/UI, design-system, accessibility, testing, and gate rules |
-| `templates/` | Versioned artifacts for specifications, design, QA, evidence, and defects |
-| `specs/`, `tasks/`, `reviews/`, `adr/` | Versioned change and decision records |
-| `knowledge/` and `profiles/` | Reusable context and project-specific adaptations |
-| `docs/` | Adoption, architecture, governance, and reference documentation |
+| Product | Universal SDD Framework (USF) |
+| Version and status | Pre-1.0 development draft; active development |
+| Runtime and dependencies | Markdown documentation only; no runtime or dependencies |
+| Primary outcome | Approved requirements become traceable implementation and reproducible quality evidence |
 
-## Architecture
+## Canonical hierarchy
 
-The framework is modular Markdown. The core document defines universal
-governance; role files define ownership; standards define normative rules;
-workflows define sequence and gates; templates capture decisions and evidence.
-Adopting projects may extend these documents through profiles but must record
-exceptions to baseline quality gates.
+1. An approved SPEC is the acceptance baseline for an active change.
+2. This index and its linked project-state modules record canonical current state.
+3. Repository content and QA evidence demonstrate delivered behavior.
+4. Resolve divergence as a defect, scope change, or documentation debt.
 
-## UX/UI and design system
+## Context index
 
-- UX/UI process: `standards/ux-ui.md`.
-- Design-system governance: `standards/design-system.md`.
-- User-facing work follows `workflows/feature.md` and requires discovery, design
-  approval, accessible specifications, design review, and traceable evidence.
-- The framework itself has no graphical interface or design-token implementation.
+Use `knowledge/INDEX.md` to select a module. Do not load every module; follow
+the phase bundle in `docs/context-budget.md` and the active SPEC's `Refs:`.
 
-## Accessibility
+| Module | Current-state coverage |
+|---|---|
+| `knowledge/modules/framework-overview.md` | Domain, users, outcome, version, runtime, dependencies, excluded technologies |
+| `knowledge/modules/governance-and-structure.md` | Repository responsibilities and modular-document architecture |
+| `knowledge/modules/delivery-and-quality.md` | UX, accessibility, QA, security, delivery, and known limitations |
 
-- Baseline policy: `standards/accessibility.md`.
-- Adopting projects must declare their standard, version, conformance target,
-  platform coverage, tools, and assistive-technology matrix.
-- The framework recommends WCAG 2.2 Level AA as the default for web projects.
+## Authoritative framework documents
 
-## Testing and QA
+| Need | Source |
+|---|---|
+| Framework definition | `UNIVERSAL_SDD_FRAMEWORK.md` |
+| Session protocol | `AGENTS.md` and AI entry files |
+| Roles and workflow | `agents/` and `workflows/` |
+| Normative practices | `standards/` |
+| Change records | `specs/`, `tasks/`, `reviews/`, `adr/` |
+| Reusable artifacts | `templates/`, `knowledge/`, `profiles/`, `docs/` |
 
-- Strategy: `standards/testing.md`.
-- Release controls: `standards/quality-gates.md`.
-- UX/UI and QA artifacts are validated through repository structure, internal
-  references, Markdown consistency, and human review.
-- Adopting software projects must define executable commands, environments,
-  numeric thresholds where useful, compatibility coverage, and evidence storage.
+## Migration
 
-## Security and privacy
-
-Documentation and evidence must not expose secrets, credentials, personal data,
-or unsafe production test data. Adopting projects define their detailed security
-standard and threat model.
-
-## CI/CD and deployment
-
-No CI/CD or deployment process is currently implemented. Consumers copy or
-adapt the framework into their repositories and connect its quality gates to
-their own automation.
-
-## Known limitations
-
-- Technology profiles and automatic bootstrapping are planned but not implemented.
-- The project has no automated Markdown link or schema validation yet.
-- The documentation API may change before version 1.0.
-
-## Technologies intentionally not used
-
-- No programming language or application framework is required.
-- No AI vendor-specific behavior is normative.
-- No design, issue-tracking, test-management, or CI vendor is mandatory.
+Existing adopters may retain a monolithic `PROJECT.md` while incrementally
+creating modules and an index. No existing file path is removed or renamed.
