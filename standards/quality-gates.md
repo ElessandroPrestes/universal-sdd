@@ -49,6 +49,11 @@ implementation TASKs. No agent may classify uncertainty as a clarification.
 - Required automated tests pass in the defined environment.
 - Manual, exploratory, compatibility, and non-functional checks are completed as applicable.
 - Regression scope is executed.
+- QA-Verifier in `workflows/verification.md` compares every applicable
+  structured acceptance-criterion ID with structured QA evidence before Code
+  Review starts.
+- Missing, unmapped, failed, or ambiguous QA-Verifier findings block Code Review
+  until resolved or covered by an authorized exception.
 - Documentation and release-impact notes are updated.
 - Defects and residual risks are recorded.
 

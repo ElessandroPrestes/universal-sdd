@@ -73,6 +73,10 @@ Run automated, manual, exploratory, compatibility, visual, accessibility,
 security, performance, and user/business acceptance checks according to risk.
 Record reproducible evidence and defects.
 
+Run QA-Verifier as defined in `workflows/verification.md` before independent
+reviews. It reports criterion-to-evidence divergence and is a blocking Gate 3
+condition.
+
 Exit: Gate 3 passes.
 
 ## 8. Independent reviews

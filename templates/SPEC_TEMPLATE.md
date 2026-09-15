@@ -44,17 +44,21 @@ handling, idempotency, concurrency, and applicable edge cases.
 
 ## Acceptance criteria
 
-Use unique stable identifiers so TASKs and QA can map evidence.
+Use one YAML block per criterion. Do not add fulfillment-relevant free prose
+outside these fields. `id` is immutable after approval so TASKs and QA evidence
+can map to it.
 
-### AC-001: <observable behavior>
+### AC-001
 
-```gherkin
-Given <precondition>
-When <action>
-Then <observable result>
+```yaml
+id: AC-001
+title: <short observable behavior>
+preconditions:
+  - <required state or permission>
+action: <actor action or triggering event>
+expected_result: <observable result>
+evidence_type: automated / manual / accessibility / design / other
 ```
-
-Evidence required: automated / manual / accessibility / design / other.
 
 ## Technical approach
 
