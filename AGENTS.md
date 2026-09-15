@@ -50,6 +50,22 @@ mesmo agente que produziu o artefato quando o workflow exigir revisão.
 Os contratos detalhados estão em `agents/`; o catálogo está em
 `docs/agents.md`.
 
+## Rastreabilidade mecanizada
+
+Use os formatos e relações definidos em `docs/ids-and-traceability.md`. Toda
+implementação vinculada a uma TASK aprovada deve registrar, no commit, estes
+trailers em linhas separadas:
+
+```text
+Spec-Ref: SPEC-NNN
+Task-Ref: TASK-NNN-XX
+```
+
+Commits que não pertencem a uma TASK não devem usar apenas um desses trailers.
+O hook opcional em `templates/hooks/commit-msg` rejeita referências parciais ou
+malformadas; projetos podem instalá-lo conforme o guia de rastreabilidade.
+Use `Refs:` nos artefatos para manter a cadeia entre as fontes de verdade.
+
 ## Encerramento
 
 Ao concluir uma tarefa, informe:
