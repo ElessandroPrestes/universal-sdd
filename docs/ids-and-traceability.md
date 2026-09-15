@@ -20,6 +20,24 @@ identifier from a superseded, rejected, or deleted artifact. A SPEC amendment
 references its predecessor and is a separate approval artifact; its tasks use
 the amended SPEC identifier in their `Refs:` field.
 
+## SPEC amendment lifecycle
+
+An approved SPEC is immutable. A scope change creates the next available
+`SPEC-NNN-vN` artifact; it never overwrites the approved predecessor. Its
+metadata `Refs:` field identifies the exact predecessor, and its approval table
+records a new applicable human approval cycle before a TASK may implement it.
+
+Use the amended identifier in all derived TASK `Refs:` fields and commit
+trailers. Preserve the predecessor for audit. Mark it `Superseded` only when
+the approved amendment replaces it; historical tasks, commits, and evidence
+continue to reference the artifact that governed them.
+
+A lightweight clarification does not create a SPEC version and does not edit
+the approved SPEC. It is recorded in a change request linked to the base SPEC,
+with the question, resolution, rationale, and asynchronous approval from the
+same human authority that approved the base SPEC. It is valid only when it does
+not alter observable behavior or acceptance criteria.
+
 ## Required references
 
 New artifacts use the uppercase templates in `templates/`. The legacy

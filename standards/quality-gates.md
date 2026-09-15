@@ -22,6 +22,27 @@ exception.
 - Tasks and QA plan provide acceptance-criteria traceability.
 - Unresolved questions are closed or explicitly accepted.
 
+## SPEC amendment classification
+
+Before implementation continues after a discovery, create a change request and
+classify it using `templates/CHANGE_REQUEST_TEMPLATE.md`.
+
+A request is a **lightweight clarification** only if every statement is true:
+
+- it does not change any observable result, including user experience, API,
+  permissions, data, error behavior, compatibility, performance, reliability,
+  security, or operation;
+- it does not add, remove, weaken, reinterpret, or otherwise alter an
+  acceptance criterion;
+- its question, resolution, rationale, and durable asynchronous approval from
+  the same human authority that approved the base SPEC are recorded.
+
+A request is a **scope change** if any statement above is false or unknown. It
+is a blocking gate: stop implementation, create the next `SPEC-NNN-vN` with a
+predecessor reference, assess applicable design and technical impacts, and
+obtain a new applicable human approval cycle before creating or continuing
+implementation TASKs. No agent may classify uncertainty as a clarification.
+
 ## Gate 3: Ready for review
 
 - Approved tasks are implemented without undocumented scope expansion.
