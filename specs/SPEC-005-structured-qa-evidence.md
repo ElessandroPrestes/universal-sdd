@@ -5,7 +5,7 @@
 | Field | Value |
 |---|---|
 | ID | SPEC-005 |
-| Status | Approved |
+| Status | Implemented |
 | Owner | Spec Agent |
 | Reviewers | QA / Engineering |
 | Created | 2026-09-15 |

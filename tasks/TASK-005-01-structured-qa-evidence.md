@@ -5,7 +5,7 @@
 | Campo | Valor |
 |---|---|
 | ID | TASK-005-01 |
-| Status | In review |
+| Status | Done |
 | Responsável | Implementation Agent |
 | SPEC | SPEC-005 |
 | Critérios | AC-001, AC-002, AC-003 |
@@ -71,4 +71,5 @@ relatório de verificação, atualizando os fluxos para tornar o QA-Verifier ope
   `tests/test_structured_qa_evidence.py`.
 - Evidências: em 2026-09-15, `python3 -m unittest discover -s tests -v` passou
   com 14 testes; `git diff --check` não reportou erros.
-- Pendências ou bloqueios: review independente permanece pendente.
+- Pendências ou bloqueios: decisão humana registrada em
+  `reviews/REVIEW-005-structured-qa-evidence.md`; não há bloqueios conhecidos.
