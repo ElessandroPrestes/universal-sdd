@@ -5,7 +5,7 @@
 | Field | Value |
 |---|---|
 | ID | SPEC-004 |
-| Status | Approved |
+| Status | Implemented |
 | Owner | Spec Agent |
 | Reviewers | Engineering / QA |
 | Created | 2026-09-15 |

@@ -5,7 +5,7 @@
 | Campo | Valor |
 |---|---|
 | ID | TASK-004-01 |
-| Status | In review |
+| Status | Done |
 | Responsável | Implementation Agent |
 | SPEC | SPEC-004 |
 | Critérios | AC-001, AC-002, AC-003 |
@@ -44,10 +44,10 @@ bloqueante, sem introduzir parser ou esquema de evidência antes da Melhoria 6.
 
 ## Passos
 
-- [ ] Padronizar o bloco YAML de critérios no template canônico.
-- [ ] Definir entradas, comparação e saída do QA-Verifier.
-- [ ] Inserir o gate bloqueante antes do Code Review.
-- [ ] Executar testes estruturais e atualizar a matriz.
+- [x] Padronizar o bloco YAML de critérios no template canônico.
+- [x] Definir entradas, comparação e saída do QA-Verifier.
+- [x] Inserir o gate bloqueante antes do Code Review.
+- [x] Executar testes estruturais e atualizar a matriz.
 
 ## Validação
 
@@ -71,6 +71,6 @@ bloqueante, sem introduzir parser ou esquema de evidência antes da Melhoria 6.
 - Evidências: em 2026-09-15, `python3 -m unittest discover -s tests -v` passou
   com 11 testes; `python3 scripts/generate_traceability.py` gerou a matriz e
   `git diff --check` não reportou erros.
-- Pendências ou bloqueios: a Melhoria 6 precisa fornecer evidência estruturada
-  antes de o QA-Verifier poder emitir resultado aprovável; review independente
-  permanece pendente.
+- Pendências ou bloqueios: decisão humana registrada em
+  `reviews/REVIEW-004-structured-acceptance-verification.md`; a Melhoria 6
+  precisa fornecer o formato de evidência estruturada para operação em produção.
