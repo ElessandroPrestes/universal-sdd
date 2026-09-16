@@ -21,7 +21,7 @@ and then populated by an LLM by inspecting the real source code.
 6. AI executes within approved scope.
 7. Every decision is documented.
 8. Architecture evolves through ADRs.
-9. Quality, design, accessibility, and code reviews are mandatory when applicable.
+9. Interface and attack surface changes require design, accessibility, and security reviews.
 10. Documentation evolves with the code.
 
 ---
