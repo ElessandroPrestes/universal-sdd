@@ -1,139 +1,113 @@
-# SPEC: Context budget by delivery phase
+# SPEC: Orçamento de contexto por fase de entrega (Context budget by delivery phase)
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | SPEC-002 |
-| Status | Implemented |
-| Owner | Spec Agent |
-| Reviewers | Engineering / QA / Documentation |
-| Created | 2026-09-15 |
-| Updated | 2026-09-15 |
-| Target release | Unscheduled |
-| Refs: | Discovery: N/A — framework internal change; Design: N/A — no user-facing interface; ADRs: N/A — documentation and retrieval structure only |
+| Status | Implementada |
+| Responsável | Agente de Especificação |
+| Revisores | Engenharia / QA / Documentação |
+| Criado | 2026-09-15 |
+| Atualizado | 2026-09-15 |
+| Liberação Alvo | Não programado |
+| Refs: | Discovery: N/A — alteração interna do framework; Design: N/A — nenhuma interface voltada para o usuário; ADRs: N/A — apenas estrutura de documentação e recuperação |
 
-## Problem and outcome
+## Problema e resultado
 
-`PROJECT.md` currently combines all framework state in one document and agents
-receive no precise, phase-specific context bundle. As the knowledge base grows,
-agents either load too much context or make inconsistent omissions.
+O `PROJECT.md` atualmente combina todo o estado do framework em um documento e os agentes não recebem nenhum pacote de contexto exato específico para a fase em que estão. À medida que a base de conhecimento (knowledge base) cresce, os agentes ou carregam contexto demais, ou omitem informações de forma inconsistente.
 
-The outcome is a short canonical project index, modular knowledge records with
-metadata-only discovery, and an explicit context budget for Discovery,
-Architecture, Implementation, QA, and Review. An agent can therefore retrieve
-only the active SPEC, assigned TASK where applicable, and the knowledge modules
-explicitly relevant to its phase.
+O resultado é um índice curto e canônico para o projeto, registros de conhecimento modulares onde as descobertas são baseadas apenas em metadados, e um orçamento (budget) explícito de contexto para Descoberta (Discovery), Arquitetura, Implementação, QA e Revisão. Desse modo, um agente pode recuperar apenas a SPEC ativa, a TAREFA (TASK) designada quando aplicável e os módulos de conhecimento explicitamente relevantes para sua fase.
 
-## Scope
+## Escopo
 
-### In scope
+### No escopo
 
-- Add `docs/context-budget.md` with exact required files and permitted sections
-  for Discovery, Architecture, Implementation, QA, and Review.
-- Reduce `PROJECT.md` to a short canonical index that links to modular context.
-- Create `knowledge/INDEX.md` containing metadata and retrieval guidance, not
-  the copied content of its modules.
-- Move the current project-state content into reusable domain modules under
-  `knowledge/modules/` without losing canonical information.
-- Add an explicit `AGENTS.md` rule forbidding agents from loading the full
-  knowledge base when the active SPEC references selected modules.
-- Preserve existing paths where possible and document a migration path for
-  adopters that rely on monolithic `PROJECT.md`.
+- Adicionar `docs/context-budget.md` com os arquivos requeridos exatos e as seções permitidas para as fases de Discovery, Architecture, Implementation, QA, e Review.
+- Reduzir o `PROJECT.md` a um índice canônico curto que vincula o contexto modular.
+- Criar o `knowledge/INDEX.md` com metadados e orientações de recuperação em vez de manter o conteúdo copiado de seus módulos.
+- Mover o atual conteúdo do estado do projeto para os módulos de domínio reutilizáveis sob `knowledge/modules/` sem perder as informações canônicas.
+- Adicionar uma regra explícita no arquivo `AGENTS.md` proibindo agentes de carregar toda a base de conhecimento quando a SPEC referenciar módulos selecionados.
+- Preservar caminhos existentes onde for possível e documentar um plano de migração para adotantes que usam um arquivo monolítico `PROJECT.md`.
 
-### Out of scope
+### Fora do escopo
 
-- Changing workflow order, quality gates, IDs, task references, or agent roles.
-- Building semantic search, embeddings, a vector database, token counting, or
-  a runtime context loader.
-- Altering adopter-project knowledge content beyond reusable templates and
-  migration guidance.
+- Mudar a ordem de workflow, portões de qualidade (quality gates), IDs, referências de tarefas ou papéis dos agentes.
+- Construir sistema de busca semântica, embeddings (incorporações), um banco de dados vetorial, um contador de tokens, ou um carregador de contexto (context loader) em runtime.
+- Alterar o conteúdo do conhecimento do projeto que adota o framework além de guias de migração e templates reutilizáveis.
 
-## Functional behavior
+## Comportamento funcional
 
-- Each phase’s budget names the mandatory documents, optional documents, and
-  prohibited broad reads; a phase may load only knowledge modules named by its
-  active SPEC or explicitly justified by a recorded risk.
-- `PROJECT.md` remains the canonical entry point, but its detail is represented
-  by links to modules rather than duplicated prose.
-- `knowledge/INDEX.md` supports selective retrieval using module title, domain,
-  owner, update date, summary metadata, and source-of-truth status.
-- A migration note makes the new modules additive and allows adopters to retain
-  their existing monolithic file while transitioning.
+- Cada orçamento da fase diz o nome dos documentos obrigatórios, os opcionais e as leituras amplas que estão proibidas. Uma fase pode apenas carregar módulos de conhecimento que foram nomeados por sua SPEC ativa, ou módulos expressamente justificados devido a riscos anotados.
+- `PROJECT.md` permanece como o ponto de entrada canônico, mas seus detalhes são dispostos como links para os módulos, ao invés de prosa duplicada.
+- O `knowledge/INDEX.md` suporta recuperação seletiva usando títulos dos módulos, o seu domínio, quem os criou, data de atualização, resumo (summary metadata) e status da origem da fonte da verdade.
+- Uma nota de migração (migration note) torna o acréscimo de novos módulos algo de fácil agregação àqueles usuários que desejam conservar seus sistemas baseados em arquivos únicos.
 
-## Acceptance criteria
+## Critérios de aceitação
 
-### AC-001: Every delivery phase has an enforceable context bundle
+### AC-001: Toda a fase de entrega tem um pacote de contexto executável
 
 ```gherkin
-Given an agent starts Discovery, Architecture, Implementation, QA, or Review
-When it consults the context-budget guide
-Then it can identify the exact required files, allowed module selection, and
-prohibited repository-wide reads for that phase
+Dado um agente inicializa Discovery, Architecture, Implementation, QA ou Review
+Quando consulta o manual de orçamento de contexto (context budget)
+Então este pode identificar perfeitamente a exatidão dos arquivos necessários, a escolha permitida aos módulos e ler amplamente a política para aquela fase
 ```
 
-Evidence required: documentation review.
+Evidência requerida: revisão de documentação.
 
-### AC-002: Project context supports selective retrieval
+### AC-002: O contexto de projeto suporta recuperação seletiva
 
 ```gherkin
-Given an agent opens PROJECT.md and knowledge/INDEX.md
-When it needs context for an active change
-Then it can locate relevant modules from metadata without loading every module
-or losing any prior canonical project-state category
+Dado que o agente abre o PROJECT.md e knowledge/INDEX.md
+Quando necessita de contexto referente a alterações correntes
+Então encontra perfeitamente todos os seus dados relevantes dentre os meta e sem carregar todas as funções existentes, não comprometendo de nenhuma forma os estados prévios canônicos do projeto
 ```
 
-Evidence required: migration and link audit.
+Evidência requerida: migração e auditoria de link.
 
-### AC-003: Active work loads only relevant knowledge
+### AC-003: Os processos ativos usam apenas funções precisas (relevant knowledge)
 
 ```gherkin
-Given an active SPEC references selected knowledge modules
-When an agent follows AGENTS.md
-Then it loads the active SPEC, its assigned TASK when applicable, and only the
-referenced modules unless a documented risk requires another module
+Dado que a SPEC em andamento menciona algumas dependências específicas (knowledge modules)
+Quando algum agente orienta-se por AGENTS.md
+Então ele executa a SPEC junto aos seus recursos essenciais se existir algo correspondente; somente se requisitado formalmente os recursos extraordinários farão parte dos cálculos ou do pacote final
 ```
 
-Evidence required: policy inspection.
+Evidência requerida: inspeção de política.
 
-### AC-004: Adoption remains backward compatible
+### AC-004: Compatível retroativamente e propício à fácil adoção
 
 ```gherkin
-Given a project using the prior monolithic PROJECT.md convention
-When it adopts the new guidance
-Then it has a documented incremental migration path and no required file is
-renamed or removed
+Dado um formato antiquado centrado sobre um único arquivo PROJECT.md
+Quando uma equipe transita ao plano de inovação
+Então dispõe livremente e ininterruptamente da progressão orientada e com migração em andamento gradual
 ```
 
-Evidence required: documentation review.
+Evidência requerida: revisão de documentação.
 
-## Technical approach
+## Abordagem técnica
 
-The implementation will use Markdown only. It will inventory each current
-`PROJECT.md` category before moving it to one or more named knowledge modules,
-then link the short index and metadata index to those modules. The exact module
-boundaries will follow that inventory and be recorded in the implementation TASK
-to avoid duplicating or silently discarding current canonical state.
+A solução usará apenas Markdown. O plano fará as averiguações em categorias isoladas antes de dividi-las aos conjuntos de conhecimentos e em seguida direcionará tudo aos canais apropriados em conformidade e sem perdas de especificações primárias já adotadas pelo software em vigor.
 
-## Risks and dependencies
+## Riscos e dependências
 
-| Risk or dependency | Impact | Likelihood | Mitigation | Owner |
+| Risco ou dependência | Impacto | Probabilidade | Mitigação | Responsável |
 |---|---|---|---|---|
-| Context budget omits a material source | Incorrect delivery decision | Medium | Require a documented risk-based exception and validate each phase bundle | QA Agent |
-| Detail is lost while modularizing PROJECT.md | Documentation divergence | Medium | Audit every current section against the new index and modules | Documentation Agent |
-| Modules reproduce normative policies | Conflicting sources of truth | Medium | Link to authoritative standards and workflows instead of copying them | Implementation Agent |
+| O orçamento de contexto omite uma fonte material | Decisão de entrega incorreta | Média | Exigir uma exceção documentada baseada em risco e validar cada pacote de fase | Agente de QA |
+| O detalhe é perdido ao modularizar o PROJECT.md | Divergência de documentação | Média | Auditar cada seção atual em relação ao novo índice e aos módulos | Agente de Documentação |
+| Os módulos reproduzem políticas normativas | Fontes de verdade conflitantes | Média | Link para padrões e workflows com autoridade em vez de copiá-los | Agente de Implementação |
 
-## Open questions
+## Questões abertas
 
-| Question | Owner | Due date | Resolution |
+| Questão | Responsável | Data limite | Resolução |
 |---|---|---|---|
-| What maximum length qualifies PROJECT.md as a short index? | Engineering reviewer | 2026-09-15 | Resolved: target 75 lines or fewer, excluding a final newline. |
+| Que tamanho (extensão) deve ser base pra julgar se o índice de PROJECT.md já está suficientemente minúsculo ou enxuto? | Revisor de Engenharia | 2026-09-15 | Resolvido: foco sobre algo que possua no máximo 75 linhas de abrangência (sem somar caracteres brancos ou separadores ao cômputo). |
 
-## Approval
+## Aprovação
 
-| Role | Name | Decision | Date | Notes |
+| Papel | Nome | Decisão | Data | Notas |
 |---|---|---|---|---|
-| Engineering | | Pending | | |
-| QA | | Pending | | |
-| Documentation | | Pending | | |
-| Human sponsor | User | Approved | 2026-09-15 | Approval recorded by the instruction to execute. |
+| Engenharia | | Pendente | | |
+| QA | | Pendente | | |
+| Documentação | | Pendente | | |
+| Patrocinador Humano | Usuário | Aprovado | 2026-09-15 | Aprovação registrada pela instrução de execução. |

@@ -1,94 +1,89 @@
 # SPEC: <title>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | SPEC-NNN |
-| Status | Draft / In review / Approved / Implemented / Superseded |
-| Owner | |
-| Reviewers | Product / Design / Engineering / QA / Security |
-| Created | YYYY-MM-DD |
-| Updated | YYYY-MM-DD |
-| Target release | |
-| Refs: | Discovery: <path or N/A — reason>; Design: <path or N/A — reason>; ADRs: <ADR-NNN or N/A — reason> |
+| Status | Draft (Rascunho) / In review (Em revisão) / Approved (Aprovado) / Implemented (Implementado) / Superseded (Substituído) |
+| Responsável | |
+| Revisores | Produto / Design / Engenharia / QA / Segurança |
+| Criado | YYYY-MM-DD |
+| Atualizado | YYYY-MM-DD |
+| Liberação Alvo | |
+| Refs: | Discovery (Descoberta): <caminho ou N/A — motivo>; Design: <caminho ou N/A — motivo>; ADRs: <ADR-NNN ou N/A — motivo> |
 
-## Problem and outcome
+## Problema e resultado
 
-Describe the problem, affected groups, current evidence, desired outcome, and
-success measures. Distinguish facts from assumptions.
+Descreva o problema, os grupos afetados, as evidências atuais, o resultado desejado e as medidas de sucesso. Diferencie fatos de suposições.
 
-## Scope
+## Escopo
 
-### In scope
-
--
-
-### Out of scope
+### No escopo (In scope)
 
 -
 
-## Functional behavior
+### Fora do escopo (Out of scope)
 
-Describe rules, permissions, validations, data changes, integrations, failure
-handling, idempotency, concurrency, and applicable edge cases.
+-
 
-## Non-functional requirements
+## Comportamento funcional
 
-- Security and privacy:
-- Performance and capacity:
-- Reliability and recovery:
-- Accessibility:
-- Compatibility:
-- Observability:
+Descreva regras, permissões, validações, alterações de dados, integrações, tratamento de falhas, idempotência, concorrência e casos extremos (edge cases) aplicáveis.
 
-## Acceptance criteria
+## Requisitos não-funcionais
 
-Use one YAML block per criterion. Do not add fulfillment-relevant free prose
-outside these fields. `id` is immutable after approval so TASKs and QA evidence
-can map to it.
+- Segurança e privacidade:
+- Desempenho e capacidade:
+- Confiabilidade e recuperação:
+- Acessibilidade:
+- Compatibilidade:
+- Observabilidade:
+
+## Critérios de aceitação
+
+Use um bloco YAML por critério. Não adicione texto livre (prosa) relevante para o cumprimento fora desses campos. O `id` é imutável após a aprovação para que as TAREFAS (TASKs) e as evidências de QA possam mapeá-lo.
 
 ### AC-001
 
 ```yaml
 id: AC-001
-title: <short observable behavior>
+title: <curto comportamento observável>
 preconditions:
-  - <required state or permission>
-action: <actor action or triggering event>
-expected_result: <observable result>
+  - <estado ou permissão necessária>
+action: <ação do ator ou evento de disparo>
+expected_result: <resultado observável>
 evidence_type: automated / manual / accessibility / design / other
 ```
 
-## Technical approach
+## Abordagem técnica
 
-Summarize affected components, APIs, schemas, migrations, feature flags,
-dependencies, compatibility, and rejected alternatives.
+Resuma componentes afetados, APIs, schemas, migrações, feature flags, dependências, compatibilidade e alternativas rejeitadas.
 
-## Delivery and operations
+## Entrega e operações
 
-- Rollout plan:
-- Migration plan:
-- Rollback plan:
-- Monitoring and alerts:
+- Plano de implantação (Rollout plan):
+- Plano de migração:
+- Plano de rollback (reversão):
+- Monitoramento e alertas:
 
-## Risks and dependencies
+## Riscos e dependências
 
-| Risk or dependency | Impact | Likelihood | Mitigation | Owner |
+| Risco ou dependência | Impacto | Probabilidade | Mitigação | Responsável |
 |---|---|---|---|---|
 | | | | | |
 
-## Open questions
+## Questões abertas
 
-| Question | Owner | Due date | Resolution |
+| Questão | Responsável | Data limite | Resolução |
 |---|---|---|---|
 | | | | |
 
-## Approval
+## Aprovação
 
-| Role | Name | Decision | Date | Notes |
+| Papel | Nome | Decisão | Data | Notas |
 |---|---|---|---|---|
-| Product | | Approved / Rejected | | |
+| Produto | | Approved / Rejected | | |
 | Design | | Approved / Rejected / N/A | | |
-| Engineering | | Approved / Rejected | | |
+| Engenharia | | Approved / Rejected | | |
 | QA | | Ready / Not ready | | |

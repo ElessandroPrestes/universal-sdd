@@ -1,32 +1,29 @@
 # Universal SDD Framework (USF)
 
-> Version: pre-1.0 development draft
+> Versão: rascunho de desenvolvimento pré-1.0
 
-## Purpose
+## Propósito
 
-This framework provides a language-agnostic, AI-agnostic implementation of
-Spec-Driven Development (SDD). It is intended to be copied into **any software
-project** (web, mobile, backend, desktop, APIs, libraries, SaaS, ERP, CLI, etc.)
-and then populated by an LLM by inspecting the real source code.
+Este framework fornece uma implementação agnóstica de linguagem e agnóstica de IA para o Desenvolvimento Orientado a Especificações (Spec-Driven Development - SDD). Ele foi projetado para ser copiado em **qualquer projeto de software** (web, mobile, backend, desktop, APIs, bibliotecas, SaaS, ERP, CLI, etc.) e, em seguida, preenchido por um LLM ao inspecionar o código-fonte real.
 
 ---
 
-# Principles
+# Princípios
 
-1. An approved SPEC defines the intended behavior of a change.
-2. PROJECT.md records the canonical current state of the project.
-3. Code and QA evidence demonstrate the implemented behavior.
-4. Any divergence among SPEC, PROJECT.md, code, and evidence is resolved explicitly.
-5. Humans approve business and user-experience decisions.
-6. AI executes within approved scope.
-7. Every decision is documented.
-8. Architecture evolves through ADRs.
-9. Interface and attack surface changes require design, accessibility, and security reviews.
-10. Documentation evolves with the code.
+1. Uma SPEC aprovada define o comportamento pretendido de uma mudança.
+2. PROJECT.md registra o estado atual canônico do projeto.
+3. Código e evidências de QA demonstram o comportamento implementado.
+4. Qualquer divergência entre a SPEC, PROJECT.md, código e evidências é resolvida explicitamente.
+5. Humanos aprovam decisões de negócios e experiência do usuário.
+6. A IA executa dentro do escopo aprovado.
+7. Toda decisão é documentada.
+8. A arquitetura evolui através de ADRs.
+9. Mudanças de interface e de superfície de ataque requerem revisões de design, acessibilidade e segurança.
+10. A documentação evolui com o código.
 
 ---
 
-# Recommended Repository Layout
+# Estrutura de Repositório Recomendada
 
 ```text
 /
@@ -53,277 +50,259 @@ docs/
 
 # PROJECT.md
 
-The canonical project state.
+O estado canônico do projeto.
 
-Must contain:
+Deve conter:
 
-- Project overview
-- Business domain
-- Architecture
+- Visão geral do projeto
+- Domínio de negócio
+- Arquitetura
 - Stack
-- Versions
-- Dependencies
-- Folder structure
+- Versões
+- Dependências
+- Estrutura de pastas
 - Runtime
-- Environment variables
+- Variáveis de ambiente
 - APIs
-- Security
-- User experience and interface conventions
-- Design system and accessibility baseline
-- Testing strategy and quality gates
+- Segurança
+- Convenções de experiência do usuário e interface
+- Design system e linha de base de acessibilidade
+- Estratégia de testes e quality gates (portões de qualidade)
 - CI/CD
-- Deployment
-- Coding standards
-- Known limitations
-- Technologies intentionally NOT used
+- Implantação
+- Padrões de codificação
+- Limitações conhecidas
+- Tecnologias intencionalmente NÃO utilizadas
 
-For an active change, the approved SPEC is the acceptance baseline. After the
-change is accepted, code, PROJECT.md, and QA evidence must be aligned. A
-divergence is recorded and resolved as a defect, approved scope change, or
-documentation debt; it must never be silently ignored.
+Para uma mudança ativa, a SPEC aprovada é a linha de base de aceitação. Após a mudança ser aceita, o código, PROJECT.md e evidências de QA devem estar alinhados. Uma divergência é registrada e resolvida como um defeito, mudança de escopo aprovada ou dívida de documentação; nunca deve ser ignorada silenciosamente.
 
 ---
 
-# AI Entry Files
+# Arquivos de Entrada de IA
 
-Each AI-specific file only redirects to PROJECT.md.
+Cada arquivo específico para IA apenas redireciona para o PROJECT.md.
 
-Example:
+Exemplo:
 
 ```md
-Read PROJECT.md first.
+Leia PROJECT.md primeiro.
 
-Then identify:
+Depois identifique:
 
-- Active workflow
-- Current agent
-- Relevant specification
-- Relevant task
+- Workflow ativo
+- Agente atual
+- Especificação relevante
+- Tarefa relevante
 
-Never start implementation before reading them.
+Nunca inicie a implementação antes de lê-los.
 ```
 
 ---
 
-# Agents
+# Agentes
 
-## Discovery Agent
+## Discovery Agent (Agente de Descoberta)
 
-Maps existing code.
+Mapeia o código existente.
 
-Produces:
+Produz:
 
-- project inventory
-- missing documentation
-- risks
+- inventário do projeto
+- documentação ausente
+- riscos
 
-Never modifies code.
-
----
-
-## UX Research Agent
-
-Discovers user needs before interface decisions are made.
-
-Produces:
-
-- UX brief
-- user groups and needs
-- journeys or task flows
-- assumptions and research questions
-- usability risks
-
-Never invents user evidence. Assumptions must be labeled and approved.
+Nunca modifica o código.
 
 ---
 
-## UX/UI Design Agent
+## UX Research Agent (Agente de Pesquisa de UX)
 
-Turns approved user needs and product requirements into implementable interface
-behavior.
+Descobre necessidades do usuário antes de as decisões de interface serem tomadas.
 
-Produces:
+Produz:
 
-- user flows
-- wireframes or prototypes when needed
-- design specification and component mapping
-- responsive behavior and interface states
-- accessibility annotations
+- briefing de UX
+- grupos de usuários e necessidades
+- jornadas ou fluxos de tarefas
+- suposições e questões de pesquisa
+- riscos de usabilidade
 
-Never starts implementation and never bypasses human design approval.
+Nunca inventa evidências de usuários. Suposições devem ser rotuladas e aprovadas.
 
 ---
 
-## Architecture Agent
+## UX/UI Design Agent (Agente de Design de UX/UI)
 
-Defines architecture.
+Transforma necessidades de usuários aprovadas e requisitos de produtos em comportamentos de interface implementáveis.
 
-Produces:
+Produz:
 
-- architecture proposal
+- fluxos de usuários
+- wireframes ou protótipos quando necessário
+- especificação de design e mapeamento de componentes
+- comportamento responsivo e estados de interface
+- anotações de acessibilidade
+
+Nunca inicia a implementação e nunca ignora a aprovação humana do design.
+
+---
+
+## Architecture Agent (Agente de Arquitetura)
+
+Define a arquitetura.
+
+Produz:
+
+- proposta de arquitetura
 - ADRs
-- impacts
+- impactos
 
-Never writes production code.
+Nunca escreve código de produção.
 
 ---
 
-## Spec Agent
+## Spec Agent (Agente de Especificação)
 
-Creates specifications.
+Cria especificações.
 
-Produces:
+Produz:
 
 - SPEC
-- acceptance criteria
-- scope
-- out-of-scope
+- critérios de aceitação
+- escopo
+- fora do escopo
 
-Must ask questions whenever ambiguity exists.
-
----
-
-## Task Agent
-
-Breaks SPEC into executable tasks.
-
-Produces:
-
-- implementation order
-- validation checklist
-- risks
+Deve fazer perguntas sempre que houver ambiguidade.
 
 ---
 
-## Implementation Agent
+## Task Agent (Agente de Tarefas)
 
-Implements only approved tasks.
+Divide a SPEC em tarefas executáveis.
 
-Never expands scope.
+Produz:
 
----
-
-## Testing Agent
-
-Creates or updates:
-
-- unit tests
-- integration tests
-- e2e tests
-
-Follows `standards/testing.md` and records evidence against acceptance criteria.
+- ordem de implementação
+- checklist de validação
+- riscos
 
 ---
 
-## QA Agent
+## Implementation Agent (Agente de Implementação)
 
-Owns risk-based quality planning and independent validation.
+Implementa apenas tarefas aprovadas.
 
-Produces:
-
-- QA plan and traceability matrix
-- manual and exploratory test evidence
-- regression result
-- defect reports with severity and priority
-- release quality recommendation
-
-Does not silently accept failed gates or residual risk.
+Nunca expande o escopo.
 
 ---
 
-## Accessibility Review Agent
+## Testing Agent (Agente de Testes)
 
-Validates applicable accessibility requirements using automated and manual
-checks. Records violations, evidence, impact, and exceptions.
+Cria ou atualiza:
 
----
+- testes unitários
+- testes de integração
+- testes e2e
 
-## Design Review Agent
-
-Compares the implemented interface with the approved design specification.
-
-Checks:
-
-- layout and visual hierarchy
-- component and token usage
-- responsive behavior
-- content and interaction states
-- accessibility annotations
-
-Outputs Approved, Approved with remarks, or Rejected. Never edits application
-code while acting as reviewer.
+Segue `standards/testing.md` e registra evidências com base nos critérios de aceitação.
 
 ---
 
-## Review Agent
+## QA Agent (Agente de QA)
 
-Reviews implementation.
+É responsável pelo planejamento de qualidade baseado em risco e pela validação independente.
 
-Outputs:
+Produz:
 
-- Approved
-- Approved with remarks
-- Rejected
+- plano de QA e matriz de rastreabilidade
+- evidências de testes manuais e exploratórios
+- resultado de regressão
+- relatórios de defeitos com severidade e prioridade
+- recomendação de qualidade de liberação (release)
 
-Never edits application code.
-
----
-
-## Refactor Agent
-
-Only fixes issues identified by Review Agent.
-
-Never creates new features.
+Não aceita silenciosamente quality gates reprovados ou riscos residuais.
 
 ---
 
-## Documentation Agent
+## Accessibility Review Agent (Agente de Revisão de Acessibilidade)
 
-Updates:
-
-PROJECT.md
-
-ADRs
-
-Knowledge Base
-
-Specs
-
-Tasks
+Valida os requisitos de acessibilidade aplicáveis usando verificações manuais e automatizadas. Registra violações, evidências, impactos e exceções.
 
 ---
 
-## Release Agent
+## Design Review Agent (Agente de Revisão de Design)
 
-Validates release readiness.
+Compara a interface implementada com a especificação de design aprovada.
 
-Checks:
+Verifica:
 
-build
+- layout e hierarquia visual
+- uso de tokens e componentes
+- comportamento responsivo
+- conteúdo e estados de interação
+- anotações de acessibilidade
 
-tests
-
-quality gates
-
-design and accessibility approvals when applicable
-
-documentation
-
-version
-
-release notes
+Gera: Aprovado, Aprovado com ressalvas ou Rejeitado. Nunca edita código da aplicação ao atuar como revisor.
 
 ---
 
-# Knowledge Base
+## Review Agent (Agente de Revisão)
 
-Entries in `knowledge/` may be organized by architecture, business, glossary,
-integrations, stack, patterns, or another taxonomy defined by the adopting
-project. Use `templates/knowledge-entry.md` and avoid duplicating ADRs or SPECs.
+Revisa a implementação.
+
+Gera:
+
+- Aprovado
+- Aprovado com ressalvas
+- Rejeitado
+
+Nunca edita o código da aplicação.
 
 ---
 
-# Standards
+## Refactor Agent (Agente de Refatoração)
+
+Apenas corrige problemas identificados pelo Agente de Revisão.
+
+Nunca cria novos recursos.
+
+---
+
+## Documentation Agent (Agente de Documentação)
+
+Atualiza:
+
+- PROJECT.md
+- ADRs
+- Knowledge Base (Base de Conhecimento)
+- Specs
+- Tasks (Tarefas)
+
+---
+
+## Release Agent (Agente de Release/Lançamento)
+
+Valida a prontidão de liberação.
+
+Verifica:
+
+- build
+- testes
+- quality gates
+- aprovações de design e acessibilidade quando aplicável
+- documentação
+- versão
+- release notes (notas de versão)
+
+---
+
+# Knowledge Base (Base de Conhecimento)
+
+Entradas em `knowledge/` podem ser organizadas por arquitetura, negócios, glossário, integrações, stack, padrões ou outra taxonomia definida pelo projeto adotante. Use `templates/knowledge-entry.md` e evite duplicar ADRs ou SPECs.
+
+---
+
+# Padrões (Standards)
 
 ```
 standards/
@@ -343,11 +322,11 @@ design-system.md
 
 ---
 
-# Profiles
+# Perfis (Profiles)
 
-Reusable project presets.
+Predefinições de projeto reutilizáveis.
 
-Examples
+Exemplos:
 
 - backend-api
 - laravel
@@ -366,13 +345,13 @@ Examples
 - monolith
 - microservice
 
-The active profile defines validations, commands and conventions.
+O perfil ativo define as validações, comandos e convenções.
 
 ---
 
 # Templates
 
-Provided baseline templates:
+Modelos (templates) base fornecidos:
 
 - `templates/spec.md`
 - `templates/project.md`
@@ -394,120 +373,119 @@ Provided baseline templates:
 - `templates/deploy-plan.md`
 - `templates/post-mortem.md`
 
-Adopting projects may extend or map these to canonical templates in their own
-tooling while preserving the required metadata and traceability.
+Projetos adotantes podem estendê-los ou mapeá-los para templates canônicos em suas próprias ferramentas, preservando os metadados necessários e a rastreabilidade.
 
 ---
 
-# Workflow
+# Fluxo de Trabalho (Workflow)
 
-Idea
-
-↓
-
-Product and UX Discovery
+Ideia
 
 ↓
 
-Architecture
+Descoberta (Discovery) de Produto e UX
 
 ↓
 
-UX/UI Design (when user-facing)
+Arquitetura
 
 ↓
 
-Human Design Approval
+Design de UX/UI (quando voltado ao usuário)
 
 ↓
 
-Functional and Technical Specification
+Aprovação Humana de Design
 
 ↓
 
-Human Approval
+Especificação Técnica e Funcional
 
 ↓
 
-Tasks
+Aprovação Humana
 
 ↓
 
-Implementation
+Tarefas (Tasks)
 
 ↓
 
-Automated and Manual QA
+Implementação
 
 ↓
 
-Accessibility Review (when applicable)
+QA Automatizado e Manual
 
 ↓
 
-Design Review (when user-facing)
+Revisão de Acessibilidade (quando aplicável)
 
 ↓
 
-Code Review
+Revisão de Design (quando voltado ao usuário)
 
 ↓
 
-Refactor (if needed)
+Revisão de Código (Code Review)
 
 ↓
 
-Documentation
+Refatoração (se necessário)
 
 ↓
 
-Release
+Documentação
 
-Rejected reviews return to implementation and the applicable QA checks repeat.
-Any requested scope change returns to specification and human approval.
+↓
+
+Lançamento (Release)
+
+Revisões rejeitadas retornam para a implementação e as verificações aplicáveis de QA se repetem.
+Qualquer mudança de escopo solicitada retorna à especificação e à aprovação humana.
 
 ---
 
-# Universal Rules
+# Regras Universais
 
-- Never invent requirements.
-- Never skip approval.
-- Never modify unrelated files.
-- Never introduce dependencies without justification.
-- Every feature must have:
+- Nunca invente requisitos.
+- Nunca pule a aprovação.
+- Nunca modifique arquivos não relacionados.
+- Nunca introduza dependências sem justificativa.
+- Cada funcionalidade deve ter:
   - SPEC
   - TASK
   - REVIEW
-- Every user-facing change must also have:
-  - UX brief or an explicit reason why it is not needed
-  - approved design specification
-  - design review
-  - accessibility evidence
-- Every change must satisfy the applicable quality gates before release.
-- Acceptance criteria must be traceable to test evidence.
-- Failed gates and residual risks require an explicit human exception with owner and expiry.
-- Every architectural change must create an ADR.
-- Every relevant implementation updates PROJECT.md.
-- Documentation and evidence align with the accepted implementation.
+- Toda mudança voltada ao usuário também deve ter:
+  - Briefing de UX ou um motivo explícito do porquê não é necessário
+  - especificação de design aprovada
+  - revisão de design
+  - evidências de acessibilidade
+- Toda alteração deve satisfazer os portões de qualidade (quality gates) aplicáveis antes da liberação.
+- Critérios de aceitação devem ser rastreáveis nas evidências de testes.
+- Portões falhos e riscos residuais exigem uma exceção explícita humana com proprietário e data de validade.
+- Toda mudança arquitetural deve criar um ADR.
+- Toda implementação relevante atualiza o PROJECT.md.
+- A documentação e as evidências se alinham com a implementação aceita.
 
 ---
 
-# Bootstrapping a New Project
+# Inicializando (Bootstrapping) um Novo Projeto
 
-When this framework is copied into a repository, the first AI must:
+Quando este framework é copiado para um repositório, a primeira IA deve:
 
-1. Read the entire repository.
-2. Populate PROJECT.md from the existing code.
-3. Detect technologies automatically.
-4. Detect architecture.
-5. Detect package manager/build system.
-6. Detect testing strategy.
-7. Detect the design system and interface conventions.
-8. Detect the accessibility baseline.
-9. Define applicable quality gates.
-10. Populate Knowledge Base.
-11. Create missing ADRs if required.
-12. Suggest improvements but never apply without approval.
-13. Wait for approved discovery, design, and specification artifacts as applicable.
+1. Ler o repositório inteiro.
+2. Preencher o PROJECT.md a partir do código existente.
+3. Detectar tecnologias automaticamente.
+4. Detectar a arquitetura.
+5. Detectar o gerenciador de pacotes/sistema de build.
+6. Detectar a estratégia de testes.
+7. Detectar o design system e as convenções de interface.
+8. Detectar a linha de base de acessibilidade.
+9. Definir os quality gates aplicáveis.
+10. Preencher a Knowledge Base (Base de Conhecimento).
+11. Criar ADRs ausentes se necessário.
+12. Sugerir melhorias, mas nunca aplicá-las sem aprovação.
+13. Aguardar os artefatos de descoberta, design e especificação aprovados, conforme aplicável.
 
-At this point the repository is considered SDD-ready.
+Neste ponto, o repositório é considerado pronto para SDD (SDD-ready).

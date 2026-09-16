@@ -1,107 +1,91 @@
-# Feature Workflow
+# Fluxo de Trabalho de Funcionalidade (Feature Workflow)
 
-## Purpose
+## Propósito
 
-Provide the default end-to-end workflow for a feature. Non-user-facing changes
-may mark design activities not applicable with a recorded reason. Riskier
-profiles may introduce additional approvals.
+Fornecer o fluxo de trabalho (workflow) padrão de ponta a ponta para uma funcionalidade (feature). Alterações não voltadas ao usuário podem marcar as atividades de design como não aplicáveis com um motivo registrado. Perfis mais arriscados podem introduzir aprovações adicionais.
 
-## 1. Product and UX discovery
+## 1. Descoberta de Produto e UX (Product and UX discovery)
 
-Owner: Product and UX Research.
+Responsável: Produto e Pesquisa de UX.
 
-Artifacts:
+Artefatos:
 
 - `templates/ux-brief.md`;
-- existing evidence, assumptions, user groups, current journey, and risks;
-- success measures.
+- evidências existentes, suposições, grupos de usuários, jornada atual e riscos;
+- medidas de sucesso.
 
-Exit: Gate 1 in `standards/quality-gates.md` passes.
+Saída: O Portão 1 em `standards/quality-gates.md` é aprovado.
 
-## 2. Architecture and feasibility
+## 2. Arquitetura e viabilidade (Architecture and feasibility)
 
-Owner: Architecture.
+Responsável: Arquitetura.
 
-Confirm constraints, integrations, data, security, performance, observability,
-and architectural decisions. Create an ADR for architectural change.
+Confirme restrições, integrações, dados, segurança, desempenho, observabilidade e decisões arquiteturais. Crie uma ADR para mudança de arquitetura.
 
-## 3. UX/UI design
+## 3. Design de UX/UI
 
-Owner: UX/UI Design.
+Responsável: Design de UX/UI.
 
-Artifacts:
+Artefatos:
 
 - `templates/user-flow.md`;
-- wireframe or prototype when needed;
+- wireframe ou protótipo quando necessário;
 - `templates/design-specification.md`;
-- accessibility annotations.
+- anotações de acessibilidade.
 
-Exit: authorized human design approval is recorded.
+Saída: a aprovação humana autorizada de design é registrada.
 
-## 4. Functional and technical specification
+## 4. Especificação funcional e técnica (Functional and technical specification)
 
-Owner: Spec Agent.
+Responsável: Agente de Especificação.
 
-The SPEC links discovery and design artifacts and defines scope, out-of-scope,
-acceptance criteria, data, integrations, security, performance, observability,
-migration, rollback, and risks.
+A SPEC vincula os artefatos de descoberta e design e define o escopo, o que está fora do escopo, critérios de aceitação, dados, integrações, segurança, desempenho, observabilidade, migração, rollback (reversão) e riscos.
 
-Exit: business and technical approval is recorded.
+Saída: aprovação comercial e técnica é registrada.
 
-## 5. Tasks and QA planning
+## 5. Tarefas e planejamento de QA (Tasks and QA planning)
 
-Owners: Task Agent and QA Agent.
+Responsáveis: Agente de Tarefas e Agente de QA.
 
-Create implementation tasks, `templates/qa-plan.md`, test cases, compatibility
-matrix, regression scope, and acceptance-criteria traceability.
+Crie tarefas de implementação, `templates/qa-plan.md`, casos de teste, matriz de compatibilidade, escopo de regressão e rastreabilidade dos critérios de aceitação.
 
-Exit: Gate 2 passes.
+Saída: O Portão 2 é aprovado.
 
-## 6. Implementation
+## 6. Implementação
 
-Owner: Implementation Agent.
+Responsável: Agente de Implementação.
 
-Implement only approved tasks. Add the lowest reliable automated tests that
-prove behavior. Record scope questions rather than making undocumented product
-or design decisions.
+Implemente apenas tarefas aprovadas. Adicione os testes automatizados mais baixos e confiáveis ​​que comprovem o comportamento. Registre perguntas de escopo em vez de tomar decisões não documentadas de produto ou design.
 
-## 7. QA and regression
+## 7. QA e regressão
 
-Owners: Testing and QA Agents.
+Responsáveis: Agentes de Teste e de QA.
 
-Run automated, manual, exploratory, compatibility, visual, accessibility,
-security, performance, and user/business acceptance checks according to risk.
-Record reproducible evidence and defects.
+Execute verificações automatizadas, manuais, exploratórias, de compatibilidade, visuais, de acessibilidade, segurança, de desempenho e aceitação de usuário/negócio de acordo com o risco.
+Registre evidências reprodutíveis e defeitos.
 
-Run QA-Verifier as defined in `workflows/verification.md` before independent
-reviews. It reports criterion-to-evidence divergence and is a blocking Gate 3
-condition.
+Execute o QA-Verifier conforme definido em `workflows/verification.md` antes de análises (reviews) independentes. Ele relata divergências de critério-para-evidência e é uma condição bloqueadora do Portão 3.
 
-Exit: Gate 3 passes.
+Saída: O Portão 3 é aprovado.
 
-## 8. Independent reviews
+## 8. Revisões independentes (Independent reviews)
 
-Owners: Accessibility Review, Design Review, and Review Agents.
+Responsáveis: Agente de Revisão de Acessibilidade, Agente de Revisão de Design e Agente de Revisão.
 
-Perform applicable reviews independently. Rejected work returns only the
-identified issues to implementation or refactoring. Scope changes return to SPEC
-and human approval.
+Realize revisões aplicáveis ​​de forma independente. O trabalho rejeitado retorna apenas com os problemas identificados para implementação ou refatoração. Mudanças de escopo retornam à SPEC e aprovação humana.
 
-Exit: all applicable reviews are approved.
+Saída: todas as revisões aplicáveis ​​são aprovadas.
 
-## 9. Release decision
+## 9. Decisão de Lançamento (Release decision)
 
-Owners: QA and Release Agents.
+Responsáveis: Agentes de QA e Release (Lançamento).
 
-QA issues Go, Go with accepted risk, or No-go. Release confirms build, gates,
-documentation, version, release notes, deployment, rollback, and monitoring.
+O QA emite 'Go' (Aprovado), 'Go with accepted risk' (Aprovado com risco aceito) ou 'No-go' (Não aprovado). O Agente Release confirma o build, portões (gates), documentação, versão, release notes (notas de lançamento), implantação (deployment), rollback (reversão) e monitoramento.
 
-Exit: Gate 4 passes.
+Saída: O Portão 4 é aprovado.
 
-## 10. Delivery and learning
+## 10. Entrega e aprendizado (Delivery and learning)
 
-Run smoke checks and monitor defined signals. Align code, PROJECT.md, SPEC,
-decisions, tests, and evidence. Record follow-up work and update standards when a
-reusable lesson is identified.
+Execute smoke checks (testes de fumaça) e monitore sinais definidos. Alinhe o código, PROJECT.md, SPEC, decisões, testes e evidências. Registre trabalhos de follow-up (acompanhamento) e atualize os padrões quando uma lição reutilizável for identificada.
 
-Exit: Gate 5 passes.
+Saída: O Portão 5 é aprovado.

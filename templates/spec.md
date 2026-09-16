@@ -1,136 +1,128 @@
 # SPEC: <title>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | SPEC-000 |
-| Status | Draft / In review / Approved / Implemented / Superseded |
-| Owner | |
-| Reviewers | Product / Design / Engineering / QA / Security |
-| Created | YYYY-MM-DD |
-| Updated | YYYY-MM-DD |
-| Target release | |
-| Related UX brief | |
-| Related design specification | |
-| Related ADRs | |
+| Status | Draft (Rascunho) / In review (Em revisão) / Approved (Aprovado) / Implemented (Implementado) / Superseded (Substituído) |
+| Responsável | |
+| Revisores | Produto / Design / Engenharia / QA / Segurança |
+| Criado | YYYY-MM-DD |
+| Atualizado | YYYY-MM-DD |
+| Lançamento alvo | |
+| Briefing de UX relacionado | |
+| Especificação de design relacionada | |
+| ADRs relacionadas | |
 
-## Problem and outcome
+## Problema e resultado
 
-Describe the user or system problem, affected groups, current evidence, desired
-outcome, and how success will be measured. Distinguish facts from assumptions.
+Descreva o problema do usuário ou do sistema, grupos afetados, evidências atuais, resultado desejado e como o sucesso será medido. Diferencie fatos de suposições.
 
-## Scope
+## Escopo
 
-### In scope
-
--
-
-### Out of scope
+### No escopo (In scope)
 
 -
 
-## User experience
+### Fora do escopo (Out of scope)
 
-### Primary user and context
+-
 
-- User group:
-- Goal:
-- Context and constraints:
+## Experiência do usuário
 
-### User flow
+### Usuário principal e contexto
 
-Link `templates/user-flow.md` or summarize the approved flow.
+- Grupo de usuários:
+- Objetivo:
+- Contexto e restrições:
 
-### Interface states
+### Fluxo do usuário (User flow)
 
-Describe all applicable initial, loading, empty, success, validation, error,
-offline, timeout, permission, and recovery states.
+Vincule `templates/user-flow.md` ou resuma o fluxo aprovado.
 
-### Responsive and compatibility behavior
+### Estados de interface
 
-Define viewport, device, orientation, input method, zoom, text scaling, browser,
-platform, and localization expectations.
+Descreva todos os estados iniciais, carregamento, vazio, sucesso, validação, erro, offline, timeout (tempo limite), permissão e recuperação aplicáveis.
 
-### Design system
+### Comportamento responsivo e compatibilidade
 
-List components, semantic tokens, assets, new patterns, and approved exceptions.
+Defina as expectativas de área de visualização (viewport), dispositivo, orientação, método de entrada, zoom, dimensionamento de texto (scaling), navegador, plataforma e localização (idioma).
 
-### Accessibility
+### Sistema de design (Design system)
 
-State the adopted baseline and specify keyboard, focus, semantics, announcements,
-contrast, reflow, alternatives, and assistive-technology expectations.
+Liste componentes, tokens semânticos, ativos (assets), novos padrões e exceções aprovadas.
 
-### Content
+### Acessibilidade
 
-Include final labels, instructions, validation messages, errors, confirmations,
-and localization constraints, or link the canonical content source.
+Declare a linha de base adotada e especifique teclado, foco, semântica, anúncios, contraste, reflow (refluxo), alternativas e expectativas de tecnologia assistiva.
 
-### Analytics and feedback
+### Conteúdo
 
-Define required events, properties, consent or privacy constraints, and success
-signals. Mark not applicable with a reason when appropriate.
+Inclua rótulos finais, instruções, mensagens de validação, erros, confirmações e restrições de localização, ou crie um link para a fonte de conteúdo canônica.
 
-## Functional behavior
+### Análises (Analytics) e feedback
 
-Describe rules, permissions, validations, data changes, integrations, failure
-handling, idempotency, concurrency, and edge cases.
+Defina eventos obrigatórios, propriedades, restrições de consentimento ou privacidade e sinais de sucesso. Marque não aplicável com um motivo quando apropriado.
 
-## Non-functional requirements
+## Comportamento funcional
 
-- Security and privacy:
-- Performance and capacity:
-- Reliability and recovery:
-- Accessibility:
-- Compatibility:
-- Observability:
+Descreva regras, permissões, validações, alterações de dados, integrações, tratamento de falhas, idempotência, concorrência e casos extremos (edge cases).
 
-Use measurable targets or link an adopted project standard.
+## Requisitos não-funcionais
 
-## Acceptance criteria
+- Segurança e privacidade:
+- Desempenho e capacidade:
+- Confiabilidade e recuperação:
+- Acessibilidade:
+- Compatibilidade:
+- Observabilidade:
 
-Use unique stable identifiers so QA can map evidence.
+Use metas mensuráveis ​​ou crie um link para um padrão de projeto adotado.
 
-### AC-001: <observable behavior>
+## Critérios de aceitação
+
+Use identificadores únicos estáveis para que o QA possa mapear evidências.
+
+### AC-001: <comportamento observável>
 
 ```gherkin
-Given <precondition>
-When <action>
-Then <observable result>
+Dado (Given) <pré-condição>
+Quando (When) <ação>
+Então (Then) <resultado observável>
 ```
 
-Evidence required: automated / manual / accessibility / design / other.
+Evidência necessária: automatizada / manual / acessibilidade / design / outro.
 
-## Technical approach
+## Abordagem técnica
 
-Summarize architecture, affected components, APIs, schemas, migrations, feature
-flags, dependencies, compatibility, and intentionally rejected alternatives.
+Resuma a arquitetura, componentes afetados, APIs, esquemas (schemas), migrações, feature flags, dependências, compatibilidade e alternativas rejeitadas intencionalmente.
 
-## Delivery and operations
+## Entrega e operações
 
-- Rollout plan:
-- Migration plan:
-- Rollback plan:
-- Monitoring and alerts:
-- Support or operational impact:
+- Plano de implantação (Rollout plan):
+- Plano de migração:
+- Plano de reversão (Rollback plan):
+- Monitoramento e alertas:
+- Suporte ou impacto operacional:
 
-## Risks and dependencies
+## Riscos e dependências
 
-| Risk or dependency | Impact | Likelihood | Mitigation | Owner |
+| Risco ou dependência | Impacto | Probabilidade | Mitigação | Responsável |
 |---|---|---|---|---|
 | | | | | |
 
-## Open questions
+## Questões abertas
 
-| Question | Owner | Due date | Resolution |
+| Questão | Responsável | Data limite | Resolução |
 |---|---|---|---|
 | | | | |
 
-## Approval
+## Aprovação
 
-| Role | Name | Decision | Date | Notes |
+| Papel | Nome | Decisão | Data | Notas |
 |---|---|---|---|---|
-| Product | | Approved / Rejected | | |
+| Produto | | Approved / Rejected | | |
 | Design | | Approved / N/A | | |
-| Engineering | | Approved / Rejected | | |
+| Engenharia | | Approved / Rejected | | |
 | QA | | Ready / Not ready | | |

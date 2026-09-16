@@ -1,79 +1,79 @@
-# Accessibility Checklist: <surface/change>
+# Checklist de Acessibilidade (Accessibility Checklist): <surface/change>
 
-## Metadata and baseline
+## Metadados e linha de base
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | A11Y-000 |
-| Adopted standard/version/level | |
+| Padrão/versão/nível adotado | |
 | Build/commit | |
-| Reviewer | |
-| Environment | |
-| Browsers/devices | |
-| Assistive technologies/versions | |
+| Revisor | |
+| Ambiente | |
+| Navegadores/dispositivos | |
+| Tecnologias assistivas/versões | |
 
-For each check record Pass, Fail, N/A with reason, or Not tested.
+Para cada verificação registre Pass (Aprovado), Fail (Reprovado), N/A com motivo, ou Not tested (Não testado).
 
-## Structure and semantics
+## Estrutura e semântica
 
-- [ ] Page/screen structure and landmarks are meaningful.
-- [ ] Headings and labels describe purpose and hierarchy.
-- [ ] Controls expose correct name, role, value, state, and relationships.
-- [ ] Reading order matches the intended meaning.
-- [ ] Tables, lists, groups, and regions use appropriate semantics.
+- [ ] A estrutura da página/tela e as landmarks (marcos) são significativas.
+- [ ] Títulos (headings) e rótulos descrevem o propósito e a hierarquia.
+- [ ] Os controles expõem nome, papel (role), valor, estado e relacionamentos corretos.
+- [ ] A ordem de leitura corresponde ao significado pretendido.
+- [ ] Tabelas, listas, grupos e regiões usam semântica apropriada.
 
-## Keyboard, focus, and input
+## Teclado, foco e entrada
 
-- [ ] All functionality works without a pointer where applicable.
-- [ ] Focus order is logical and focus is visible.
-- [ ] Focus is managed after navigation, dialogs, errors, and dynamic changes.
-- [ ] No keyboard trap exists; standard escape and dismissal behavior works.
-- [ ] Pointer gestures have an accessible alternative.
-- [ ] Targets and spacing meet the adopted baseline.
+- [ ] Toda a funcionalidade funciona sem o uso do ponteiro (mouse), quando aplicável.
+- [ ] A ordem de foco é lógica e o foco é visível.
+- [ ] O foco é gerenciado após navegação, diálogos (dialogs), erros e mudanças dinâmicas.
+- [ ] Não existe armadilha (trap) de teclado; o comportamento padrão de escape (esc) e dispensa (dismissal) funciona.
+- [ ] Gestos de ponteiro têm uma alternativa acessível.
+- [ ] Alvos (targets) e espaçamento atendem à linha de base adotada.
 
-## Content and perception
+## Conteúdo e percepção
 
-- [ ] Text and non-text contrast meet the adopted baseline.
-- [ ] Meaning does not depend on color, shape, location, sound, or motion alone.
-- [ ] Informative images and media have equivalent alternatives.
-- [ ] Decorative content is ignored by assistive technology.
-- [ ] Content remains usable with zoom, text scaling, reflow, and orientation changes.
-- [ ] Motion and animation respect applicable user preferences.
+- [ ] O contraste de texto e não-texto atende à linha de base adotada.
+- [ ] O significado não depende apenas de cor, formato, localização, som ou movimento.
+- [ ] Imagens e mídias informativas possuem alternativas equivalentes.
+- [ ] O conteúdo decorativo é ignorado pela tecnologia assistiva.
+- [ ] O conteúdo permanece utilizável com zoom, dimensionamento de texto (scaling), reflow (refluxo) e mudanças de orientação.
+- [ ] O movimento e a animação respeitam as preferências do usuário, quando aplicável.
 
-## Forms, errors, and status
+## Formulários, erros e status
 
-- [ ] Inputs have persistent programmatic labels and instructions.
-- [ ] Required fields, formats, and constraints are communicated before failure.
-- [ ] Errors identify the problem and provide recovery guidance.
-- [ ] Error summaries and focus behavior support efficient recovery.
-- [ ] Status, progress, success, and asynchronous errors are announced appropriately.
-- [ ] Destructive or consequential actions support confirmation, review, or undo.
+- [ ] Os inputs (entradas) têm rótulos (labels) programáticos persistentes e instruções.
+- [ ] Campos obrigatórios, formatos e restrições são comunicados antes de uma falha.
+- [ ] Erros identificam o problema e fornecem orientação de recuperação.
+- [ ] Resumos de erros e comportamento do foco apoiam a recuperação eficiente.
+- [ ] Status, progresso, sucesso e erros assíncronos são anunciados adequadamente.
+- [ ] Ações destrutivas ou com consequências (consequential) suportam confirmação, revisão ou desfazer (undo).
 
-## Time, media, and authentication
+## Tempo, mídia e autenticação
 
-- [ ] Time limits can be extended or are justified.
-- [ ] Audio/video alternatives and controls meet the baseline.
-- [ ] Authentication does not introduce unnecessary cognitive barriers.
-- [ ] CAPTCHA or human verification has an accessible alternative.
+- [ ] Os limites de tempo podem ser estendidos ou são justificados.
+- [ ] Controles e alternativas de áudio/vídeo atendem à linha de base.
+- [ ] A autenticação não introduz barreiras cognitivas desnecessárias.
+- [ ] CAPTCHA ou verificação humana possui uma alternativa acessível.
 
-## Automated scan
+## Varredura automatizada (Automated scan)
 
-| Tool/version | Scope | Result | Report | False positives reviewed by |
+| Ferramenta/versão | Escopo | Resultado | Relatório | Falsos positivos revisados por |
 |---|---|---|---|---|
 | | | | | |
 
-## Critical-journey assistive-technology checks
+## Verificações de tecnologia assistiva na jornada crítica
 
-| Journey | AT/input | Expected result | Actual result | Evidence/defect |
+| Jornada | AT/entrada | Resultado esperado | Resultado atual | Evidência/defeito |
 |---|---|---|---|---|
 | | | | | |
 
-## Findings and decision
+## Descobertas e decisão (Findings and decision)
 
-| ID | Requirement | User impact | Severity | Evidence | Owner/status |
+| ID | Requisito | Impacto no usuário | Severidade | Evidência | Responsável/status |
 |---|---|---|---|---|---|
 | | | | | | |
 
-Decision: Approved / Approved with authorized exception / Rejected
+Decisão: Approved (Aprovado) / Approved with authorized exception (Aprovado com exceção autorizada) / Rejected (Rejeitado)
 
-Reviewer and timestamp:
+Revisor e timestamp:

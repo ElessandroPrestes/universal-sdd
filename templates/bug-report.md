@@ -1,72 +1,68 @@
-# Bug Report: <summary>
+# Relatório de Bug (Bug Report): <summary>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | BUG-000 |
-| Status | New / Confirmed / In progress / Ready to verify / Closed / Reopened |
-| Severity | S1 / S2 / S3 / S4 |
-| Priority | P0 / P1 / P2 / P3 |
-| Reporter | |
-| Owner | |
-| Detected in | Build/commit/release |
-| Related SPEC/criterion/test | |
+| Status | New (Novo) / Confirmed (Confirmado) / In progress (Em progresso) / Ready to verify (Pronto para verificar) / Closed (Fechado) / Reopened (Reaberto) |
+| Severidade | S1 / S2 / S3 / S4 |
+| Prioridade | P0 / P1 / P2 / P3 |
+| Relatado por | |
+| Responsável | |
+| Detectado em | Build/commit/release |
+| SPEC/critério/teste relacionado | |
 
-## Summary and impact
+## Resumo e impacto
 
-Describe the observable problem, affected users or systems, frequency, scope,
-data/security/accessibility impact, and whether a workaround exists.
+Descreva o problema observável, usuários ou sistemas afetados, frequência, escopo, impacto em dados/segurança/acessibilidade e se há uma solução de contorno (workaround).
 
-## Environment
+## Ambiente
 
-- Environment and configuration:
-- Device/OS/browser or runtime:
-- Viewport/input/assistive technology:
-- Account/role/permissions:
-- Feature flags/dependencies:
+- Ambiente e configuração:
+- Dispositivo/SO/navegador ou runtime:
+- Área de visualização (Viewport)/entrada/tecnologia assistiva:
+- Conta/papel (role)/permissões:
+- Feature flags (bandeiras de funcionalidades)/dependências:
 
-## Preconditions and test data
+## Pré-condições e dados de teste
 
 -
 
-## Reproduction steps
+## Etapas de reprodução (Reproduction steps)
 
 1.
 2.
 3.
 
-## Expected result
+## Resultado esperado
 
+## Resultado real
 
-## Actual result
+## Evidência
 
+Anexe (link) logs, rastreamentos (traces), requisições/respostas, capturas de tela, gravações, relatórios e timestamps (carimbos de data/hora). Remova ou proteja segredos e dados pessoais.
 
-## Evidence
+## Reprodutibilidade
 
-Link logs, traces, requests/responses, screenshots, recordings, reports, and
-timestamps. Remove or protect secrets and personal data.
+- Frequência:
+- Primeira versão conhecida:
+- Última versão funcional conhecida:
+- Reproduzido de forma independente por:
 
-## Reproducibility
+## Triagem (Triage)
 
-- Frequency:
-- First known version:
-- Last known working version:
-- Reproduced independently by:
+- Área suspeita/causa raiz:
+- Regressão: Sim / Não / Desconhecido
+- Duplicata de:
+- Solução de contorno (Workaround) e limitações:
+- Disposição para lançamento (Release disposition):
 
-## Triage
-
-- Suspected area/root cause:
-- Regression: Yes / No / Unknown
-- Duplicate of:
-- Workaround and limitations:
-- Release disposition:
-
-## Resolution and verification
+## Resolução e verificação
 
 - Fix build/commit:
-- Root cause:
-- Added/updated regression test:
-- Verification environment and evidence:
-- Verified by/date:
-- Closure notes:
+- Causa raiz:
+- Teste de regressão adicionado/atualizado:
+- Ambiente de verificação e evidências:
+- Verificado por/data:
+- Notas de encerramento:

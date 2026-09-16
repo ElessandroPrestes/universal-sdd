@@ -1,4 +1,4 @@
-# Review: <mudança>
+# Revisão (Review): <mudança>
 
 ## Metadados
 
@@ -7,7 +7,7 @@
 | ID | REVIEW-000 |
 | SPEC/TASK | |
 | Build/commit | |
-| Reviewer | |
+| Revisor | |
 | Data | YYYY-MM-DD |
 
 ## Escopo revisado
@@ -17,11 +17,11 @@
 - Padrões e ADRs:
 - Validações disponíveis:
 
-## Achados
+## Achados (Findings)
 
 | ID | Severidade | Local | Evidência e impacto | Correção requerida | Status |
 |---|---|---|---|---|---|
-| REV-01 | | | | | Open |
+| REV-01 | | | | | Open (Aberto) |
 
 ## Verificações
 
@@ -34,8 +34,8 @@
 
 ## Decisão
 
-Approved / Approved with remarks / Rejected
+Approved (Aprovado) / Approved with remarks (Aprovado com ressalvas) / Rejected (Rejeitado)
 
 - Motivo:
 - Riscos residuais ou ressalvas:
-- Reviewer e timestamp:
+- Revisor e timestamp:

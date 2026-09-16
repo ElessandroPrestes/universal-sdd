@@ -1,78 +1,76 @@
-# UX Brief: <initiative>
+# Briefing de UX (UX Brief): <initiative>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | UXB-000 |
-| Status | Draft / In research / Approved / Superseded |
-| Owner | |
-| Related initiative | |
-| Date | YYYY-MM-DD |
+| Status | Draft (Rascunho) / In research (Em pesquisa) / Approved (Aprovado) / Superseded (Substituído) |
+| Responsável | |
+| Iniciativa relacionada | |
+| Data | YYYY-MM-DD |
 
-## Problem
+## Problema
 
-What problem is observed, for whom, in what context, and why it matters now?
+Qual problema é observado, para quem, em que contexto, e por que é importante agora?
 
-## Desired outcome and success measures
+## Resultado desejado e medidas de sucesso
 
-| Outcome | Signal or metric | Baseline | Target | Evaluation window |
+| Resultado | Sinal ou métrica | Linha de base (Baseline) | Meta (Target) | Janela de avaliação |
 |---|---|---|---|---|
 | | | | | |
 
-## User groups and context
+## Grupos de usuários e contexto
 
-| User group | Goal or job | Context | Needs or barriers | Evidence |
+| Grupo de usuários | Objetivo (Job to be done) | Contexto | Necessidades ou barreiras | Evidência |
 |---|---|---|---|---|
 | | | | | |
 
-## Evidence inventory
+## Inventário de evidências
 
-Link research, analytics, feedback, support data, prior experiments, and current
-product behavior. State limitations and dates.
+Faça um link para pesquisas, analytics, feedbacks, dados de suporte, experimentos anteriores e o comportamento atual do produto. Declare as limitações e datas.
 
-## Current journey
+## Jornada atual
 
-Describe the current steps, pain points, workarounds, failure points, and moments
-where users abandon or require support.
+Descreva as etapas atuais, pontos problemáticos (pain points), soluções de contorno (workarounds), pontos de falha e momentos em que os usuários abandonam ou precisam de suporte.
 
-## Assumptions
+## Suposições (Assumptions)
 
-| ID | Assumption | Risk if false | Validation method | Owner | Status |
+| ID | Suposição | Risco se falso | Método de validação | Responsável | Status |
 |---|---|---|---|---|---|
-| A-001 | | | | | Unvalidated |
+| A-001 | | | | | Unvalidated (Não validado) |
 
-## Constraints and exclusions
+## Restrições e exclusões (Constraints and exclusions)
 
-- Business:
-- Technical:
-- Legal, privacy, or security:
-- Accessibility:
-- Time or operational:
-- Explicit non-goals:
+- Negócio:
+- Técnico:
+- Legal, privacidade ou segurança:
+- Acessibilidade:
+- Tempo ou operacional:
+- Não-objetivos (non-goals) explícitos:
 
-## Research and validation plan
+## Plano de pesquisa e validação
 
-| Question | Method | Participant or data source | Success signal | Owner |
+| Questão | Método | Participante ou fonte de dados | Sinal de sucesso | Responsável |
 |---|---|---|---|---|
 | | | | | |
 
-If research is skipped, record the reason, risk, approver, and future validation.
+Se a pesquisa for ignorada (skipped), registre o motivo, o risco, o aprovador e a validação futura.
 
-## Usability risks
+## Riscos de usabilidade
 
-| Risk | Affected users | Impact | Mitigation or design question |
+| Risco | Usuários afetados | Impacto | Mitigação ou questão de design |
 |---|---|---|---|
 | | | | |
 
-## Design questions
+## Questões de design
 
 -
 
-## Approval
+## Aprovação
 
-| Role | Name | Decision | Date | Notes |
+| Papel | Nome | Decisão | Data | Notas |
 |---|---|---|---|---|
-| Product | | | | |
-| UX Research | | | | |
+| Produto | | | | |
+| Pesquisa de UX | | | | |
 | Design | | | | |

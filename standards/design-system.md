@@ -1,70 +1,63 @@
-# Design System Standard
+# Design System Standard (Padrão de Sistema de Design)
 
-## Purpose
+## Propósito
 
-Keep interface decisions consistent, accessible, reusable, and traceable. A
-project may use an internal system, a third-party system, or a documented set of
-platform-native conventions.
+Manter as decisões de interface consistentes, acessíveis, reutilizáveis e rastreáveis. Um projeto pode usar um sistema interno, um sistema de terceiros ou um conjunto documentado de convenções nativas da plataforma.
 
-## Source and ownership
+## Origem e propriedade
 
-`PROJECT.md` must identify:
+O `PROJECT.md` deve identificar:
 
-- the design system and its version or revision;
-- the canonical location for tokens, components, icons, and content guidance;
-- maintainers and approval responsibilities;
-- supported platforms and known gaps.
+- o design system e a sua versão ou revisão;
+- o local canônico para tokens, componentes, ícones e orientações de conteúdo;
+- os mantenedores e responsabilidades de aprovação;
+- as plataformas suportadas e as lacunas conhecidas.
 
-Design files must not be the only source of component behavior. Implementable
-states, properties, and accessibility semantics must be documented in the
-repository or a versioned system referenced from it.
+Os arquivos de design não devem ser a única fonte de comportamento dos componentes. Os estados implementáveis, propriedades e a semântica de acessibilidade devem estar documentados no repositório ou num sistema versionado referenciado por ele.
 
 ## Tokens
 
-Use semantic tokens for at least:
+Use tokens semânticos para pelo menos:
 
-- color and contrast roles;
-- typography;
-- spacing and sizing;
-- borders, radius, elevation, and opacity;
-- motion duration and easing;
-- breakpoints or layout rules where applicable.
+- cores e papéis de contraste;
+- tipografia;
+- espaçamento e dimensionamento;
+- bordas, raio (radius), elevação e opacidade;
+- duração da animação (motion) e easing (suavização);
+- breakpoints ou regras de layout onde aplicável.
 
-Avoid introducing raw values when an appropriate token exists. A new token must
-have a semantic purpose, owner, usage guidance, and migration impact.
+Evite introduzir valores brutos (raw values) quando um token apropriado existir. Um novo token deve ter um propósito semântico, proprietário, orientação de uso e impacto de migração.
 
-## Components
+## Componentes
 
-Each reusable component must define:
+Cada componente reutilizável deve definir:
 
-- purpose, supported variants, and prohibited usage;
-- content rules and localization behavior;
-- interactive states and transitions;
-- keyboard and assistive-technology semantics;
-- responsive behavior;
-- examples and automated tests appropriate to its risk.
+- propósito, variantes suportadas e uso proibido;
+- regras de conteúdo e comportamento de localização;
+- estados interativos e transições;
+- teclado e semântica de tecnologia assistiva;
+- comportamento responsivo;
+- exemplos e testes automatizados apropriados ao seu risco.
 
-Prefer extending an existing component over creating a visually similar local
-variant. Product-specific composition may remain local when it is not reusable.
+Prefira estender um componente existente em vez de criar uma variante local visualmente semelhante. Uma composição específica de produto pode permanecer local quando não for reutilizável.
 
-## Change governance
+## Governança de mudanças
 
-Changes that affect existing consumers require:
+As mudanças que afetam os consumidores existentes exigem:
 
-1. impact analysis;
-2. design and engineering review;
-3. accessibility review;
-4. versioning or migration notes;
-5. visual and behavioral regression evidence.
+1. análise de impacto;
+2. revisão de design e engenharia;
+3. revisão de acessibilidade;
+4. notas de versão ou migração;
+5. evidência de regressão visual e comportamental.
 
-Breaking changes must not be silently released. Deprecations need an owner,
-replacement guidance, and removal target.
+Mudanças que quebram compatibilidade (breaking changes) não devem ser lançadas silenciosamente. Descontinuações (deprecations) precisam de um responsável, orientação de substituição e um alvo para remoção.
 
-## Review checklist
+## Checklist de revisão
 
-- Only approved components and tokens are used.
-- New patterns are justified and documented.
-- All component states are implemented.
-- Content works with realistic length and localization.
-- Accessibility semantics are preserved by composition.
-- The implemented component has relevant test and review evidence.
+- Apenas componentes e tokens aprovados são utilizados.
+- Novos padrões são justificados e documentados.
+- Todos os estados do componente estão implementados.
+- O conteúdo funciona com tamanho e localização realistas.
+- A semântica de acessibilidade é preservada pela composição.
+- O componente implementado possui evidências relevantes de teste e revisão.

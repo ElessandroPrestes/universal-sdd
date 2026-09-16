@@ -1,10 +1,9 @@
-# Knowledge module index
+# Índice do Módulo de Conhecimento (Knowledge module index)
 
-This is retrieval metadata. Read a module only when the active SPEC references
-it or a documented material risk requires it.
+Esses são os metadados de recuperação (retrieval). Leia um módulo apenas quando a SPEC ativa o referenciar ou quando um risco material documentado exigir.
 
-| Module | Domain | Owner | Reviewed | Applicability | Canonical-state coverage |
+| Módulo | Domínio | Responsável | Revisado em | Aplicabilidade | Cobertura de estado canônico |
 |---|---|---|---|---|---|
-| `knowledge/modules/framework-overview.md` | Product identity | Documentation | 2026-09-15 | Any USF adoption or framework change | Overview, users, status, runtime, dependencies |
-| `knowledge/modules/governance-and-structure.md` | Framework governance | Documentation | 2026-09-15 | Architecture, roles, and repository organization | Hierarchy, structure, architecture |
-| `knowledge/modules/delivery-and-quality.md` | Delivery governance | Documentation | 2026-09-15 | Design, QA, security, and release planning | UX, accessibility, QA, security, delivery, limitations |
+| `knowledge/modules/framework-overview.md` | Identidade do produto | Documentação | 2026-09-15 | Qualquer adoção do USF ou mudança de framework | Visão geral, usuários, status, runtime, dependências |
+| `knowledge/modules/governance-and-structure.md` | Governança do framework | Documentação | 2026-09-15 | Arquitetura, papéis (roles) e organização do repositório | Hierarquia, estrutura, arquitetura |
+| `knowledge/modules/delivery-and-quality.md` | Governança de entrega | Documentação | 2026-09-15 | Planejamento de design, QA, segurança e release | UX, acessibilidade, QA, segurança, entrega, limitações |

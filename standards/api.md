@@ -1,17 +1,14 @@
-# API Standard
+# API Standard (Padrão de API)
 
-## Baseline
+## Linha de base
 
-Each API must define its contract, ownership, authentication, authorization,
-versioning, errors, limits, compatibility window, observability, and canonical
-documentation.
+Cada API deve definir o seu contrato, propriedade, autenticação, autorização, versionamento, erros, limites, janela de compatibilidade, observabilidade e documentação canônica.
 
-- Validate requests and return stable, actionable errors without leaking internals.
-- Treat externally consumed behavior as a compatibility contract.
-- Specify pagination, ordering, filtering, idempotency, concurrency, and timeouts
-  where applicable.
-- Use explicit deprecation and migration periods for breaking changes.
-- Protect sensitive fields and audit security-relevant operations.
-- Add contract and integration tests at independently evolving boundaries.
+- Validar as requisições e retornar erros estáveis e acionáveis, sem vazar informações internas.
+- Tratar o comportamento consumido externamente como um contrato de compatibilidade.
+- Especificar paginação, ordenação, filtragem, idempotência, concorrência e timeouts (tempos de limite) onde aplicável.
+- Usar períodos explícitos de descontinuação (deprecation) e migração para mudanças que quebrem compatibilidade (breaking changes).
+- Proteger campos sensíveis e auditar operações relevantes para a segurança.
+- Adicionar testes de contrato e integração em limites que evoluem de forma independente.
 
-The SPEC must identify affected consumers and rollout/rollback behavior.
+A SPEC deve identificar os consumidores afetados e o comportamento de rollout (implantação)/rollback (reversão).

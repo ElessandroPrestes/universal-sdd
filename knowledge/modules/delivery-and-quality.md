@@ -1,44 +1,32 @@
-# Delivery and quality context
+# Contexto de entrega e qualidade (Delivery and quality context)
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
-| Domain | Delivery, quality, security, and operations |
-| Owner | Documentation |
-| Reviewed | 2026-09-15 |
-| Applicability | UX, QA, release, and operational planning |
-| Source of truth | `PROJECT.md` context index and linked standards |
+| Domínio | Entrega, qualidade, segurança e operações |
+| Responsável | Documentação |
+| Revisado | 2026-09-15 |
+| Aplicabilidade | UX, QA, lançamento e planejamento operacional |
+| Fonte da verdade | Índice de contexto do `PROJECT.md` e padrões vinculados |
 
-## Experience and accessibility
+## Experiência e acessibilidade
 
-User-facing changes follow `workflows/feature.md`, including discovery, design
-approval, accessible specification, design review, and traceable evidence.
-The framework has no graphical interface or design-token implementation.
+Alterações voltadas ao usuário seguem o arquivo `workflows/feature.md`, incluindo descoberta, aprovação de design, especificação acessível, revisão de design e evidências rastreáveis.
+O framework não possui interface gráfica ou implementação de tokens de design.
 
-Adopters use `standards/ux-ui.md`, `standards/design-system.md`, and
-`standards/accessibility.md`. The framework recommends WCAG 2.2 Level AA as a
-default for web projects; adopters declare their target, coverage, tools, and
-assistive-technology matrix.
+Os adotantes usam `standards/ux-ui.md`, `standards/design-system.md` e `standards/accessibility.md`. O framework recomenda WCAG 2.2 Nível AA como um padrão (default) para projetos da web; os adotantes declaram seu alvo, cobertura, ferramentas e matriz de tecnologia assistiva.
 
-## Quality and security
+## Qualidade e segurança
 
-`standards/testing.md` defines the strategy and
-`standards/quality-gates.md` defines release controls. Framework artifacts are
-validated through repository structure, internal references, Markdown
-consistency, and human review. Adopting software projects define executable
-commands, environments, thresholds when useful, compatibility coverage, and
-evidence storage.
+`standards/testing.md` define a estratégia e `standards/quality-gates.md` define os controles de lançamento. Artefatos do framework são validados através da estrutura do repositório, referências internas, consistência do Markdown e revisão humana. Projetos de software adotantes definem comandos executáveis, ambientes, limiares (thresholds) quando úteis, cobertura de compatibilidade e armazenamento de evidências.
 
-Documentation and evidence must not expose secrets, credentials, personal data,
-or unsafe production data. Adopters define their detailed security standard and
-threat model.
+A documentação e as evidências não devem expor segredos, credenciais, dados pessoais ou dados inseguros de produção. Os adotantes definem seu padrão de segurança detalhado e o modelo de ameaças.
 
-## Delivery and limitations
+## Entrega e limitações
 
-The framework has no CI/CD or deployment process. Consumers copy or adapt it
-and connect quality gates to their automation.
+O framework não tem um processo de CI/CD ou implantação (deployment). Os consumidores o copiam ou adaptam e conectam portões de qualidade à sua automação.
 
-- Technology profiles and automatic bootstrapping are planned, not implemented.
-- There is no automated Markdown link or schema validation yet.
-- The documentation API may change before version 1.0.
+- Perfis de tecnologia (Technology profiles) e inicialização (bootstrapping) automática estão planejados, não implementados.
+- Ainda não há validação automatizada de links Markdown ou esquema (schema).
+- A API da documentação pode mudar antes da versão 1.0.

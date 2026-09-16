@@ -1,44 +1,44 @@
-# Design Review: <change>
+# Revisão de Design (Design Review): <change>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | DR-000 |
 | Build/commit | |
-| Environment | |
-| Approved design revision | |
-| Design system revision | |
-| Reviewer | |
-| Date | |
+| Ambiente | |
+| Revisão de design aprovada | |
+| Revisão do design system | |
+| Revisor | |
+| Data | |
 
-## Review matrix
+## Matriz de revisão
 
-| Surface/state | Viewport/device/input | Design reference | Evidence | Result | Finding |
+| Superfície/estado | Viewport/dispositivo/entrada | Referência de design | Evidência | Resultado | Achado (Finding) |
 |---|---|---|---|---|---|
 | | | | | Pass/Fail | |
 
-## Checks
+## Verificações (Checks)
 
-- [ ] Main, alternative, error, empty, loading, permission, and recovery states match.
-- [ ] Layout, hierarchy, spacing, typography, color, assets, and content match.
-- [ ] Approved components and semantic tokens are used.
-- [ ] Responsive reflow and orientation behavior match.
-- [ ] Pointer, keyboard, touch, focus, and motion behavior match.
-- [ ] Realistic long, short, missing, and localized content behaves as specified.
-- [ ] Zoom, text scaling, reduced motion, and accessibility annotations are preserved.
-- [ ] No undocumented pattern or scope change was introduced.
+- [ ] Estados principais, alternativos, de erro, vazios, de carregamento, de permissão e de recuperação coincidem.
+- [ ] Layout, hierarquia, espaçamento, tipografia, cor, ativos (assets) e conteúdo coincidem.
+- [ ] Componentes aprovados e tokens semânticos são usados.
+- [ ] O comportamento de orientação e reflow responsivo coincide.
+- [ ] O comportamento do ponteiro, teclado, toque, foco e movimento coincide.
+- [ ] O conteúdo longo, curto, ausente e localizado realista comporta-se conforme especificado.
+- [ ] Zoom, escala de texto, movimento reduzido e anotações de acessibilidade são preservados.
+- [ ] Nenhum padrão não documentado ou mudança de escopo foi introduzido.
 
-## Findings
+## Descobertas (Findings)
 
-| ID | Difference | Expected | Actual | User impact/severity | Evidence | Owner/status |
+| ID | Diferença | Esperado | Atual (Real) | Impacto no usuário/severidade | Evidência | Responsável/status |
 |---|---|---|---|---|---|---|
 | DRF-01 | | | | | | |
 
-## Decision
+## Decisão
 
-Approved / Approved with remarks / Rejected
+Approved (Aprovado) / Approved with remarks (Aprovado com ressalvas) / Rejected (Rejeitado)
 
-Remarks, approved deviations, or required remediation:
+Observações (Remarks), desvios aprovados ou remediação necessária:
 
-Reviewer and timestamp:
+Revisor e timestamp:

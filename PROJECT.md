@@ -1,44 +1,42 @@
-# Universal SDD Project State
+# Estado do Projeto Universal SDD
 
-## Current state
+## Estado atual
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
-| Product | Universal SDD Framework (USF) |
-| Version and status | Pre-1.0 development draft; active development |
-| Runtime and dependencies | Markdown documentation only; no runtime or dependencies |
-| Primary outcome | Approved requirements become traceable implementation and reproducible quality evidence |
+| Produto | Universal SDD Framework (USF) |
+| Versão e status | Rascunho de desenvolvimento pré-1.0; em desenvolvimento ativo |
+| Runtime e dependências | Apenas documentação em Markdown; sem runtime ou dependências |
+| Resultado principal | Requisitos aprovados tornam-se implementação rastreável e evidências de qualidade reprodutíveis |
 
-## Canonical hierarchy
+## Hierarquia canônica
 
-1. An approved SPEC is the acceptance baseline for an active change.
-2. This index and its linked project-state modules record canonical current state.
-3. Repository content and QA evidence demonstrate delivered behavior.
-4. Resolve divergence as a defect, scope change, or documentation debt.
+1. Uma SPEC aprovada é a linha de base de aceitação para uma mudança ativa.
+2. Este índice e seus módulos de estado do projeto vinculados registram o estado atual canônico.
+3. O conteúdo do repositório e as evidências de QA demonstram o comportamento entregue.
+4. Resolva divergências como defeito, mudança de escopo ou dívida de documentação.
 
-## Context index
+## Índice de contexto
 
-Use `knowledge/INDEX.md` to select a module. Do not load every module; follow
-the phase bundle in `docs/context-budget.md` and the active SPEC's `Refs:`.
+Use `knowledge/INDEX.md` para selecionar um módulo. Não carregue todos os módulos; siga o pacote de fases em `docs/context-budget.md` e as referências (`Refs:`) da SPEC ativa.
 
-| Module | Current-state coverage |
+| Módulo | Cobertura do estado atual |
 |---|---|
-| `knowledge/modules/framework-overview.md` | Domain, users, outcome, version, runtime, dependencies, excluded technologies |
-| `knowledge/modules/governance-and-structure.md` | Repository responsibilities and modular-document architecture |
-| `knowledge/modules/delivery-and-quality.md` | UX, accessibility, QA, security, delivery, and known limitations |
+| `knowledge/modules/framework-overview.md` | Domínio, usuários, resultado, versão, runtime, dependências, tecnologias excluídas |
+| `knowledge/modules/governance-and-structure.md` | Responsabilidades do repositório e arquitetura modular de documentos |
+| `knowledge/modules/delivery-and-quality.md` | UX, acessibilidade, QA, segurança, entrega e limitações conhecidas |
 
-## Authoritative framework documents
+## Documentos autoritativos do framework
 
-| Need | Source |
+| Necessidade | Fonte |
 |---|---|
-| Framework definition | `UNIVERSAL_SDD_FRAMEWORK.md` |
-| Session protocol | `AGENTS.md` and AI entry files |
-| Roles and workflow | `agents/` and `workflows/` |
-| Normative practices | `standards/` |
-| Change records | `specs/`, `tasks/`, `reviews/`, `adr/` |
-| Reusable artifacts | `templates/`, `knowledge/`, `profiles/`, `docs/` |
+| Definição do framework | `UNIVERSAL_SDD_FRAMEWORK.md` |
+| Protocolo de sessão | `AGENTS.md` e arquivos de entrada de IA |
+| Papéis e fluxo de trabalho | `agents/` e `workflows/` |
+| Práticas normativas | `standards/` |
+| Registros de mudança | `specs/`, `tasks/`, `reviews/`, `adr/` |
+| Artefatos reutilizáveis | `templates/`, `knowledge/`, `profiles/`, `docs/` |
 
-## Migration
+## Migração
 
-Existing adopters may retain a monolithic `PROJECT.md` while incrementally
-creating modules and an index. No existing file path is removed or renamed.
+Adotantes existentes podem manter um `PROJECT.md` monolítico enquanto criam módulos e um índice incrementalmente. Nenhum caminho de arquivo existente é removido ou renomeado.

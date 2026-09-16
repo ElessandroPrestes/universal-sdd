@@ -1,117 +1,99 @@
-# SPEC: Structured acceptance criteria and QA verification gate
+# SPEC: Critérios de aceitação estruturados e portão de verificação de QA (Structured acceptance criteria and QA verification gate)
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | SPEC-004 |
-| Status | Implemented |
-| Owner | Spec Agent |
-| Reviewers | Engineering / QA |
-| Created | 2026-09-15 |
-| Updated | 2026-09-15 |
-| Target release | Unscheduled |
-| Refs: | Discovery: N/A — framework internal change; Design: N/A — no user-facing interface; ADRs: N/A — quality workflow documentation only |
+| Status | Implementada |
+| Responsável | Agente de Especificação |
+| Revisores | Engenharia / QA |
+| Criado | 2026-09-15 |
+| Atualizado | 2026-09-15 |
+| Liberação Alvo | Não programado |
+| Refs: | Discovery: N/A — alteração interna do framework; Design: N/A — nenhuma interface voltada para o usuário; ADRs: N/A — apenas documentação de fluxo de trabalho de qualidade |
 
-## Problem and outcome
+## Problema e resultado
 
-Acceptance criteria currently allow prose and do not define a consumable
-contract for comparing approved behavior to QA evidence. The rule against
-silent divergence therefore depends on manual interpretation.
+Os critérios de aceitação atualmente permitem texto livre (prosa) e não definem um contrato consumível para comparar o comportamento aprovado com as evidências de QA. A regra contra divergência silenciosa, portanto, depende de interpretação manual.
 
-The outcome is a structured acceptance-criteria format in the canonical SPEC
-template and a blocking QA-Verifier workflow step that reports every missing,
-unmapped, failed, or ambiguous criterion before code review.
+O resultado é um formato de critério de aceitação estruturado no template canônico de SPEC e uma etapa bloqueadora de fluxo de trabalho (workflow) QA-Verifier (Verificador de QA) que reporta cada critério ausente, não mapeado, falho ou ambíguo antes da revisão de código (code review).
 
-## Scope
+## Escopo
 
-### In scope
+### No escopo
 
-- Update `templates/SPEC_TEMPLATE.md` with a structured, stable acceptance
-  criterion format.
-- Add `workflows/verification.md` defining QA-Verifier inputs, comparison,
-  output, divergence reporting, and its position before Code Review.
-- Add the QA-Verifier as a blocking condition in `standards/quality-gates.md`.
+- Atualizar `templates/SPEC_TEMPLATE.md` com um formato de critério de aceitação estruturado e estável.
+- Adicionar `workflows/verification.md` definindo entradas do QA-Verifier, comparação, saída, relatórios de divergência e sua posição antes do Code Review.
+- Adicionar o QA-Verifier como uma condição de bloqueio em `standards/quality-gates.md`.
 
-### Out of scope
+### Fora do escopo
 
-- Defining the structured QA-evidence file itself; that belongs to Melhoria 6.
-- Implementing an automated parser, CI integration, or changing existing SPECs.
-- Changing task IDs, commit trailers, approval authorities, or test strategy.
+- Definir o arquivo de evidências estruturadas de QA em si; isso pertence à Melhoria 6.
+- Implementar um analisador (parser) automatizado, integração de CI, ou alterar SPECs existentes.
+- Alterar IDs de tarefas, trailers de commit, autoridades de aprovação ou estratégia de teste.
 
-## Functional behavior
+## Comportamento funcional
 
-- Each new criterion in the canonical SPEC template has a stable `AC-NNN` ID,
-  preconditions, action, expected observable result, and required evidence type
-  in structured YAML.
-- QA-Verifier compares every structured criterion to structured QA evidence;
-  it emits a reproducible list of unmapped, missing, failed, or ambiguous items
-  rather than inferring fulfillment.
-- Until the QA-evidence contract of Melhoria 6 exists, the QA-Verifier gate is
-  documented but cannot pass for changes that require QA evidence.
-- Code Review cannot start while applicable QA-Verifier findings remain open.
+- Cada novo critério no template canônico de SPEC tem um ID estável `AC-NNN`, pré-condições, ação, resultado observável esperado e tipo de evidência requerida em YAML estruturado.
+- O QA-Verifier compara cada critério estruturado com a evidência estruturada de QA; ele emite uma lista reprodutível de itens não mapeados, ausentes, falhos ou ambíguos em vez de inferir o cumprimento.
+- Até que o contrato de evidência de QA da Melhoria 6 exista, o portão (gate) QA-Verifier está documentado, mas não pode passar para mudanças que exigem evidências de QA.
+- O Code Review não pode começar enquanto houver descobertas aplicáveis do QA-Verifier em aberto.
 
-## Acceptance criteria
+## Critérios de aceitação
 
-### AC-001: Canonical SPEC template has machine-consumable criteria
+### AC-001: O template canônico de SPEC tem critérios legíveis por máquina
 
 ```gherkin
-Given an author uses the canonical SPEC template
-When it defines an acceptance criterion
-Then the criterion has structured ID, precondition, action, expected result,
-and evidence-type fields without relying on free prose
+Dado que um autor usa o template canônico de SPEC
+Quando ele define um critério de aceitação
+Então o critério tem os campos estruturados ID, pré-condição, ação, resultado esperado e tipo de evidência sem depender de texto livre (prosa)
 ```
 
-Evidence required: template inspection.
+Evidência requerida: inspeção de template.
 
-### AC-002: QA-Verifier reports divergence before review
+### AC-002: O QA-Verifier relata divergências antes da revisão
 
 ```gherkin
-Given an approved SPEC and its QA evidence
-When QA-Verifier compares criterion IDs and outcomes
-Then it lists every missing, unmapped, failed, or ambiguous criterion before
-Code Review may begin
+Dado uma SPEC aprovada e sua evidência de QA
+Quando o QA-Verifier compara IDs de critérios e resultados
+Então ele lista cada critério ausente, não mapeado, falho ou ambíguo antes que o Code Review possa começar
 ```
 
-Evidence required: workflow and gate review.
+Evidência requerida: revisão de fluxo de trabalho (workflow) e de portão (gate).
 
-### AC-003: Verification is a blocking quality gate
+### AC-003: A verificação é um portão de qualidade bloqueador
 
 ```gherkin
-Given QA-Verifier has unresolved applicable findings
-When the change requests Code Review
-Then the quality-gate standard blocks the transition until the findings are
-resolved or have an authorized exception
+Dado que o QA-Verifier tem descobertas aplicáveis não resolvidas
+Quando a mudança solicita Code Review
+Então o padrão de portões de qualidade bloqueia a transição até que as descobertas sejam resolvidas ou tenham uma exceção autorizada
 ```
 
-Evidence required: standards review.
+Evidência requerida: revisão de padrões.
 
-## Technical approach
+## Abordagem técnica
 
-Use a YAML code block per acceptance criterion in the uppercase canonical
-template. The workflow specifies a technology-agnostic comparison contract and
-names the forthcoming QA-evidence schema as a dependency. This preserves the
-legacy lowercase template and avoids adding a parser before its input and
-evidence schemas are both defined.
+Use um bloco de código YAML por critério de aceitação no template canônico em letras maiúsculas. O fluxo de trabalho (workflow) especifica um contrato de comparação agnóstico de tecnologia e nomeia o futuro esquema de evidência de QA como uma dependência. Isso preserva o template legado em minúsculas e evita adicionar um analisador (parser) antes que seus esquemas de entrada e de evidência estejam ambos definidos.
 
-## Risks and dependencies
+## Riscos e dependências
 
-| Risk or dependency | Impact | Likelihood | Mitigation | Owner |
+| Risco ou dependência | Impacto | Probabilidade | Mitigação | Responsável |
 |---|---|---|---|---|
-| QA-evidence schema is not yet available | Gate cannot produce a passing result | High | Mark Melhoria 6 as an explicit prerequisite for operational use | QA Agent |
-| Existing SPECs use prose criteria | Migration burden | High | Preserve legacy templates and require the new format only for new canonical SPECs | Documentation Agent |
-| Criteria are structurally complete but vague | False confidence | Medium | Require observable expected results and flag ambiguity as a finding | QA-Verifier |
+| O esquema de evidência de QA ainda não está disponível | O portão não pode produzir um resultado de aprovação | Alta | Marcar a Melhoria 6 como um pré-requisito explícito para uso operacional | Agente de QA |
+| SPECs existentes usam critérios em prosa | Ônus de migração | Alta | Preservar templates legados e exigir o novo formato apenas para novas SPECs canônicas | Agente de Documentação |
+| Os critérios são estruturalmente completos, mas vagos | Falsa confiança | Média | Exigir resultados esperados observáveis e sinalizar a ambiguidade como uma descoberta | QA-Verifier |
 
-## Open questions
+## Questões abertas
 
-| Question | Owner | Due date | Resolution |
+| Questão | Responsável | Data limite | Resolução |
 |---|---|---|---|
-| Should the QA-Verifier be automated after Melhoria 6? | Engineering reviewer | After Melhoria 6 | Deferred; this change defines only the portable contract and gate. |
+| O QA-Verifier deve ser automatizado após a Melhoria 6? | Revisor de Engenharia | Após Melhoria 6 | Adiado; esta alteração define apenas o contrato portátil e o portão. |
 
-## Approval
+## Aprovação
 
-| Role | Name | Decision | Date | Notes |
+| Papel | Nome | Decisão | Data | Notas |
 |---|---|---|---|---|
-| Engineering | | Pending | | |
-| QA | | Pending | | |
-| Human sponsor | User | Approved | 2026-09-15 | Approval recorded in the CLI conversation. |
+| Engenharia | | Pendente | | |
+| QA | | Pendente | | |
+| Patrocinador Humano | Usuário | Aprovado | 2026-09-15 | Aprovação registrada na conversa do CLI. |

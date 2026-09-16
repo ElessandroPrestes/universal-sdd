@@ -1,106 +1,106 @@
-# QA Plan: <change>
+# Plano de QA (QA Plan): <change>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | QA-000 |
-| Status | Draft / Approved / Executing / Complete |
-| QA owner | |
+| Status | Draft (Rascunho) / Approved (Aprovado) / Executing (Executando) / Complete (Concluído) |
+| Responsável (QA owner) | |
 | Build/commit | |
-| Related SPEC/design | |
-| Test window | |
+| SPEC/design relacionado | |
+| Janela de teste (Test window) | |
 
-## Scope and quality objective
+## Escopo e objetivo de qualidade
 
-### In scope
+### No escopo (In scope)
 
 -
 
-### Out of scope
+### Fora do escopo (Out of scope)
 
-- Item, reason, risk, and approver.
+- Item, motivo, risco e aprovador.
 
-## Risk assessment
+## Avaliação de risco
 
-| ID | Risk | User/system impact | Likelihood | Test response | Owner |
+| ID | Risco | Impacto no usuário/sistema | Probabilidade | Resposta de teste | Responsável |
 |---|---|---|---|---|---|
 | R-001 | | | | | |
 
-## Test approach
+## Abordagem de teste
 
-| Test area | Level/type | Automated/manual | Environment | Owner | Required evidence |
+| Área de teste | Nível/tipo | Automatizado/manual | Ambiente | Responsável | Evidência requerida |
 |---|---|---|---|---|---|
-| Functional | | | | | |
-| Integration/contract | | | | | |
-| E2E | | | | | |
-| Exploratory/usability | | | | | |
-| User/business acceptance (UAT) | | | | | |
+| Funcional | | | | | |
+| Integração/contrato | | | | | |
+| E2E (Ponta a ponta) | | | | | |
+| Exploratório/usabilidade | | | | | |
+| Aceitação de usuário/negócio (UAT) | | | | | |
 | Visual | | | | | |
-| Accessibility | | | | | |
-| Security/privacy | | | | | |
-| Performance/reliability | | | | | |
-| Compatibility/localization | | | | | |
+| Acessibilidade | | | | | |
+| Segurança/privacidade | | | | | |
+| Desempenho/confiabilidade | | | | | |
+| Compatibilidade/localização | | | | | |
 
-Mark areas not applicable with a reason.
+Marque as áreas não aplicáveis com um motivo.
 
-## Acceptance-criteria traceability
+## Rastreabilidade dos critérios de aceitação
 
-| Criterion | Risk | Automated test ID/path | Manual test case | Evidence/result | Defect/exception |
+| Critério | Risco | ID/caminho do teste automatizado | Caso de teste manual | Evidência/resultado | Defeito/exceção |
 |---|---|---|---|---|---|
-| AC-001 | | | | Pending | |
+| AC-001 | | | | Pendente | |
 
-No criterion may remain without evidence or an approved not-applicable reason.
+Nenhum critério pode permanecer sem evidência ou sem um motivo aprovado de não aplicável.
 
-## Environment and data
+## Ambiente e dados
 
-- Environment and URL/endpoint:
-- Build/commit/configuration:
-- Feature flags:
-- Dependencies or service versions:
-- Accounts, roles, and permissions:
-- Data setup, cleanup, isolation, and privacy controls:
-- Observability/log access:
+- Ambiente e URL/endpoint:
+- Build/commit/configuração:
+- Feature flags (Bandeiras de funcionalidades):
+- Dependências ou versões de serviço:
+- Contas, funções (roles) e permissões:
+- Configuração de dados, limpeza, isolamento e controles de privacidade:
+- Acesso à observabilidade/logs:
 
-## Compatibility matrix
+## Matriz de compatibilidade
 
-| Platform/browser/device | Version | Viewport/input | Priority | Result/evidence |
+| Plataforma/navegador/dispositivo | Versão | Área de visualização (Viewport)/entrada | Prioridade | Resultado/evidência |
 |---|---|---|---|---|
-| | | | | Pending |
+| | | | | Pendente |
 
-## Entry criteria
+## Critérios de entrada (Entry criteria)
 
-- [ ] SPEC and design are approved.
-- [ ] Build is deployable to the test environment.
-- [ ] Environment and deterministic data are ready.
-- [ ] Test cases and automation are reviewable.
-- [ ] Known limitations and changed dependencies are disclosed.
+- [ ] A SPEC e o design estão aprovados.
+- [ ] O build pode ser implantado no ambiente de teste.
+- [ ] O ambiente e os dados determinísticos estão prontos.
+- [ ] Casos de teste e automação podem ser revisados.
+- [ ] Limitações conhecidas e dependências alteradas são divulgadas.
 
-## Exit criteria
+## Critérios de saída (Exit criteria)
 
-- [ ] Acceptance criteria have passing evidence.
-- [ ] Required automation and regression pass.
-- [ ] Applicable manual and non-functional checks pass.
-- [ ] No open S1 or S2 defect exists.
-- [ ] Remaining defects and risks have an explicit disposition.
-- [ ] Accessibility, design, and code reviews are complete when applicable.
+- [ ] Critérios de aceitação têm evidência de aprovação (passing).
+- [ ] Automação e regressão exigidas foram aprovadas.
+- [ ] Verificações manuais e não-funcionais aplicáveis foram aprovadas.
+- [ ] Não há defeito S1 ou S2 aberto.
+- [ ] Defeitos e riscos restantes têm uma disposição explícita.
+- [ ] Revisões de acessibilidade, design e código estão completas, quando aplicável.
 
-## Defects and residual risks
+## Defeitos e riscos residuais
 
-| ID | Severity | Summary | Status | Owner | Release disposition |
+| ID | Severidade | Resumo | Status | Responsável | Disposição para lançamento |
 |---|---|---|---|---|---|
 | | | | | | |
 
-## Gate exceptions
+## Exceções de portão (Gate exceptions)
 
-| Gate/check | Reason and impact | Mitigation/monitoring | Owner | Expiry | Approver |
+| Portão/verificação | Motivo e impacto | Mitigação/monitoramento | Responsável | Validade (Expiry) | Aprovador |
 |---|---|---|---|---|---|
 | | | | | | |
 
-## Test summary and recommendation
+## Resumo do teste e recomendação
 
-- Executed/passed/failed/blocked:
-- Key evidence:
-- Known limitations:
-- Recommendation: Go / Go with accepted risk / No-go
-- QA owner and timestamp:
+- Executados/aprovados/falhos/bloqueados:
+- Evidência principal:
+- Limitações conhecidas:
+- Recomendação: Go (Aprovado) / Go with accepted risk (Aprovado com risco aceito) / No-go (Não aprovado)
+- Responsável de QA e timestamp:

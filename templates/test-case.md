@@ -1,47 +1,46 @@
-# Test Case: <title>
+# Caso de Teste (Test Case): <title>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | TC-000 |
-| Type | Functional / Regression / Exploratory / Accessibility / Other |
-| Priority | Critical / High / Medium / Low |
-| Related criteria | AC-000 |
-| Owner | |
-| Automation | Automated path / Manual / Candidate / N/A |
+| Tipo | Functional / Regression / Exploratory / Accessibility / Other |
+| Prioridade | Critical / High / Medium / Low |
+| Critérios relacionados | AC-000 |
+| Responsável | |
+| Automação | Caminho automatizado / Manual / Candidate / N/A |
 
-## Objective
+## Objetivo
 
-State the behavior or risk this case proves.
+Declare o comportamento ou risco que este caso comprova (proves).
 
-## Preconditions and data
+## Pré-condições e dados
 
-- Build/environment/configuration:
-- User, role, and permissions:
-- Required data and setup:
-- External dependency state:
+- Build/ambiente/configuração:
+- Usuário, papel (role) e permissões:
+- Dados requeridos e setup:
+- Estado da dependência externa:
 
-## Steps
+## Etapas (Steps)
 
-| Step | Action/input | Expected observable result |
+| Passo | Ação/entrada | Resultado observável esperado |
 |---|---|---|
 | 1 | | |
 
-## Variations and boundaries
+## Variações e limites (boundaries)
 
-List applicable invalid, empty, minimum, maximum, duplicate, concurrent,
-permission, timeout, offline, cancellation, retry, and recovery cases.
+Liste os casos aplicáveis ​​de inválido, vazio, mínimo, máximo, duplicado, concorrente, de permissão, de timeout (tempo limite), offline, cancelamento, tentativa (retry) e recuperação.
 
-## Execution
+## Execução
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | Build/commit | |
-| Environment/device | |
-| Executed by | |
+| Ambiente/dispositivo | |
+| Executado por | |
 | Timestamp | |
-| Result | Pass / Fail / Blocked / Not run |
-| Evidence | Link to logs/report/screenshot/recording |
-| Defects | BUG-000 |
-| Notes | |
+| Resultado | Pass (Aprovado) / Fail (Reprovado) / Blocked (Bloqueado) / Not run (Não executado) |
+| Evidência | Link para logs/relatório/screenshot/gravação |
+| Defeitos | BUG-000 |
+| Notas | |

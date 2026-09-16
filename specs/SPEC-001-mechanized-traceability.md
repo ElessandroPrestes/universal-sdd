@@ -1,144 +1,120 @@
-# SPEC: Mechanized traceability
+# SPEC: Rastreabilidade mecanizada (Mechanized traceability)
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | SPEC-001 |
-| Status | Implemented |
-| Owner | Spec Agent |
-| Reviewers | Engineering / QA |
-| Created | 2026-09-15 |
-| Updated | 2026-09-15 |
-| Target release | Unscheduled |
-| Related UX brief | N/A — internal framework documentation and tooling change |
-| Related design specification | N/A — no user-facing interface |
-| Related ADRs | None identified; the change does not alter framework architecture |
+| Status | Implementada |
+| Responsável | Agente de Especificação |
+| Revisores | Engenharia / QA |
+| Criado | 2026-09-15 |
+| Atualizado | 2026-09-15 |
+| Liberação Alvo | Não programado |
+| Relacionado a UX brief | N/A — documentação interna do framework e alteração de ferramentas |
+| Relacionado a design spec | N/A — nenhuma interface voltada para o usuário |
+| Relacionado a ADRs | Nenhum identificado; a mudança não altera a arquitetura do framework |
 
-## Problem and outcome
+## Problema e resultado
 
-The framework requires traceability between approved requirements, executable
-work, commits, and QA evidence, but it currently provides no stable identifier
-scheme, machine-readable matrix, or commit-time validation. This makes audit
-depend on manual document review.
+O framework requer rastreabilidade entre requisitos aprovados, trabalhos executáveis, commits e evidências de QA, mas atualmente não fornece nenhum esquema estável de identificadores, matriz legível por máquina (machine-readable matrix) ou validação no momento do commit. Isso faz com que a auditoria dependa de revisão manual de documentos.
 
-The outcome is reusable, dependency-light framework artifacts that establish
-and validate an auditable chain from SPEC to TASK, commit, and QA status.
+O resultado são artefatos de framework reutilizáveis e com poucas dependências que estabelecem e validam uma cadeia auditável desde a SPEC até a TAREFA (TASK), commit e status de QA.
 
-## Scope
+## Escopo
 
-### In scope
+### No escopo
 
-- Document stable `SPEC-NNN`, `TASK-NNN-XX`, and `ADR-NNN` identifiers and
-  their reference relationships.
-- Add ID and `Refs:` fields to reusable SPEC and TASK templates without
-  removing the existing lowercase templates.
-- Document required `Spec-Ref:` and `Task-Ref:` commit trailers in `AGENTS.md`.
-- Add a dependency-light reusable script that scans `specs/`, `tasks/`,
-  `reviews/`, and Git history to generate a traceability matrix in `docs/`.
-- Add an optional `commit-msg` hook template that validates the required
-  trailers.
+- Documentar identificadores estáveis `SPEC-NNN`, `TASK-NNN-XX` e `ADR-NNN` e os seus relacionamentos de referência.
+- Adicionar os campos ID e `Refs:` (Referências) a templates reutilizáveis de SPEC e TASK sem remover os templates minúsculos (lowercase) existentes.
+- Documentar os trailers de commit necessários `Spec-Ref:` e `Task-Ref:` no arquivo `AGENTS.md`.
+- Adicionar um script reutilizável e com poucas dependências que varre (scans) as pastas `specs/`, `tasks/`, `reviews/` e o histórico do Git para gerar uma matriz de rastreabilidade em `docs/`.
+- Adicionar um template de hook `commit-msg` opcional que valida os trailers requeridos.
 
-### Out of scope
+### Fora do escopo
 
-- Automated acceptance-criteria verification or structured QA evidence.
-- Context-budget restructuring, SPEC amendments, agent handoff contracts,
-  external-content sanitization, and framework metrics.
-- Installing hooks automatically, changing Git history, or requiring a specific
-  programming language, CI provider, or issue tracker.
+- Verificação automática de critérios de aceitação ou de evidências estruturadas de QA.
+- Reestruturação de limites de contexto (context-budget), alterações de SPEC, contratos de transferência (handoff) de agentes, higienização de conteúdo externo e métricas do framework.
+- Instalar hooks automaticamente, mudar o histórico do Git, ou requerer uma linguagem de programação específica, provedor de CI ou rastreador de problemas (issue tracker).
 
-## Functional behavior
+## Comportamento funcional
 
-- The identifier guide specifies formats, uniqueness expectations, and how
-  artifacts link to their predecessor in the delivery chain.
-- The new templates make `ID` and `Refs:` explicit fields for future use while
-  retaining backward-compatible existing template paths.
-- The matrix generator reports, for each discovered SPEC, linked TASKs,
-  matching Git commits, and available QA/review status without modifying source
-  artifacts or Git history.
-- The optional hook rejects commit messages missing the trailers required by
-  the documented convention, while projects remain free to opt in by copying
-  it to their Git hooks directory.
+- O guia de identificadores especifica os formatos, as expectativas de singularidade (uniqueness) e como os artefatos são vinculados a seu predecessor na cadeia de entrega.
+- Os novos templates tornam os campos `ID` e `Refs:` explícitos para uso futuro, mantendo os caminhos de templates existentes de forma compatível retroativamente.
+- O gerador de matriz reporta, para cada SPEC descoberta, as tarefas (TASKs) vinculadas, os commits correspondentes do Git e os status disponíveis de QA/revisão sem modificar os artefatos originais ou o histórico do Git.
+- O hook opcional rejeita mensagens de commit que não contenham os trailers necessários estipulados pela convenção documentada, enquanto os projetos continuam livres para aderir copiando o hook para o diretório de hooks do Git.
 
-## Acceptance criteria
+## Critérios de aceitação
 
-### AC-001: Identifier and linkage convention is reusable
+### AC-001: A convenção de identificadores e links é reutilizável
 
 ```gherkin
-Given a project adopting the framework
-When it creates a SPEC, TASK, or ADR
-Then the identifier guide defines the required identifier format and linkage
-relationships without relying on project-specific examples
+Dado um projeto que adota o framework
+Quando criar uma SPEC, TAREFA (TASK) ou ADR
+Então o guia de identificadores define o formato e as relações de vinculação do identificador sem depender de exemplos específicos do projeto
 ```
 
-Evidence required: documentation review.
+Evidência requerida: revisão de documentação.
 
-### AC-002: Templates capture required references
+### AC-002: Templates capturam as referências exigidas
 
 ```gherkin
-Given an author creates a SPEC or TASK using the new template
-When it completes the metadata section
-Then it has explicit ID and Refs fields for recording traceability
+Dado que um autor cria uma SPEC ou TAREFA (TASK) usando o novo template
+Quando preencher a seção de metadados
+Então este tem os campos explícitos ID e Refs para registro da rastreabilidade
 ```
 
-Evidence required: template inspection.
+Evidência requerida: inspeção de template.
 
-### AC-003: Commit references are documented and optionally validated
+### AC-003: Referências de commit são documentadas e validadas opcionalmente
 
 ```gherkin
-Given a project opts into the supplied commit-msg hook
-When a commit message omits a required documented reference trailer
-Then the hook rejects the commit message with an actionable error
+Dado um projeto que opte por usar o hook fornecido commit-msg
+Quando uma mensagem de commit omitir um trailer de referência exigido documentado
+Então o hook rejeita a mensagem de commit com um erro acionável
 ```
 
-Evidence required: local hook test.
+Evidência requerida: teste local do hook.
 
-### AC-004: The traceability matrix is reproducible
+### AC-004: A matriz de rastreabilidade é reprodutível
 
 ```gherkin
-Given a repository containing SPECs, TASKs, reviews, and Git commits
-When the matrix generator is run
-Then it writes a consultable matrix that maps discovered SPECs to linked TASKs,
-matching commits, and QA or review status
+Dado um repositório que contém SPECs, TAREFAS (TASKs), revisões e commits do Git
+Quando o gerador de matriz for executado
+Então ele escreve uma matriz consultável que mapeia as SPECs descobertas para TAREFAS vinculadas, commits correspondentes e status de QA ou de revisão
 ```
 
-Evidence required: generator test using repository artifacts.
+Evidência requerida: teste do gerador usando artefatos do repositório.
 
-## Technical approach
+## Abordagem técnica
 
-Use Markdown documentation and templates plus a standard-library-only script
-chosen during implementation. The script must tolerate missing optional
-directories and unmatched references, reporting them as gaps rather than
-inventing links. The generated matrix format will be Markdown or JSON, selected
-in the implementation TASK based on reviewability and testability.
+Usar documentação Markdown e templates mais um script usando apenas a biblioteca padrão (standard-library-only), escolhido durante a implementação. O script deve tolerar diretórios opcionais ausentes e referências sem correspondência, reportando-os como lacunas (gaps) em vez de inventar links. O formato gerado para a matriz será Markdown ou JSON, escolhido na TAREFA de implementação baseando-se em testabilidade e em ser passível de revisão.
 
-## Delivery and operations
+## Entrega e operações
 
-- Rollout plan: publish new artifacts alongside existing templates.
-- Migration plan: existing projects may retain current artifacts; new IDs and
-  references are adopted incrementally.
-- Rollback plan: remove opt-in use of the new script and hook; no data or Git
-  history migration is performed.
-- Monitoring and alerts: N/A — this framework currently has no runtime.
+- Plano de rollout: publicar novos artefatos juntamente com os templates existentes.
+- Plano de migração: projetos existentes podem manter artefatos atuais; os novos IDs e referências são adotados gradualmente.
+- Plano de rollback: remover o uso opcional do novo script e do hook; nenhuma migração de dados ou histórico do Git é realizada.
+- Monitoramento e alertas: N/A — este framework atualmente não possui runtime (tempo de execução).
 
-## Risks and dependencies
+## Riscos e dependências
 
-| Risk or dependency | Impact | Likelihood | Mitigation | Owner |
+| Risco ou dependência | Impacto | Probabilidade | Mitigação | Responsável |
 |---|---|---|---|---|
-| Historical artifacts lack IDs or trailers | Incomplete matrix rows | High | Report gaps explicitly; do not require retroactive rewriting | Implementation Agent |
-| Git is unavailable to the script | Commit data cannot be collected | Low | Exit with an actionable diagnostic while preserving source artifacts | Implementation Agent |
-| Hook convention conflicts with adopter policy | Adoption friction | Medium | Keep hook optional and document installation/override expectations | Documentation Agent |
+| Artefatos históricos sem IDs ou trailers | Linhas de matriz incompletas | Alta | Relatar lacunas explicitamente; não exigir reescrita retroativa | Agente de Implementação |
+| O Git está indisponível para o script | Dados de commit não podem ser coletados | Baixa | Sair do script com um diagnóstico prático preservando os artefatos | Agente de Implementação |
+| Convenção do hook entra em conflito com a política do adotante | Atrito na adoção | Média | Manter o hook opcional e documentar expectativas de instalação/sobrescrita | Agente de Documentação |
 
-## Open questions
+## Questões abertas
 
-| Question | Owner | Due date | Resolution |
+| Questão | Responsável | Data limite | Resolução |
 |---|---|---|---|
-| Should the generated matrix be Markdown, JSON, or both? | Engineering reviewer | Before TASK approval | Open |
+| A matriz gerada deve ser Markdown, JSON, ou ambos? | Revisor de Engenharia | Antes da aprovação da TAREFA (TASK) | Aberta |
 
-## Approval
+## Aprovação
 
-| Role | Name | Decision | Date | Notes |
+| Papel | Nome | Decisão | Data | Notas |
 |---|---|---|---|---|
-| Engineering | | Pending | | |
-| QA | | Pending | | |
-| Human sponsor | User | Approved | 2026-09-15 | Approval recorded in the CLI conversation. |
+| Engenharia | | Pendente | | |
+| QA | | Pendente | | |
+| Patrocinador Humano | Usuário | Aprovado | 2026-09-15 | Aprovação registrada na conversa do CLI. |

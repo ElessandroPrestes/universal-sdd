@@ -1,32 +1,31 @@
-# QA Evidence: <title>
+# Evidência de QA (QA Evidence): <title>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | QA-EVIDENCE-NNN |
-| Status | In progress / Complete |
+| Status | In progress (Em progresso) / Complete (Concluído) |
 | SPEC | SPEC-NNN |
-| TASK | TASK-NNN-XX |
-| QA Owner | |
-| Execution Date | YYYY-MM-DD |
+| TAREFA (TASK) | TASK-NNN-XX |
+| Responsável (QA Owner) | |
+| Data de Execução | YYYY-MM-DD |
 | Build / Commit | |
-| Environment | |
+| Ambiente | |
 
-## Environment configuration
+## Configuração do ambiente
 
-- OS / Architecture:
+- SO / Arquitetura:
 - Runtime / Engine:
-- Dependencies / Service versions:
-- Feature flags / Configurations:
-- Test accounts / Permissions:
-- Test data baseline / Seed:
+- Dependências / Versões de serviço:
+- Feature flags / Configurações:
+- Contas de teste / Permissões:
+- Linha de base dos dados de teste / Seed:
 
-## Acceptance criteria evidence
+## Evidência de critérios de aceitação
 
-Record one structured YAML entry for each acceptance criterion defined in the SPEC.
-Do not infer results or use free prose outside these fields. Every applicable criterion
-must be evaluated.
+Registre uma entrada YAML estruturada para cada critério de aceitação definido na SPEC.
+Não deduza os resultados ou use texto livre (prosa) fora desses campos. Todo critério aplicável deve ser avaliado.
 
 ### AC-001 evidence
 
@@ -35,15 +34,15 @@ criterion_id: AC-001
 status: passed # passed | failed | exception
 execution_type: automated # automated | manual | exploratory | accessibility | visual | performance | security
 execution_date: YYYY-MM-DD
-verified_by: <QA Agent / tester name>
+verified_by: <Agente de QA / nome do testador>
 preconditions_met: true
-action_taken: <exact action or trigger executed>
-observable_result: <observed result matching SPEC expected_result>
+action_taken: <ação exata ou gatilho executado>
+observable_result: <resultado observado correspondendo ao expected_result da SPEC>
 reproducible_evidence:
-  command: <exact command line executed, or N/A>
-  log_or_artifact: <file path, URI, or artifact reference>
-  details: <summary of stdout/stderr, screenshots, or reproduction steps>
-exception_ref: N/A # N/A or approved exception reference
+  command: <linha de comando exata executada, ou N/A>
+  log_or_artifact: <caminho do arquivo, URI, ou referência do artefato>
+  details: <resumo de stdout/stderr, capturas de tela, ou passos de reprodução>
+exception_ref: N/A # N/A ou referência de exceção aprovada
 ```
 
 ### AC-002 evidence
@@ -53,37 +52,37 @@ criterion_id: AC-002
 status: passed # passed | failed | exception
 execution_type: manual # automated | manual | exploratory | accessibility | visual | performance | security
 execution_date: YYYY-MM-DD
-verified_by: <QA Agent / tester name>
+verified_by: <Agente de QA / nome do testador>
 preconditions_met: true
-action_taken: <exact action or trigger executed>
-observable_result: <observed result matching SPEC expected_result>
+action_taken: <ação exata ou gatilho executado>
+observable_result: <resultado observado correspondendo ao expected_result da SPEC>
 reproducible_evidence:
   command: N/A
-  log_or_artifact: <path to test notes, screenshot, or video>
-  details: <step-by-step verification log>
-exception_ref: N/A # N/A or approved exception reference
+  log_or_artifact: <caminho para notas de teste, screenshot (captura de tela) ou vídeo>
+  details: <log de verificação passo a passo>
+exception_ref: N/A # N/A ou referência de exceção aprovada
 ```
 
-## Summary and findings
+## Resumo e descobertas (Summary and findings)
 
-| Total criteria | Passed | Failed | Exception |
+| Total de critérios | Passed (Aprovados) | Failed (Falhos) | Exceção |
 |---|---|---|---|
 | | | | |
 
-### Defects and regressions
+### Defeitos e regressões
 
-| Defect ID | Severity | Criterion | Summary | Status |
+| ID do Defeito | Severidade | Critério | Resumo | Status |
 |---|---|---|---|---|
 | | | | | |
 
-### Residual risks and exceptions
+### Riscos residuais e exceções
 
-| Exception ID | Criterion | Reason | Approved by | Expiry |
+| ID da Exceção | Critério | Motivo | Aprovado por | Expirado em (Expiry) |
 |---|---|---|---|---|
 | | | | | |
 
-## Recommendation
+## Recomendação
 
-- Recommendation: Go / Go with accepted risk / No-go
-- Rationale:
-- QA Owner and Date:
+- Recomendação: Go (Aprovado) / Go with accepted risk (Aprovado com risco aceito) / No-go (Não aprovado)
+- Justificativa (Rationale):
+- Responsável de QA e Data:

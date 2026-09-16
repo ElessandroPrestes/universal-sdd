@@ -1,98 +1,69 @@
-# IDs and traceability
+# IDs e rastreabilidade (IDs and traceability)
 
-## Purpose
+## Propósito
 
-This convention makes the delivery chain auditable without imposing an issue
-tracker, programming language, CI provider, or automatic Git-hook installation.
-It supplements, rather than replaces, human approval and QA evidence.
+Esta convenção torna a cadeia de entrega auditável sem impor um rastreador de problemas (issue tracker), linguagem de programação, provedor de CI ou instalação automática de hook do Git.
+Ela complementa, em vez de substituir, a aprovação humana e as evidências de QA.
 
-## Stable identifiers
+## Identificadores estáveis
 
-| Artifact | Format | Example | Allocation rule |
+| Artefato | Formato | Exemplo | Regra de alocação |
 |---|---|---|---|
-| Specification | `SPEC-NNN` | `SPEC-042` | Use the next unused three-digit sequence in `specs/`. |
-| Specification amendment | `SPEC-NNN-vN` | `SPEC-042-v2` | Keep the base identifier and increment `N` only for an approved SPEC amendment. |
-| Task | `TASK-NNN-XX` | `TASK-042-01` | Reuse the three-digit base SPEC number; increment the two-digit task sequence. |
-| Architecture decision | `ADR-NNN` | `ADR-017` | Use the next unused three-digit sequence in `adr/`. |
+| Especificação (SPEC) | `SPEC-NNN` | `SPEC-042` | Use a próxima sequência de três dígitos não utilizada em `specs/`. |
+| Emenda/Alteração de SPEC | `SPEC-NNN-vN` | `SPEC-042-v2` | Mantenha o identificador base e incremente o `N` apenas para uma alteração de SPEC aprovada. |
+| Tarefa (TASK) | `TASK-NNN-XX` | `TASK-042-01` | Reutilize o número base de três dígitos da SPEC; incremente a sequência da tarefa de dois dígitos. |
+| Decisão de arquitetura (ADR) | `ADR-NNN` | `ADR-017` | Use a próxima sequência de três dígitos não utilizada em `adr/`. |
 
-Identifiers are immutable once an artifact is shared for review. Do not reuse an
-identifier from a superseded, rejected, or deleted artifact. A SPEC amendment
-references its predecessor and is a separate approval artifact; its tasks use
-the amended SPEC identifier in their `Refs:` field.
+Identificadores são imutáveis depois que um artefato é compartilhado para revisão. Não reutilize um identificador de um artefato substituído, rejeitado ou excluído. Uma alteração de SPEC faz referência a seu predecessor e é um artefato de aprovação separado; suas tarefas usam o identificador da SPEC alterada em seus campos `Refs:`.
 
-## SPEC amendment lifecycle
+## Ciclo de vida da alteração de SPEC
 
-An approved SPEC is immutable. A scope change creates the next available
-`SPEC-NNN-vN` artifact; it never overwrites the approved predecessor. Its
-metadata `Refs:` field identifies the exact predecessor, and its approval table
-records a new applicable human approval cycle before a TASK may implement it.
+Uma SPEC aprovada é imutável. Uma mudança de escopo cria o próximo artefato `SPEC-NNN-vN` disponível; ela nunca sobrescreve o predecessor aprovado. Seu campo de metadados `Refs:` identifica o predecessor exato, e sua tabela de aprovação registra um novo ciclo de aprovação humana aplicável antes que uma TAREFA (TASK) possa implementá-la.
 
-Use the amended identifier in all derived TASK `Refs:` fields and commit
-trailers. Preserve the predecessor for audit. Mark it `Superseded` only when
-the approved amendment replaces it; historical tasks, commits, and evidence
-continue to reference the artifact that governed them.
+Use o identificador alterado em todos os campos `Refs:` de TASKs derivadas e nos trailers de commit. Preserve o predecessor para auditoria. Marque-o como `Superseded` (Substituído) somente quando a alteração aprovada o substituir; tarefas, commits e evidências históricas continuam a referenciar o artefato que as governou.
 
-A lightweight clarification does not create a SPEC version and does not edit
-the approved SPEC. It is recorded in a change request linked to the base SPEC,
-with the question, resolution, rationale, and asynchronous approval from the
-same human authority that approved the base SPEC. It is valid only when it does
-not alter observable behavior or acceptance criteria.
+Um esclarecimento simples (lightweight clarification) não cria uma versão da SPEC e não edita a SPEC aprovada. É registrado em uma solicitação de mudança (change request) vinculada à base da SPEC, com a pergunta, resolução, justificativa e aprovação assíncrona da mesma autoridade humana que aprovou a SPEC base. Só é válido quando não altera o comportamento observável ou os critérios de aceitação.
 
-## Required references
+## Referências obrigatórias
 
-New artifacts use the uppercase templates in `templates/`. The legacy
-lowercase templates remain available for compatible adoption.
+Novos artefatos usam os templates em letras maiúsculas em `templates/`. Os templates legados em minúsculas permanecem disponíveis para adoção compatível.
 
-| Artifact | Required `Refs:` content |
+| Artefato | Conteúdo obrigatório de `Refs:` |
 |---|---|
-| SPEC | Discovery, design, and applicable ADR references; record `N/A — <reason>` when an upstream activity does not apply. |
-| TASK | Its exact approved SPEC identifier, applicable acceptance-criterion IDs, and applicable ADRs. |
-| QA or review artifact | The SPEC and TASK identifiers it verifies, using `Spec-Ref:` and `Task-Ref:` lines when no metadata table exists. |
+| SPEC | Referências de descoberta, de design e de ADRs aplicáveis; registre `N/A — <motivo>` quando uma atividade anterior (upstream) não se aplicar. |
+| TASK | O identificador exato da SPEC aprovada, IDs de critérios de aceitação aplicáveis e ADRs aplicáveis. |
+| Artefato de QA ou revisão | Os identificadores de SPEC e TASK que ele verifica, usando as linhas `Spec-Ref:` e `Task-Ref:` quando não existe tabela de metadados. |
 
-References must be explicit. A missing, malformed, or unresolvable reference is
-a traceability gap to be recorded and resolved; neither a person nor a script
-may infer the intended link from matching prose or filenames.
+As referências devem ser explícitas. Uma referência ausente, malformada ou não solucionável é uma lacuna (gap) de rastreabilidade a ser registrada e resolvida; nem uma pessoa nem um script pode inferir o link pretendido a partir de textos em prosa ou nomes de arquivos correspondentes.
 
-## Commit trailers
+## Trailers de commit
 
-Every implementation commit associated with an approved TASK includes exactly
-one trailer for the SPEC and one for the TASK:
+Todo commit de implementação associado a uma TAREFA aprovada inclui exatamente um trailer para a SPEC e um para a TAREFA (TASK):
 
 ```text
 Spec-Ref: SPEC-042
 Task-Ref: TASK-042-01
 ```
 
-Use the exact SPEC version when implementing an amendment, for example
-`Spec-Ref: SPEC-042-v2`. A commit unrelated to an approved TASK omits both
-trailers. Never add only one trailer.
+Use a versão exata da SPEC ao implementar uma alteração, por exemplo, `Spec-Ref: SPEC-042-v2`. Um commit que não está relacionado a uma TAREFA aprovada omite os dois trailers. Nunca adicione apenas um trailer.
 
-To opt in to local validation, copy the supplied hook and make it executable:
+Para optar pela validação local, copie o hook fornecido e torne-o executável:
 
 ```sh
 cp templates/hooks/commit-msg .git/hooks/commit-msg
 chmod +x .git/hooks/commit-msg
 ```
 
-The hook validates presence and format whenever either traceability trailer is
-used. It is intentionally optional so existing adopters can migrate without
-blocking historical or unrelated commits.
+O hook valida a presença e o formato sempre que algum trailer de rastreabilidade for usado. Ele é intencionalmente opcional, para que os adotantes existentes possam migrar sem bloquear commits históricos ou não relacionados.
 
-## Traceability matrix
+## Matriz de rastreabilidade
 
-Generate the repository matrix from its root with:
+Gere a matriz do repositório a partir de sua raiz com:
 
 ```sh
 python3 scripts/generate_traceability.py
 ```
 
-The default output is `docs/traceability-matrix.md`. It lists every discovered
-SPEC, linked TASKs, commits whose trailers refer to the SPEC or linked TASK,
-and linked QA/review records. It also lists gaps such as a TASK without an
-existing SPEC or a SPEC without a TASK or commit reference. The generator reads
-only `specs/`, `tasks/`, `reviews/`, and Git history; it does not edit source
-artifacts or Git history. Use `--output <path>` to write a different matrix.
+A saída padrão (default) é `docs/traceability-matrix.md`. Ela lista cada SPEC descoberta, TAREFAS vinculadas, commits cujos trailers referenciam a SPEC ou a TAREFA vinculada, e registros vinculados de QA/revisão. Ela também lista lacunas, como uma TAREFA sem uma SPEC existente ou uma SPEC sem uma referência de TAREFA ou commit. O gerador lê apenas as pastas `specs/`, `tasks/`, `reviews/` e o histórico do Git; ele não edita os artefatos de origem nem o histórico do Git. Use `--output <path>` para escrever uma matriz diferente.
 
-Markdown is the default format because it is reviewable in any repository. The
-source script contains the deterministic extraction rules, so adopters can
-convert the result to another reporting format without changing source records.
+Markdown é o formato padrão porque pode ser revisado em qualquer repositório. O script de origem contém as regras de extração determinísticas, para que os adotantes possam converter o resultado em outro formato de relatório sem alterar os registros de origem.

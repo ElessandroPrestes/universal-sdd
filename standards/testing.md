@@ -1,88 +1,63 @@
-# Testing Standard
+# Testing Standard (Padrão de Testes)
 
-## Purpose
+## Propósito
 
-Define a risk-based testing strategy that demonstrates conformance to the
-approved SPEC and prevents regressions. Test type and depth depend on impact,
-not only on implementation size.
+Definir uma estratégia de testes baseada em riscos que demonstre a conformidade com a SPEC aprovada e evite regressões. O tipo e a profundidade do teste dependem do impacto, não apenas do tamanho da implementação.
 
-## Test levels
+## Níveis de teste
 
-- **Unit:** isolated business rules, transformations, and component logic.
-- **Integration:** boundaries such as database, service, queue, filesystem, or
-  component integration.
-- **Contract:** compatibility between independently deployed consumers and providers.
-- **End-to-end:** critical journeys across the deployed system.
-- **Manual/exploratory:** emergent behavior, usability, content, recovery, and
-  risks that automation does not adequately cover.
-- **User/business acceptance (UAT):** confirmation by authorized stakeholders
-  that critical business workflows and acceptance outcomes are fit for use.
-- **Non-functional:** accessibility, security, performance, resilience,
-  compatibility, and observability when applicable.
-- **Visual regression:** stable visual contracts for important components and
-  screens, with reviewed baselines and controlled environments.
+- **Unitário (Unit):** regras de negócios isoladas, transformações e lógica de componentes.
+- **Integração (Integration):** fronteiras como banco de dados, serviço, fila, sistema de arquivos ou integração de componentes.
+- **Contrato (Contract):** compatibilidade entre consumidores e provedores implantados de forma independente.
+- **Ponta a ponta (End-to-end):** jornadas críticas através do sistema implantado.
+- **Manual/exploratório:** comportamento emergente, usabilidade, conteúdo, recuperação e riscos que a automação não cobre adequadamente.
+- **Aceitação de usuário/negócio (UAT):** confirmação por partes interessadas autorizadas de que fluxos de trabalho essenciais aos negócios e os resultados de aceitação estão adequados para o uso.
+- **Não funcional:** acessibilidade, segurança, desempenho, resiliência, compatibilidade e observabilidade quando aplicável.
+- **Regressão visual:** contratos visuais estáveis para componentes e telas importantes, com linhas de base (baselines) revisadas e ambientes controlados.
 
-Prefer the lowest reliable test level that proves the behavior. Do not duplicate
-every assertion at every level.
+Prefira o nível de teste confiável mais baixo que prove o comportamento. Não duplique todas as asserções em todos os níveis.
 
-## QA plan and traceability
+## Plano de QA e rastreabilidade
 
-Every material change requires `templates/qa-plan.md`. Each acceptance criterion
-must map to one or more of:
+Toda mudança material requer o `templates/qa-plan.md`. Cada critério de aceitação deve mapear para um ou mais dos seguintes itens:
 
-- an automated test identifier;
-- a manual test case and execution record;
-- an approved reason why validation is not applicable.
+- um identificador de teste automatizado;
+- um caso de teste manual e registro de execução;
+- um motivo aprovado pelo qual a validação não é aplicável.
 
-The mapping must include positive, negative, permission, error, boundary, and
-recovery behavior when relevant.
+O mapeamento deve incluir comportamento positivo, negativo, de permissão, erro, limites (boundary) e recuperação, quando relevante.
 
-## Test environments and data
+## Ambientes e dados de teste
 
-Record environment, build or commit, configuration, dependencies, feature flags,
-accounts, and data prerequisites. Test data must be deterministic, privacy-safe,
-isolated, and recoverable. Never copy sensitive production data without an
-approved and compliant process.
+Registre o ambiente, build ou commit, configuração, dependências, feature flags (bandeiras de funcionalidades), contas e pré-requisitos de dados. Os dados de teste devem ser determinísticos, seguros do ponto de vista de privacidade, isolados e recuperáveis. Nunca copie dados confidenciais de produção sem um processo aprovado e em conformidade.
 
-## Regression and compatibility
+## Regressão e compatibilidade
 
-Use `templates/regression-checklist.md` to select affected journeys, integrations,
-platforms, browsers, devices, locales, and assistive technologies. Regression
-scope must follow the impact analysis; “only changed files” is not sufficient.
+Use `templates/regression-checklist.md` para selecionar jornadas, integrações, plataformas, navegadores, dispositivos, idiomas (locales) e tecnologias assistivas afetadas. O escopo de regressão deve seguir a análise de impacto; “apenas arquivos modificados” não é suficiente.
 
-## Reliability
+## Confiabilidade
 
-A test is useful only when its result is repeatable and diagnosable. A flaky test
-must be recorded with an owner and remediation target. Quarantine requires an
-approved exception and replacement coverage; silent retries must not conceal a
-failure.
+Um teste só é útil quando seu resultado é repetível e diagnosticável. Um teste intermitente (flaky test) deve ser registrado com um proprietário e alvo de correção. A quarentena requer uma exceção aprovada e cobertura de substituição; novas tentativas silenciosas (silent retries) não devem ocultar uma falha.
 
-## Coverage
+## Cobertura
 
-Projects may define numeric coverage thresholds, but line coverage alone is not
-a quality gate. Required coverage includes critical risks, acceptance criteria,
-business rules, failures, and integration boundaries.
+Projetos podem definir limiares (thresholds) numéricos de cobertura, mas a cobertura de linhas por si só não é um quality gate (portão de qualidade). A cobertura exigida inclui riscos críticos, critérios de aceitação, regras de negócios, falhas e fronteiras de integração.
 
-## Defects
+## Defeitos
 
 Use `templates/bug-report.md`.
 
-Severity describes user or system impact:
+A severidade descreve o impacto no usuário ou sistema:
 
-- **S1 Critical:** security or safety incident, widespread outage, unrecoverable
-  data loss, or a critical journey blocked without workaround.
-- **S2 High:** major function or user group blocked; workaround is impractical.
-- **S3 Medium:** degraded behavior with a reasonable workaround.
-- **S4 Low:** minor problem with limited functional impact.
+- **S1 Crítico:** incidente de segurança, interrupção generalizada, perda irreversível de dados ou jornada crítica bloqueada sem solução de contorno (workaround).
+- **S2 Alto:** grande função ou grupo de usuários bloqueado; solução de contorno é impraticável.
+- **S3 Médio:** comportamento degradado com solução de contorno razoável.
+- **S4 Baixo:** pequeno problema com impacto funcional limitado.
 
-Priority describes repair order and is decided separately from severity.
+A prioridade descreve a ordem de reparo e é decidida separadamente da severidade.
 
-## Evidence and results
+## Evidências e resultados
 
-Evidence must include build, environment, command or steps, result, timestamp,
-and relevant logs, reports, screenshots, recordings, or links. A reviewer must be
-able to reproduce the conclusion without relying on undocumented context.
+A evidência deve incluir o build, ambiente, comando ou etapas, resultado, timestamp e logs, relatórios, capturas de tela (screenshots), gravações ou links relevantes. O revisor deve ser capaz de reproduzir a conclusão sem depender de um contexto não documentado.
 
-For changes with structured acceptance criteria, QA evidence must be recorded
-using `templates/QA_EVIDENCE_TEMPLATE.md` to enable structured comparison by the
-QA-Verifier before review.
+Para alterações com critérios de aceitação estruturados, a evidência de QA deve ser registrada usando `templates/QA_EVIDENCE_TEMPLATE.md` para habilitar a comparação estruturada pelo QA-Verifier (Verificador de QA) antes da revisão.

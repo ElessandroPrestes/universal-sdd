@@ -1,118 +1,99 @@
-# SPEC: SPEC amendment protocol
+# SPEC: Protocolo de alteração de SPEC (SPEC amendment protocol)
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | SPEC-003 |
-| Status | Implemented |
-| Owner | Spec Agent |
-| Reviewers | Product / Engineering / QA |
-| Created | 2026-09-15 |
-| Updated | 2026-09-15 |
-| Target release | Unscheduled |
-| Refs: | Discovery: N/A — framework internal change; Design: N/A — no user-facing interface; ADRs: N/A — workflow documentation only |
+| Status | Implementada |
+| Responsável | Agente de Especificação |
+| Revisores | Produto / Engenharia / QA |
+| Criado | 2026-09-15 |
+| Atualizado | 2026-09-15 |
+| Liberação Alvo | Não programado |
+| Refs: | Discovery: N/A — alteração interna do framework; Design: N/A — nenhuma interface voltada para o usuário; ADRs: N/A — apenas documentação de fluxo de trabalho |
 
-## Problem and outcome
+## Problema e resultado
 
-Implementation discoveries currently have no lightweight, auditable route for
-clarifying an approved SPEC. Teams may either bypass the approval record or
-repeat a full approval cycle for wording that does not change observable
-behavior.
+Descobertas na implementação atualmente não têm um caminho leve e auditável para esclarecer uma SPEC aprovada. As equipes podem ignorar o registro de aprovação ou repetir um ciclo completo de aprovação para um texto que não altera o comportamento observável.
 
-The outcome is a reusable change-request record and objective gate criteria
-that distinguish a clarification from a scope change, preserve SPEC versions,
-and ensure any material behavior change returns to human approval.
+O resultado é um registro reutilizável de solicitação de mudança e critérios objetivos de portão (gate criteria) que distinguem um esclarecimento de uma mudança de escopo, preservam as versões da SPEC e garantem que qualquer mudança material de comportamento retorne à aprovação humana.
 
-## Scope
+## Escopo
 
-### In scope
+### No escopo
 
-- Extend the ID and traceability guide with the SPEC amendment lifecycle and
-  `SPEC-NNN-vN` reference rules.
-- Add `templates/CHANGE_REQUEST_TEMPLATE.md` with distinct lightweight
-  clarification and scope-change flows.
-- Add objective classification and approval requirements to
-  `standards/quality-gates.md`.
+- Estender o guia de ID e rastreabilidade com o ciclo de vida de alteração da SPEC e as regras de referência `SPEC-NNN-vN`.
+- Adicionar `templates/CHANGE_REQUEST_TEMPLATE.md` com fluxos distintos para esclarecimentos leves (lightweight clarification) e alterações de escopo.
+- Adicionar requisitos objetivos de classificação e aprovação a `standards/quality-gates.md`.
 
-### Out of scope
+### Fora do escopo
 
-- Changing the existing approval authority, quality-gate sequence, task-ID
-  scheme, or traceability generator.
-- Automatically approving, merging, or applying a change request.
-- Defining issue-tracker, notification, or asynchronous-approval tooling.
+- Alterar a atual autoridade de aprovação, sequência de portões de qualidade, esquema de ID de tarefa ou gerador de rastreabilidade.
+- Aprovar, mesclar ou aplicar automaticamente uma solicitação de alteração.
+- Definir ferramentas de issue-tracker (rastreamento de problemas), notificação ou aprovação assíncrona.
 
-## Functional behavior
+## Comportamento funcional
 
-- A lightweight clarification records the question, resolution, rationale, and
-  asynchronous approval; it cannot modify observable behavior or acceptance
-  criteria.
-- A scope change records impact and creates an amended SPEC version, requiring
-  the full applicable human approval cycle before implementation continues.
-- Quality gates classify a request using explicit observable-behavior and
-  acceptance-criteria tests; uncertainty is treated as a scope change.
+- Um esclarecimento leve (lightweight clarification) registra a pergunta, resolução, justificativa e aprovação assíncrona; não pode modificar o comportamento observável ou os critérios de aceitação.
+- Uma mudança de escopo registra o impacto e cria uma versão de SPEC alterada, exigindo o ciclo completo de aprovação humana aplicável antes de a implementação continuar.
+- Os portões de qualidade classificam uma solicitação usando testes explícitos de comportamento observável e critérios de aceitação; incertezas são tratadas como mudança de escopo.
 
-## Acceptance criteria
+## Critérios de aceitação
 
-### AC-001: SPEC amendments preserve versioned traceability
+### AC-001: Alterações de SPEC preservam a rastreabilidade versionada
 
 ```gherkin
-Given an approved SPEC requires a scope change
-When an amendment is recorded
-Then the guide defines its SPEC-NNN-vN identifier, predecessor reference, and
-approval relationship without overwriting the prior approved SPEC
+Dado que uma SPEC aprovada requer uma mudança de escopo
+Quando uma alteração é registrada
+Então o guia define seu identificador SPEC-NNN-vN, referência do predecessor e relação de aprovação sem sobrescrever a SPEC aprovada anteriormente
 ```
 
-Evidence required: documentation review.
+Evidência requerida: revisão de documentação.
 
-### AC-002: Change requests expose both decision paths
+### AC-002: Solicitações de alteração expõem os dois caminhos de decisão
 
 ```gherkin
-Given an implementation discovery
-When an author uses the change-request template
-Then it can record either a lightweight clarification or a scope change with
-the required impact, decision, and approval fields for that path
+Dado uma descoberta de implementação
+Quando um autor usa o template de solicitação de mudança (change request)
+Então pode-se registrar um esclarecimento leve ou uma mudança de escopo com o impacto, decisão e campos de aprovação necessários para aquele caminho
 ```
 
-Evidence required: template inspection.
+Evidência requerida: inspeção de template.
 
-### AC-003: Classification is a blocking quality gate
+### AC-003: A classificação é um portão de qualidade bloqueador
 
 ```gherkin
-Given a proposed change request
-When its observable behavior or acceptance-criteria impact is uncertain or changed
-Then the quality-gate standard classifies it as a scope change and blocks
-implementation until human approval is recorded
+Dado uma solicitação de alteração proposta
+Quando o seu comportamento observável ou impacto nos critérios de aceitação é incerto ou foi alterado
+Então o padrão de portões de qualidade classifica-a como uma mudança de escopo e bloqueia a implementação até que a aprovação humana seja registrada
 ```
 
-Evidence required: standards review.
+Evidência requerida: revisão de padrões.
 
-## Technical approach
+## Abordagem técnica
 
-Use Markdown documentation and a reusable template only. Preserve `SPEC-NNN`
-as the base identifier and add `-vN` only for approved scope amendments. The
-implementation will explicitly record that a clarification is not a new SPEC
-version, while a scope change never replaces the approved predecessor.
+Usar apenas documentação Markdown e um template reutilizável. Preservar `SPEC-NNN` como o identificador base e adicionar `-vN` apenas para alterações de escopo aprovadas. A implementação registrará explicitamente que um esclarecimento não é uma nova versão de SPEC, enquanto uma mudança de escopo nunca substitui o predecessor aprovado.
 
-## Risks and dependencies
+## Riscos e dependências
 
-| Risk or dependency | Impact | Likelihood | Mitigation | Owner |
+| Risco ou dependência | Impacto | Probabilidade | Mitigação | Responsável |
 |---|---|---|---|---|
-| Clarifications are mislabeled to bypass approval | Undocumented scope expansion | Medium | Use objective gate questions and classify uncertainty as scope change | QA Agent |
-| Versioning conflicts with task or commit references | Broken traceability | Low | Document exact references and preserve prior artifacts | Implementation Agent |
-| Async approval lacks durable evidence | Unverifiable decision | Medium | Require approver, timestamp, and stable approval reference | Spec Agent |
+| Esclarecimentos rotulados erroneamente para burlar a aprovação | Expansão de escopo não documentada | Média | Usar perguntas objetivas de portão e classificar incertezas como mudança de escopo | Agente de QA |
+| Conflitos de versionamento de tarefa ou de commit | Rastreabilidade quebrada | Baixa | Documentar referências exatas e preservar artefatos anteriores | Agente de Implementação |
+| A aprovação assíncrona carece de evidência durável | Decisão não verificável | Média | Requerir aprovador, timestamp e referência de aprovação estável | Agente de Especificação |
 
-## Open questions
+## Questões abertas
 
-| Question | Owner | Due date | Resolution |
+| Questão | Responsável | Data limite | Resolução |
 |---|---|---|---|
-| Which human roles may give asynchronous clarification approval? | Product owner | 2026-09-15 | Resolved: the same human authority that approved the base SPEC. |
+| Quais funções humanas podem dar aprovação assíncrona a esclarecimentos? | Product owner | 2026-09-15 | Resolvido: a mesma autoridade humana que aprovou a SPEC base. |
 
-## Approval
+## Aprovação
 
-| Role | Name | Decision | Date | Notes |
+| Papel | Nome | Decisão | Data | Notas |
 |---|---|---|---|---|
-| Product | | Pending | | |
-| Engineering | | Pending | | |
-| QA | | Pending | | |
-| Human sponsor | User | Approved | 2026-09-15 | Approval recorded in the CLI conversation. |
+| Produto | | Pendente | | |
+| Engenharia | | Pendente | | |
+| QA | | Pendente | | |
+| Patrocinador Humano | Usuário | Aprovado | 2026-09-15 | Aprovação registrada na conversa do CLI. |

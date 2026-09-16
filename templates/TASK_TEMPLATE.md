@@ -1,55 +1,55 @@
-# TASK: <title>
+# TAREFA (TASK): <title>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | TASK-NNN-XX |
-| Status | Planned / Ready / In progress / In review / Done / Blocked |
-| Owner | |
-| Refs: | SPEC: SPEC-NNN; Acceptance criteria: AC-001; ADRs: ADR-NNN or N/A — reason |
-| Dependencies | |
+| Status | Planned (Planejado) / Ready (Pronto) / In progress (Em progresso) / In review (Em revisão) / Done (Concluído) / Blocked (Bloqueado) |
+| Responsável | |
+| Refs: | SPEC: SPEC-NNN; Critérios de aceitação: AC-001; ADRs: ADR-NNN ou N/A — motivo |
+| Dependências | |
 
-## Objective
+## Objetivo
 
-Describe the verifiable increment produced by this task.
+Descreva o incremento verificável produzido por esta tarefa.
 
-## Scope
+## Escopo
 
-### Included
-
--
-
-### Excluded
+### Incluído
 
 -
 
-## Approach and impact
+### Excluído
 
-- Likely files or components:
-- Data, contracts, or migrations:
-- Risks and safeguards:
-- Applicable ADRs and standards:
+-
 
-## Steps
+## Abordagem e impacto
+
+- Prováveis arquivos ou componentes:
+- Dados, contratos ou migrações:
+- Riscos e salvaguardas (safeguards):
+- ADRs e padrões aplicáveis:
+
+## Etapas (Steps)
 
 - [ ]
 
-## Validation
+## Validação
 
-| Criterion/risk | Test, command, or review | Expected evidence |
+| Critério/risco | Teste, comando, ou revisão | Evidência esperada |
 |---|---|---|
 | | | |
 
-## Completion condition
+## Condição de conclusão
 
-- [ ] Scope implemented without expansion.
-- [ ] Applicable tests and validations pass.
-- [ ] Documentation and traceability are updated.
-- [ ] Limitations and deviations are recorded.
+- [ ] Escopo implementado sem expansão.
+- [ ] Testes e validações aplicáveis foram aprovados.
+- [ ] A documentação e rastreabilidade estão atualizadas.
+- [ ] Limitações e desvios estão registrados.
 
-## Result
+## Resultado
 
-- Changes made:
-- Evidence:
-- Open work or blockers:
+- Mudanças feitas:
+- Evidência:
+- Trabalho em aberto ou bloqueios (blockers):

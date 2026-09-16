@@ -1,79 +1,37 @@
-# Context budget by phase
+# Orçamento de contexto por fase (Context budget by phase)
 
-## Shared rules
+## Regras compartilhadas
 
-Start with `AGENTS.md`, this guide, and the short `PROJECT.md` index. Load a
-knowledge module only when the active SPEC names it in `Refs:` or a material
-risk is documented with the module and reason. An index is retrieval metadata,
-not a reason to load every listed module. Never replace a required artifact
-with a repository-wide search or an inferred summary.
+Comece com o arquivo `AGENTS.md`, este guia, e o índice curto `PROJECT.md`. Carregue um módulo de conhecimento apenas quando a SPEC ativa o nomear em `Refs:` ou um risco material for documentado com o módulo e o motivo. Um índice é apenas metadado de recuperação (retrieval), não um motivo para carregar todo módulo listado nele. Nunca substitua um artefato obrigatório por uma busca em todo o repositório ou um resumo inferido.
 
-## Discovery
+## Descoberta (Discovery)
 
-**Must load:** the incoming request; `AGENTS.md`; `PROJECT.md` sections
-“Current state”, “Canonical hierarchy”, and “Context index”; and the metadata
-table in `knowledge/INDEX.md`.
+**Deve carregar:** a solicitação de entrada; `AGENTS.md`; `PROJECT.md` nas seções "Current state" (Estado atual), "Canonical hierarchy" (Hierarquia canônica) e "Context index" (Índice de contexto); e a tabela de metadados em `knowledge/INDEX.md`.
 
-**May load:** only modules selected by the request's domain or a recorded risk;
-existing research directly linked by the request.
+**Pode carregar:** apenas módulos selecionados pelo domínio da solicitação ou um risco registrado; pesquisa existente diretamente vinculada pela solicitação.
 
-**Do not load:** future SPECs, TASKs, all modules, or unrelated implementation
-history.
+**Não carregar:** futuras SPECs, TASKs, todos os módulos ou implementações não relacionadas.
 
-## Architecture
+## Design e Especificação (Design and Specification)
 
-**Must load:** approved discovery output; `AGENTS.md`; the same three
-`PROJECT.md` sections; `knowledge/INDEX.md` metadata; modules selected by the
-discovery output; and ADRs directly relevant to the decision.
+**Deve carregar:** a solicitação de entrada ou aprovação de descoberta; `AGENTS.md`; padrões de UX/UI aplicáveis e o documento do sistema de design; a SPEC em rascunho.
 
-**May load:** applicable standards named by the discovery output and existing
-architecture evidence for the affected boundary.
+**Pode carregar:** artefatos de UX vinculados; módulos limitados de segurança ou arquitetura se o risco for identificado; um ADR.
 
-**Do not load:** the full knowledge base, unrelated ADRs, or all repository code.
+**Não carregar:** tarefas, testes, código-fonte.
 
-## Implementation
+## Implementação (Implementation)
 
-**Must load:** active approved SPEC in full; assigned TASK in full; `AGENTS.md`;
-`PROJECT.md` sections “Canonical hierarchy” and “Context index”; modules named
-in the SPEC's `Refs:`; linked ADRs; and standards named by the TASK.
+**Deve carregar:** `AGENTS.md`; a SPEC aprovada e o design; a TASK ativa; diretrizes (guidelines) aplicáveis de codificação, banco de dados ou segurança e ferramentas limitadas de repositório (por exemplo, configuração de linter).
 
-**May load:** files directly identified by the TASK and additional modules only
-with a recorded material-risk exception.
+**Pode carregar:** os arquivos do código-fonte e o esquema (schema) identificados pela TASK ou varredura pontual (spot scanning); `docs/traceability-matrix.md` se o rastreamento precisar de atualização.
 
-**Do not load:** unreferenced knowledge modules, unrelated SPECs or TASKs, or
-the repository as undifferentiated context.
+**Não carregar:** toda a base de código, módulos não relacionados em `knowledge/`.
 
-## QA
+## Teste, Revisão e QA (Testing, Review, and QA)
 
-**Must load:** active SPEC sections “Metadata”, “Scope”, “Acceptance criteria”,
-“Non-functional requirements”, and “Risks and dependencies”; assigned TASK;
-QA plan and available evidence; `AGENTS.md`; `PROJECT.md` section “Context
-index”; referenced modules; and `standards/testing.md` plus
-`standards/quality-gates.md`.
+**Deve carregar:** a SPEC aprovada; a TASK e as evidências; as ferramentas de teste e padrões de portão de qualidade (quality gate); PR (Pull Request) e arquivos modificados; este guia de orçamento de contexto; `AGENTS.md`.
 
-**May load:** linked ADRs, affected implementation files, and risk-relevant
-standards such as accessibility or security.
+**Pode carregar:** logs e rastreamentos (traces) vinculados; histórico restrito do Git se investigar uma regressão.
 
-**Do not load:** unreferenced modules, unrelated test suites, or all prior QA
-evidence.
-
-## Review
-
-**Must load:** active SPEC sections “Metadata”, “Scope”, “Acceptance criteria”,
-“Technical approach”, “Risks and dependencies”, and “Approval”; assigned TASK;
-the changed-file diff; QA evidence; `AGENTS.md`; `PROJECT.md` section “Context
-index”; referenced modules; linked ADRs; and applicable standards.
-
-**May load:** narrowly scoped regression evidence and modules required to assess
-a documented risk.
-
-**Do not load:** every module, unrelated change history, or broad repository
-content not needed to evaluate the diff.
-
-## Migration for adopters
-
-Keep an existing monolithic `PROJECT.md` as the entry point during migration.
-First create `knowledge/INDEX.md`, then move one current-state domain at a time
-to `knowledge/modules/`, replacing the moved prose with a link in the index.
-Preserve all existing paths and mark the migration complete only after each old
-category is represented by the index or a linked module.
+**Não carregar:** contexto global, módulos não referenciados na SPEC.

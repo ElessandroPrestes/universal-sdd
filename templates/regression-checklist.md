@@ -1,50 +1,49 @@
-# Regression Checklist: <release/change>
+# Checklist de Regressão (Regression Checklist): <release/change>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | REG-000 |
 | Build/commit | |
-| QA owner | |
-| Impact analysis | |
+| Responsável (QA owner) | |
+| Análise de impacto | |
 
-## Scope selection
+## Seleção de escopo
 
-Explain how changed behavior, dependencies, data, permissions, integrations, and
-shared components determined this regression scope.
+Explique como o comportamento alterado, as dependências, dados, permissões, integrações e componentes compartilhados determinaram este escopo de regressão.
 
 ## Checklist
 
-| Area | Scenario/journey | Platform/data variant | Test/evidence | Result | Defect |
+| Área | Cenário/jornada | Plataforma/variante de dados | Teste/evidência | Resultado | Defeito |
 |---|---|---|---|---|---|
-| Critical journey | | | | Pending | |
-| Authentication/session | | | | Pending | |
-| Authorization/roles | | | | Pending | |
-| Data create/read/update/delete | | | | Pending | |
-| Validation/error/recovery | | | | Pending | |
-| Integrations/contracts | | | | Pending | |
-| Notifications/jobs | | | | Pending | |
-| Shared UI components | | | | Pending | |
-| Responsive/compatibility | | | | Pending | |
-| Accessibility | | | | Pending | |
-| Localization/content | | | | Pending | |
-| Security/privacy | | | | Pending | |
-| Performance/reliability | | | | Pending | |
-| Observability/operations | | | | Pending | |
+| Jornada crítica | | | | Pendente | |
+| Autenticação/sessão | | | | Pendente | |
+| Autorização/papéis (roles) | | | | Pendente | |
+| Dados (criar/ler/atualizar/excluir) | | | | Pendente | |
+| Validação/erro/recuperação | | | | Pendente | |
+| Integrações/contratos | | | | Pendente | |
+| Notificações/jobs | | | | Pendente | |
+| Componentes de UI compartilhados | | | | Pendente | |
+| Responsivo/compatibilidade | | | | Pendente | |
+| Acessibilidade | | | | Pendente | |
+| Localização/conteúdo | | | | Pendente | |
+| Segurança/privacidade | | | | Pendente | |
+| Desempenho/confiabilidade | | | | Pendente | |
+| Observabilidade/operações | | | | Pendente | |
 
-Remove or mark an area N/A only with a reason.
+Remova ou marque uma área como N/A (não aplicável) apenas com um motivo.
 
-## Automated suite
+## Suíte automatizada
 
-| Suite/command | Environment | Result | Report |
+| Suíte/comando | Ambiente | Resultado | Relatório |
 |---|---|---|---|
 | | | | |
 
-## Summary
+## Resumo
 
-- Passed/failed/blocked/not run:
-- Scope limitations:
-- Open defects:
-- Residual risk:
-- Recommendation and approver:
+- Aprovados/falhos/bloqueados/não executados:
+- Limitações de escopo:
+- Defeitos abertos:
+- Risco residual:
+- Recomendação e aprovador:

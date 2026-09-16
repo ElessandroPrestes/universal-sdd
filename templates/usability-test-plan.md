@@ -1,77 +1,76 @@
-# Usability Test Plan: <study>
+# Plano de Teste de Usabilidade (Usability Test Plan): <study>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | UT-000 |
-| Owner | |
-| Date/window | |
-| Related UX brief/design/SPEC | |
-| Status | Planned / Running / Complete |
+| Responsável | |
+| Data/janela | |
+| Briefing de UX/design/SPEC relacionado | |
+| Status | Planned (Planejado) / Running (Em execução) / Complete (Concluído) |
 
-## Research questions and decisions
+## Questões de pesquisa e decisões
 
-What must be learned, and which product or design decision will each finding
-inform?
+O que deve ser aprendido, e que decisão de produto ou design cada descoberta (finding) informará?
 
-## Method and limitations
+## Método e limitações
 
-- Moderated/unmoderated:
-- Remote/in person:
-- Prototype or build revision:
-- Data collection and consent:
-- Known limitations and sources of bias:
+- Moderado/não moderado:
+- Remoto/presencial:
+- Protótipo ou revisão de build:
+- Coleta de dados e consentimento:
+- Limitações conhecidas e fontes de viés (bias):
 
-## Participants
+## Participantes
 
-| Target group | Inclusion criteria | Exclusion criteria | Planned count | Recruited count |
+| Grupo alvo (Target group) | Critérios de inclusão | Critérios de exclusão | Contagem planejada | Contagem recrutada |
 |---|---|---|---|---|
 | | | | | |
 
-Do not claim representativeness beyond the actual sample.
+Não reivindique representatividade além da amostra real.
 
-## Scenarios and tasks
+## Cenários e tarefas
 
-| ID | Scenario/task | Starting state | Success | Failure/abandonment | Measure |
+| ID | Cenário/tarefa | Estado inicial | Sucesso | Falha/abandono | Medida |
 |---|---|---|---|---|---|
 | T-01 | | | | | |
 
-Avoid leading instructions that reveal the intended interaction.
+Evite instruções indutivas (leading instructions) que revelem a interação pretendida.
 
-## Measures
+## Medidas
 
-- task completion and critical errors;
-- time or effort when meaningful;
-- assistance required;
-- observed confusion, recovery, and abandonment;
-- participant-reported confidence or satisfaction;
-- accessibility barriers.
+- conclusão da tarefa e erros críticos;
+- tempo ou esforço, quando significativo;
+- assistência necessária;
+- confusão observada, recuperação e abandono;
+- confiança ou satisfação relatada pelo participante;
+- barreiras de acessibilidade.
 
-## Session guide
+## Guia da sessão
 
-Include introduction, consent, neutral prompts, follow-up questions, and closing.
+Inclua introdução, consentimento, prompts neutros (neutral prompts), perguntas de acompanhamento (follow-up) e encerramento.
 
-## Findings
+## Descobertas (Findings)
 
-| ID | Observation/evidence | Affected participants | Severity | Decision/recommendation | Owner |
+| ID | Observação/evidência | Participantes afetados | Severidade | Decisão/recomendação | Responsável |
 |---|---|---|---|---|---|
 | F-01 | | | | | |
 
-Record observations separately from interpretation.
+Registre as observações separadamente da interpretação.
 
-## Outcome
+## Resultado
 
-- Questions answered:
-- Questions still open:
-- Design changes:
-- Accepted risks:
-- Follow-up research:
+- Questões respondidas:
+- Questões ainda abertas:
+- Mudanças de design:
+- Riscos aceitos:
+- Pesquisa de acompanhamento (Follow-up research):
 
-## Approval
+## Aprovação
 
-| Role | Name | Decision | Date |
+| Papel | Nome | Decisão | Data |
 |---|---|---|---|
-| UX Research | | | |
+| Pesquisa de UX | | | |
 | Design | | | |
-| Product | | | |
+| Produto | | | |

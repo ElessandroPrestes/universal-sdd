@@ -1,30 +1,24 @@
-# Framework overview
+# Visão Geral do Framework (Framework overview)
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
-| Domain | Product identity and operating constraints |
-| Owner | Documentation |
-| Reviewed | 2026-09-15 |
-| Applicability | Any Universal SDD adoption or framework change |
-| Source of truth | `PROJECT.md` context index |
+| Domínio | Identidade do produto e restrições operacionais |
+| Responsável | Documentação |
+| Revisado em | 2026-09-15 |
+| Aplicabilidade | Qualquer adoção do Universal SDD ou mudança do framework |
+| Fonte da verdade | Índice de contexto do `PROJECT.md` |
 
-## Identity and users
+## Identidade e usuários
 
-Universal SDD Framework (USF) is a language- and AI-agnostic documentation
-framework for Spec-Driven Development. It serves software-development
-governance and delivery practitioners in product, design, engineering, QA,
-accessibility, architecture, documentation, and release, working with people
-or AI agents.
+O Universal SDD Framework (USF) é um framework de documentação agnóstico em relação à linguagem e à IA para o Desenvolvimento Orientado por Especificação (Spec-Driven Development). Ele atende a profissionais de governança e entrega de desenvolvimento de software em produto, design, engenharia, QA, acessibilidade, arquitetura, documentação e lançamento (release), trabalhando com pessoas ou agentes de IA.
 
-Its intended outcome is that approved requirements become traceable
-implementation with reproducible quality evidence.
+Seu resultado pretendido é que os requisitos aprovados se tornem implementações rastreáveis ​​com evidências de qualidade reprodutíveis.
 
-## Operating constraints
+## Restrições operacionais
 
-- Documented version: pre-1.0 development draft; status: active development.
-- Runtime: none; this project consists of Markdown documentation.
-- Dependencies: none.
-- No programming language, application framework, AI-vendor behavior, design,
-  issue-tracking, test-management, or CI vendor is mandatory.
+- Versão documentada: rascunho de desenvolvimento anterior à 1.0; status: desenvolvimento ativo.
+- Tempo de execução (Runtime): nenhum; este projeto consiste em documentação Markdown.
+- Dependências: nenhuma.
+- Nenhuma linguagem de programação, framework de aplicação, comportamento de fornecedor de IA, design, rastreamento de problemas, gerenciamento de testes ou fornecedor de CI (Integração Contínua) é obrigatório.

@@ -1,97 +1,93 @@
-# Design Specification: <feature>
+# Especificação de Design (Design Specification): <feature>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | DESIGN-000 |
-| Status | Draft / In review / Approved / Implemented / Superseded |
-| Owner | |
-| UX brief | |
-| User flow | |
-| Prototype or design revision | |
-| Related SPEC | |
-| Design system revision | |
+| Status | Draft (Rascunho) / In review (Em revisão) / Approved (Aprovado) / Implemented (Implementado) / Superseded (Substituído) |
+| Responsável | |
+| Briefing de UX | |
+| Fluxo de usuário (User flow) | |
+| Protótipo ou revisão de design | |
+| SPEC relacionada | |
+| Revisão do design system | |
 
-## Design intent
+## Intenção de design
 
-Summarize the user goal, selected approach, important tradeoffs, and rejected
-alternatives.
+Resuma o objetivo do usuário, a abordagem selecionada, os compromissos (tradeoffs) importantes e as alternativas rejeitadas.
 
-## Screens and surfaces
+## Telas e superfícies (Screens and surfaces)
 
-| ID | Surface | Purpose | Entry and exit | Reference |
+| ID | Superfície | Propósito | Entrada e saída | Referência |
 |---|---|---|---|---|
 | UI-01 | | | | |
 
-## Components and tokens
+## Componentes e tokens
 
-| Element | Approved component | Variant or properties | Semantic tokens | New or exception |
+| Elemento | Componente aprovado | Variante ou propriedades | Tokens semânticos | Novo ou exceção |
 |---|---|---|---|---|
 | | | | | |
 
-## State matrix
+## Matriz de estado
 
-| Surface or component | Initial | Loading | Empty | Success | Validation/error | Offline/timeout | Permission |
+| Superfície ou componente | Inicial | Carregando | Vazio | Sucesso | Validação/erro | Offline/timeout | Permissão |
 |---|---|---|---|---|---|---|---|
 | | | | | | | | |
 
-Also document focus, hover, pressed, selected, disabled, read-only, expanded,
-destructive confirmation, cancellation, and undo states where applicable.
+Também documente estados de foco (focus), passar o mouse (hover), pressionado, selecionado, desabilitado (disabled), somente leitura (read-only), expandido, confirmação destrutiva, cancelamento e desfazer (undo) quando aplicável.
 
-## Interaction specification
+## Especificação de interação
 
-| Trigger/input | Behavior | Feedback | Focus result | Error/recovery | Criterion |
+| Gatilho/entrada | Comportamento | Feedback | Resultado do foco | Erro/recuperação | Critério |
 |---|---|---|---|---|---|
 | | | | | | |
 
-## Responsive and platform rules
+## Regras responsivas e de plataforma
 
-| Viewport/device/input | Layout and reflow | Navigation | Content changes | Unsupported behavior |
+| Viewport/dispositivo/entrada | Layout e reflow | Navegação | Alterações de conteúdo | Comportamento não suportado |
 |---|---|---|---|---|
 | | | | | |
 
-Define text scaling, zoom, orientation, virtual keyboard, touch target, pointer,
-keyboard, and reduced-motion behavior where applicable.
+Defina escala de texto, zoom, orientação, teclado virtual, alvo de toque, ponteiro, teclado e comportamento de movimento reduzido (reduced-motion) quando aplicável.
 
-## Content specification
+## Especificação de conteúdo
 
-| Context | Final content | Variables/limits | Localization notes |
+| Contexto | Conteúdo final | Variáveis/limites | Notas de localização |
 |---|---|---|---|
 | | | | |
 
-## Accessibility annotations
+## Anotações de acessibilidade
 
-| Element or flow | Semantic name/role/value | Keyboard and focus | Announcement | Contrast/alternative | Criterion |
+| Elemento ou fluxo | Nome semântico/papel/valor | Teclado e foco | Anúncio (Announcement) | Contraste/alternativa | Critério |
 |---|---|---|---|---|---|
 | | | | | | |
 
-## Assets and data
+## Ativos e dados (Assets and data)
 
-List canonical asset paths, formats, dimensions, cropping behavior, alternatives,
-realistic data cases, long content, missing content, and privacy constraints.
+Liste caminhos canônicos de ativos (assets), formatos, dimensões, comportamento de corte (cropping), alternativas, casos de dados realistas, conteúdo longo, conteúdo ausente e restrições de privacidade.
 
-## Analytics
+## Analytics (Análises)
 
-| Event | Trigger | Properties | Consent/privacy notes |
+| Evento | Gatilho | Propriedades | Notas de consentimento/privacidade |
 |---|---|---|---|
 | | | | |
 
-## Design acceptance criteria
+## Critérios de aceitação de design
 
 - DAC-001:
 
-## Open issues and exceptions
+## Questões abertas e exceções
 
-| ID | Issue | Impact | Owner | Resolution or approved exception |
+| ID | Problema | Impacto | Responsável | Resolução ou exceção aprovada |
 |---|---|---|---|---|
 | | | | | |
 
-## Approval
+## Aprovação
 
-| Role | Name | Decision | Revision | Date | Notes |
+| Papel | Nome | Decisão | Revisão | Data | Notas |
 |---|---|---|---|---|---|
-| Product | | | | | |
+| Produto | | | | | |
 | Design | | | | | |
-| Engineering | | | | | |
-| Accessibility | | | | | |
+| Engenharia | | | | | |
+| Acessibilidade | | | | | |

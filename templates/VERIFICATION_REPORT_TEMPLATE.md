@@ -1,44 +1,43 @@
-# QA Verification Report: <title>
+# Relatório de Verificação de QA (QA Verification Report): <title>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | VR-NNN |
-| Status | Passed / Blocked |
+| Status | Passed (Aprovado) / Blocked (Bloqueado) |
 | SPEC | SPEC-NNN |
-| TASK | TASK-NNN-XX |
-| Evidence Ref | <path to QA evidence file> |
-| Verifier | QA-Verifier |
-| Execution Date | YYYY-MM-DD |
+| TAREFA (TASK) | TASK-NNN-XX |
+| Evidência Ref | <caminho para o arquivo de evidência de QA> |
+| Verificador | QA-Verifier |
+| Data de Execução | YYYY-MM-DD |
 
-## Comparison results
+## Resultados da comparação
 
-QA-Verifier compares every structured criterion in the approved SPEC against the
-structured QA evidence. Each item is classified as:
+O QA-Verifier compara cada critério estruturado na SPEC aprovada com a evidência estruturada de QA. Cada item é classificado como:
 
-- **verified:** evidence matches the criterion, preconditions, action, and expected result, with passing status or approved exception.
-- **missing:** no QA evidence entry exists for this criterion ID.
-- **unmapped:** evidence cannot be linked exactly to one approved criterion ID.
-- **failed:** linked evidence records a failed result.
-- **ambiguous:** criterion or evidence lacks sufficient structured detail to confirm verification.
+- **verified (verificado):** a evidência corresponde ao critério, pré-condições, ação e resultado esperado, com o status aprovado (passing) ou com uma exceção aprovada.
+- **missing (ausente):** não existe uma entrada de evidência de QA para este ID de critério.
+- **unmapped (não mapeado):** a evidência não pode ser vinculada exatamente a um ID de critério aprovado.
+- **failed (falhou):** a evidência vinculada registra um resultado reprovado.
+- **ambiguous (ambíguo):** o critério ou a evidência não possui detalhes estruturados suficientes para confirmar a verificação.
 
-| Criterion ID | SPEC Expected Result | Evidence Status | Verifier Classification | Notes / Finding |
+| ID do Critério | Resultado Esperado da SPEC | Status da Evidência | Classificação do Verificador | Notas / Achado |
 |---|---|---|---|---|
 | AC-001 | | passed | verified | |
 | AC-002 | | passed | verified | |
 
-## Unresolved findings
+## Descobertas não resolvidas (Unresolved findings)
 
-List every missing, unmapped, failed, or ambiguous item. Any open finding blocks Code Review.
+Liste cada item ausente, não mapeado, falho ou ambíguo. Qualquer descoberta em aberto bloqueia a Revisão de Código (Code Review).
 
-| Finding ID | Criterion | Classification | Description | Required action |
+| ID da Descoberta | Critério | Classificação | Descrição | Ação requerida |
 |---|---|---|---|---|
 | | | | | |
 
-## Gate 3 decision
+## Decisão do Portão 3 (Gate 3 decision)
 
-- Gate status: **Pass** (Ready for Code Review) / **Blocked** (Findings open)
-- Open findings count: 0
-- Authorized exceptions: None / <reference>
-- Verifier signature and timestamp:
+- Status do Portão: **Pass** (Pronto para Code Review) / **Blocked** (Descobertas em aberto)
+- Contagem de descobertas abertas: 0
+- Exceções autorizadas: Nenhuma / <referência>
+- Assinatura do verificador e timestamp:

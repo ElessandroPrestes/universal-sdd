@@ -1,128 +1,108 @@
-# SPEC: Structured QA evidence schema and contract
+# SPEC: Esquema e contrato de evidência de QA estruturado (Structured QA evidence schema and contract)
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | SPEC-005 |
-| Status | Implemented |
-| Owner | Spec Agent |
-| Reviewers | QA / Engineering |
-| Created | 2026-09-15 |
-| Updated | 2026-09-15 |
-| Target release | Unscheduled |
-| Refs: | Discovery: N/A — framework internal change; Design: N/A — no user-facing interface; ADRs: N/A — quality workflow documentation only |
+| Status | Implementada |
+| Responsável | Agente de Especificação |
+| Revisores | QA / Engenharia |
+| Criado | 2026-09-15 |
+| Atualizado | 2026-09-15 |
+| Liberação Alvo | Não programado |
+| Refs: | Discovery: N/A — alteração interna do framework; Design: N/A — nenhuma interface voltada para o usuário; ADRs: N/A — apenas documentação de fluxo de trabalho de qualidade |
 
-## Problem and outcome
+## Problema e resultado
 
-Acceptance criteria in SPEC-004 became machine-consumable, and the QA-Verifier
-workflow was defined to compare criteria against evidence. However, without a
-structured QA evidence contract and template, verification could not be
-performed deterministically, leaving QA-Verifier in a blocked, non-operational
-state.
+Os critérios de aceitação no SPEC-004 tornaram-se legíveis por máquina, e o fluxo de trabalho do QA-Verifier foi definido para comparar os critérios com as evidências. No entanto, sem um contrato e um template de evidências estruturadas de QA, a verificação não pôde ser realizada de forma determinística, deixando o QA-Verifier em um estado bloqueado e não operacional.
 
-The outcome is a structured QA evidence schema and template
-(`templates/QA_EVIDENCE_TEMPLATE.md`), a structured verification report template
-(`templates/VERIFICATION_REPORT_TEMPLATE.md`), and updated workflow and testing
-standards that make the QA-Verifier operational for active changes.
+O resultado é um esquema e um template de evidência estruturada de QA (`templates/QA_EVIDENCE_TEMPLATE.md`), um template de relatório de verificação estruturado (`templates/VERIFICATION_REPORT_TEMPLATE.md`) e padrões de teste e fluxo de trabalho atualizados que tornam o QA-Verifier operacional para mudanças ativas.
 
-## Scope
+## Escopo
 
-### In scope
+### No escopo
 
-- Create `templates/QA_EVIDENCE_TEMPLATE.md` with structured YAML blocks per
-  acceptance criterion result.
-- Create `templates/VERIFICATION_REPORT_TEMPLATE.md` with reproducible Gate 3
-  comparison outputs.
-- Update `workflows/verification.md` to reference the structured evidence
-  template and declare the verification step operational.
-- Update `standards/testing.md` to require structured QA evidence for acceptance
-  criteria validation.
-- Add structural tests in `tests/test_structured_qa_evidence.py`.
+- Criar `templates/QA_EVIDENCE_TEMPLATE.md` com blocos YAML estruturados por resultado de critério de aceitação.
+- Criar `templates/VERIFICATION_REPORT_TEMPLATE.md` com saídas de comparação reproduzíveis do Portão 3.
+- Atualizar `workflows/verification.md` para referenciar o template de evidência estruturada e declarar a etapa de verificação operacional.
+- Atualizar `standards/testing.md` para exigir evidências estruturadas de QA para a validação dos critérios de aceitação.
+- Adicionar testes estruturais em `tests/test_structured_qa_evidence.py`.
 
-### Out of scope
+### Fora do escopo
 
-- Implementing automated parser scripts or CI runner executables.
-- Retrofitting past completed SPECs with structured evidence files.
-- Changing task IDs, commit trailers, or approval authorities.
+- Implementar scripts de analisador (parser) automatizado ou executáveis ​​de CI runner.
+- Retrofit (adaptar) SPECs concluídas passadas com arquivos de evidências estruturados.
+- Alterar IDs de tarefas, trailers de commit ou autoridades de aprovação.
 
-## Functional behavior
+## Comportamento funcional
 
-- Each change requiring QA validation records evidence in a structured document
-  based on `templates/QA_EVIDENCE_TEMPLATE.md`.
-- Every applicable criterion `AC-NNN` from the SPEC must have an entry containing:
-  `criterion_id`, `status` (`passed`, `failed`, or `exception`), `execution_type`,
-  `execution_date`, `verified_by`, and `reproducible_evidence`.
-- The QA-Verifier workflow step in `workflows/verification.md` compares the
-  SPEC's structured criteria against the structured QA evidence.
-- The QA-Verifier produces a report using `templates/VERIFICATION_REPORT_TEMPLATE.md`
-  classifying any discrepancies as `missing`, `unmapped`, `failed`, or `ambiguous`.
-- Code Review cannot proceed while applicable QA-Verifier findings remain open.
+- Cada mudança que requer validação de QA registra evidências em um documento estruturado com base em `templates/QA_EVIDENCE_TEMPLATE.md`.
+- Cada critério aplicável `AC-NNN` da SPEC deve ter uma entrada contendo: `criterion_id`, `status` (`passed` [aprovado], `failed` [falhou] ou `exception` [exceção]), `execution_type` (tipo de execução), `execution_date` (data de execução), `verified_by` (verificado por) e `reproducible_evidence` (evidência reprodutível).
+- A etapa do fluxo de trabalho do QA-Verifier em `workflows/verification.md` compara os critérios estruturados da SPEC com a evidência estruturada de QA.
+- O QA-Verifier produz um relatório usando `templates/VERIFICATION_REPORT_TEMPLATE.md` classificando quaisquer discrepâncias como `missing` (ausente), `unmapped` (não mapeado), `failed` (falhou) ou `ambiguous` (ambíguo).
+- A revisão de código (Code Review) não pode prosseguir enquanto houver descobertas aplicáveis do QA-Verifier em aberto.
 
-## Acceptance criteria
+## Critérios de aceitação
 
-### AC-001: Canonical QA evidence template has machine-consumable criteria results
+### AC-001: O template canônico de evidências de QA possui resultados de critérios consumíveis por máquina
 
 ```yaml
 id: AC-001
-title: Canonical QA evidence template contains required YAML contract fields
+title: O template canônico de evidências de QA contém os campos de contrato YAML exigidos
 preconditions:
-  - An author creates a QA evidence artifact using templates/QA_EVIDENCE_TEMPLATE.md
-action: Inspect the criteria evidence entries
-expected_result: Each criterion entry contains criterion_id, status, execution_type, execution_date, verified_by, and reproducible_evidence fields
+  - Um autor cria um artefato de evidência de QA usando templates/QA_EVIDENCE_TEMPLATE.md
+action: Inspecionar as entradas de evidência de critérios
+expected_result: Cada entrada de critério contém os campos criterion_id, status, execution_type, execution_date, verified_by, e reproducible_evidence
 evidence_type: automated
 ```
 
-### AC-002: Verification report template structures QA-Verifier divergence reporting
+### AC-002: O template de relatório de verificação estrutura o relatório de divergência do QA-Verifier
 
 ```yaml
 id: AC-002
-title: Verification report template structures comparison and Gate 3 findings
+title: O template de relatório de verificação estrutura a comparação e as descobertas do Portão 3
 preconditions:
-  - QA-Verifier produces a verification report using templates/VERIFICATION_REPORT_TEMPLATE.md
-action: Inspect the report structure
-expected_result: The template defines SPEC/TASK references, criterion-by-criterion status, divergence classification (missing, unmapped, failed, ambiguous), and Gate 3 pass/block decision
+  - QA-Verifier produz um relatório de verificação usando templates/VERIFICATION_REPORT_TEMPLATE.md
+action: Inspecionar a estrutura do relatório
+expected_result: O template define referências de SPEC/TASK, status critério por critério, classificação de divergência (missing, unmapped, failed, ambiguous), e a decisão de pass/block (aprovado/bloqueado) do Portão 3
 evidence_type: automated
 ```
 
-### AC-003: Verification workflow and testing standard operationalize structured evidence
+### AC-003: O fluxo de trabalho de verificação e o padrão de teste operacionalizam as evidências estruturadas
 
 ```yaml
 id: AC-003
-title: Verification workflow and testing standard reference structured QA evidence
+title: O fluxo de trabalho de verificação e o padrão de teste referenciam evidências estruturadas de QA
 preconditions:
-  - Inspect workflows/verification.md and standards/testing.md
-action: Verify references to QA evidence contract
-expected_result: workflows/verification.md references templates/QA_EVIDENCE_TEMPLATE.md as operational, and standards/testing.md requires structured evidence for acceptance criteria
+  - Inspecionar workflows/verification.md e standards/testing.md
+action: Verificar referências ao contrato de evidências de QA
+expected_result: workflows/verification.md faz referência a templates/QA_EVIDENCE_TEMPLATE.md como operacional, e standards/testing.md exige evidências estruturadas para os critérios de aceitação
 evidence_type: automated
 ```
 
-## Technical approach
+## Abordagem técnica
 
-Provide canonical uppercase templates in `templates/` using clear YAML blocks
-for machine extraction and human readability. Update references in
-`workflows/verification.md` and `standards/testing.md` to link the contracts.
-Automated unit tests in `tests/test_structured_qa_evidence.py` assert the presence
-of required fields and cross-references.
+Fornecer templates canônicos em maiúsculas (uppercase) em `templates/` usando blocos YAML claros para extração por máquina e legibilidade humana. Atualizar as referências em `workflows/verification.md` e `standards/testing.md` para vincular os contratos. Testes unitários automatizados em `tests/test_structured_qa_evidence.py` confirmam a presença dos campos obrigatórios e referências cruzadas.
 
-## Risks and dependencies
+## Riscos e dependências
 
-| Risk or dependency | Impact | Likelihood | Mitigation | Owner |
+| Risco ou dependência | Impacto | Probabilidade | Mitigação | Responsável |
 |---|---|---|---|---|
-| Incomplete evidence records | Falsely passing verifications | Medium | Require command, log/artifact, and verified_by in reproducible evidence | QA Agent |
-| Unmapped or extra criteria in evidence | Obsolete or undocumented testing | Low | QA-Verifier flags unmapped criteria as blocking Gate 3 findings | QA-Verifier |
-| Tooling expectations without parser code | Confusion about automated CI vs portable contract | Low | Clearly document the markdown/YAML format as portable and human/AI verifiable | Spec Agent |
+| Registros de evidência incompletos | Falsas verificações aprovadas | Média | Exigir command, log/artifact e verified_by em evidência reprodutível | Agente de QA |
+| Critérios não mapeados ou extras na evidência | Teste obsoleto ou não documentado | Baixa | O QA-Verifier sinaliza os critérios não mapeados como descobertas de bloqueio do Portão 3 | QA-Verifier |
+| Expectativas de ferramentas sem código de parser | Confusão sobre CI automatizado vs. contrato portátil | Baixa | Documentar claramente o formato markdown/YAML como portátil e verificável por humanos/IA | Agente de Especificação |
 
-## Open questions
+## Questões abertas
 
-| Question | Owner | Due date | Resolution |
+| Questão | Responsável | Data limite | Resolução |
 |---|---|---|---|
-| Will automated parser scripts be added in a future spec? | Engineering | Future release | Deferred; this spec defines the authoritative document contracts. |
+| Scripts de parser automatizados serão adicionados em uma especificação futura? | Engenharia | Lançamento futuro | Adiado; esta spec define os contratos autoritativos do documento. |
 
-## Approval
+## Aprovação
 
-| Role | Name | Decision | Date | Notes |
+| Papel | Nome | Decisão | Data | Notas |
 |---|---|---|---|---|
-| Engineering | | Pending | | |
-| QA | | Pending | | |
-| Human sponsor | User | Approved | 2026-09-15 | Approval recorded in the CLI conversation. |
+| Engenharia | | Pendente | | |
+| QA | | Pendente | | |
+| Patrocinador Humano | Usuário | Aprovado | 2026-09-15 | Aprovação registrada na conversa do CLI. |

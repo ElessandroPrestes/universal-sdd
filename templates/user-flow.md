@@ -1,61 +1,58 @@
-# User Flow: <name>
+# Fluxo do Usuário (User Flow): <name>
 
-## Metadata
+## Metadados
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
 | ID | FLOW-000 |
-| Related UX brief | |
-| Related SPEC | |
-| Owner | |
-| Status | Draft / Approved / Superseded |
+| Relacionado ao Briefing de UX | |
+| Relacionado à SPEC | |
+| Responsável | |
+| Status | Draft (Rascunho) / Approved (Aprovado) / Superseded (Substituído) |
 
-## Goal and actors
+## Objetivo e atores
 
-- User goal:
-- Primary actor:
-- Other actors or systems:
-- Entry points:
-- Successful exit:
-- Cancellation or abandonment exits:
+- Objetivo do usuário:
+- Ator principal:
+- Outros atores ou sistemas:
+- Pontos de entrada:
+- Saída bem-sucedida:
+- Saídas por cancelamento ou abandono:
 
-## Preconditions
+## Pré-condições
 
-- Authentication or permission:
-- Required data or state:
-- Device, platform, or connectivity constraints:
+- Autenticação ou permissão:
+- Dados requeridos ou estado:
+- Restrições de dispositivo, plataforma ou conectividade:
 
-## Main flow
+## Fluxo principal
 
-| Step | Actor action | System response | Interface state | Data or event | Acceptance criterion |
+| Passo | Ação do ator | Resposta do sistema | Estado da interface | Dado ou evento | Critério de aceitação |
 |---|---|---|---|---|---|
 | 1 | | | | | AC-000 |
 
-## Alternative and recovery flows
+## Fluxos alternativos e de recuperação
 
-| ID | Trigger | Steps | Expected recovery or exit | Criterion |
+| ID | Gatilho | Passos | Recuperação ou saída esperada | Critério |
 |---|---|---|---|---|
 | ALT-01 | | | | |
 
-Include validation errors, permission denial, empty data, timeouts, offline
-behavior, partial failure, cancellation, retry, undo, and session expiration when
-applicable.
+Inclua erros de validação, negação de permissão, dados vazios, timeouts (tempo limite excedido), comportamento offline, falha parcial, cancelamento, repetição, desfazer (undo) e expiração de sessão quando aplicável.
 
-## Flow diagram
+## Diagrama de fluxo
 
-Add or link a versioned diagram. Every node must be described by the tables so
-the flow remains testable without interpreting an image alone.
+Adicione ou anexe um diagrama versionado. Todo nó deve ser descrito pelas tabelas, para que o fluxo permaneça testável sem a interpretação exclusiva de uma imagem.
 
-## Open questions and risks
+## Questões abertas e riscos
 
-| Item | Owner | Resolution or mitigation |
+| Item | Responsável | Resolução ou mitigação |
 |---|---|---|
 | | | |
 
-## Approval
+## Aprovação
 
-| Role | Name | Decision | Date |
+| Papel | Nome | Decisão | Data |
 |---|---|---|---|
-| Product | | | |
+| Produto | | | |
 | Design | | | |
-| Engineering | | | |
+| Engenharia | | | |
